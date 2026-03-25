@@ -1,0 +1,80 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 7.875rem;
+    height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    &.primary {
+        background: var(--buttomPrimary);
+        color: var(--white);
+        img {
+            filter: var(--icon-white);
+        }
+
+        &:hover {
+            background: var(--buttomPrimaryHover);
+        }
+
+        &.active,
+        &:active {
+            background: var(--buttomPrimaryActive);
+        }
+    }
+
+    &.secondary {
+        background: var(--buttomSecondary);
+        color: var(--text-dark);
+        img {
+            filter: var(--icon-text-dark);
+        }
+
+        &:hover {
+            background: var(--buttomSecondaryHover);
+        }
+
+        &.active,
+        &:active {
+            background: var(--buttomSecondaryActive);
+        }
+    }
+
+    &.general {
+        background: var(--buttomGeneral);
+        color: var(--text-light);
+        img {
+            filter: var(--icon-text-light);
+        }
+
+        &:hover {
+            background: var(--buttomGeneralHover);
+        }
+
+        &.active,
+        &:active {
+            background: var(--buttomGeneralActive);
+        }
+    }
+
+    &.disabled {
+        background: var(--buttomDisable);
+        color: var(--text-disable);
+        pointer-events: none;
+
+        img {
+            filter: var(--icon-text-disable);
+        }
+    }
+}
+

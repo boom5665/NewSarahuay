@@ -1,0 +1,107 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #808080;
+    --yellow: #ffeb3b;
+
+    // Color Variable
+    --primary: #008f6b;
+    --PrimaryHover: #007a5c;
+    --PrimaryActive: #00664d;
+    --secondary: #fdec52;
+    --SecondaryHover: #e1cb02;
+    --SecondaryActive: #bca902;
+    --third: #0b5b16;
+    --line: #bababa;
+
+    --RGBblack: 0, 0, 0; // #000000
+    --RGBprimary: 0, 143, 107; // #008F6B
+    --RGBthird: 11, 91, 22; // #0b5b16
+
+    // Text Variable
+    --text-dark: #080808;
+    --text-light: #3f3f3f;
+    --text-disable: #bababa;
+    --text-success: #00c392;
+    --text-error: #d91122;
+
+    // Button Variable
+    --buttomPrimary: #008f6b;
+    --buttomPrimaryHover: #007a5c;
+    --buttomPrimaryActive: #00664d;
+    --buttomSecondary: #fdec52;
+    --buttomSecondaryHover: #e1cb02;
+    --buttomSecondaryActive: #bca902;
+    --buttomGeneral: #ffffff;
+    --buttomGeneralHover: #f8f8f8;
+    --buttomGeneralActive: #bababa;
+    --buttomDisable: #ffffff;
+
+    --icon-black: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(336deg) brightness(103%)
+        contrast(102%); //#000000
+    --icon-white: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(43deg) brightness(102%)
+        contrast(105%); //#ffffff
+    --icon-gray: brightness(0) saturate(100%) invert(45%) sepia(68%) saturate(0%) hue-rotate(272deg) brightness(98%)
+        contrast(85%); //#808080
+
+    --icon-text-light: brightness(0) saturate(100%) invert(0%) sepia(6%) saturate(6559%) hue-rotate(10deg)
+        brightness(86%) contrast(94%); //#080808
+    --icon-text-light: brightness(0) saturate(100%) invert(25%) sepia(92%) saturate(0%) hue-rotate(217deg)
+        brightness(101%) contrast(124%); //#3F3F3F
+    --icon-text-disable: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(67%) hue-rotate(266deg)
+        brightness(94%) contrast(89%); //#BABABA
+    --icon-text-success: brightness(0) saturate(100%) invert(73%) sepia(75%) saturate(4754%) hue-rotate(126deg)
+        brightness(95%) contrast(101%); //#00C392
+    --icon-text-error: brightness(0) saturate(100%) invert(14%) sepia(97%) saturate(7386%) hue-rotate(352deg)
+        brightness(89%) contrast(91%); //#D91122
+    --icon-primary: brightness(0) saturate(100%) invert(36%) sepia(94%) saturate(449%) hue-rotate(116deg)
+        brightness(99%) contrast(101%); //#008F6B
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    //mobile
+    --bottom-nav: 600 0.75rem "Pentor Corporate", sans-serif;
+    --Footer: 400 0.875rem "Pentor Corporate", sans-serif;
+    --PageTitle: 700 1rem "Pentor Corporate", sans-serif;
+    --CategoryTab: 400 0.875rem "Pentor Corporate", sans-serif;
+    --Breadcrumbs: 400 1rem "Pentor Corporate", sans-serif;
+    --HeroHeadCard: 700 1.25rem "Pentor Corporate", sans-serif;
+    --HeadCard: 600 1rem / normal "Pentor Corporate", sans-serif;
+    --ArticleBody: 400 1rem "FC Sara Samkan [Non-commercial]";
+    --TagCard: 400 0.75rem "FC Sara Samkan [Non-commercial]";
+    --TimeCard: 400 0.75rem "Pentor Corporate", sans-serif;
+    --HeadContent: 700 1.25rem "Pentor Corporate", sans-serif;
+    --FieldLabel: 400 1rem "Pentor Corporate", sans-serif;
+    --FieldValue: 400 0.875rem "Pentor Corporate", sans-serif;
+    --ButtonMain: 700 1rem "Pentor Corporate", sans-serif;
+    --ButtonContent: 400 0.875rem "Pentor Corporate", sans-serif;
+    --Note: 400 0.875rem "FC Sara Samkan [Non-commercial]";
+    --ResultLabel: 700 1.25rem "Pentor Corporate", sans-serif;
+    --ResultValue: 600 0.875rem "Pentor Corporate", sans-serif;
+    --ResultNumberPrimary: 700 3.125rem "Pentor Corporate", sans-serif;
+    --ResultNumberSecondary: 700 2rem "Pentor Corporate", sans-serif;
+    //desktop
+    --bottom-navPC: 600 .875rem "Pentor Corporate", sans-serif;
+    --FooterPC: 400 1rem "Pentor Corporate", sans-serif;
+    --PageTitlePC: 700 1.125rem "Pentor Corporate", sans-serif;
+    --CategoryTabPC: 400 1rem "Pentor Corporate", sans-serif;
+    --BreadcrumbsPC: 400 1.125rem "Pentor Corporate", sans-serif;
+    --HeroHeadCardPC: 700 1.375rem "Pentor Corporate", sans-serif;
+    --HeadCardPC: 600 1.125rem "Pentor Corporate", sans-serif;
+    --ArticleBodyPC: 400 1.125rem "FC Sara Samkan [Non-commercial]";
+    --TagCardPC: 400 .875rem "FC Sara Samkan [Non-commercial]";
+    --TimeCardPC: 400 .875rem "Pentor Corporate", sans-serif;
+    --HeadContentPC: 700 1.375rem "Pentor Corporate", sans-serif;
+    --FieldLabelPC: 400 1.125rem "Pentor Corporate", sans-serif;
+    --FieldValuePC: 400 1rem "Pentor Corporate", sans-serif;
+    --ButtonMainPC: 700 1.125rem "Pentor Corporate", sans-serif;
+    --ButtonContentPC: 400 1rem "Pentor Corporate", sans-serif;
+    --NotePC: 400 1rem "FC Sara Samkan [Non-commercial]";
+    --ResultLabelPC: 700 1.375rem "Pentor Corporate", sans-serif;
+    --ResultValuePC: 600 1rem "Pentor Corporate", sans-serif;
+    --ResultNumberPrimaryPC: 700 3.125rem "Pentor Corporate", sans-serif;
+    --ResultNumberSecondaryPC: 700 2rem "Pentor Corporate", sans-serif;
+}
