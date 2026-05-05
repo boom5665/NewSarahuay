@@ -3,5 +3,10 @@
   "success": "Success",
   "fail": "Fail",
   "pro": "Pro",
-  "Memberlevel": "Member Level"
+  "Memberlevel": "Member Level",
+  "Home":"Home",
+  "Lottery":"News",
+  "Result":"Result",
+  "AIanalysis":"AI Analysis",
+  "Saimu":"Saimu"
 }

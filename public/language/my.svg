@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240.14 240.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b600;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        fill: #ffca00;
+      }
+
+      .cls-4 {
+        stroke: #999;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-6 {
+        fill: #ff002a;
+      }
+
+      .cls-7 {
+        fill: #b60028;
+      }
+
+      .cls-8 {
+        fill: #2a254b;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g>
+      <g class="cls-9">
+        <g>
+          <rect class="cls-7" x="-79.93" y=".07" width="400" height="40.47"/>
+          <rect class="cls-2" x="-79.93" y="40.54" width="400" height="40.47"/>
+          <rect class="cls-8" x="-79.93" y="81.01" width="400" height="78.13"/>
+          <rect class="cls-2" x="-79.93" y="159.14" width="400" height="40.47"/>
+          <rect class="cls-7" x="-79.93" y="199.6" width="400" height="40.47"/>
+          <g>
+            <g>
+              <rect class="cls-5" x="-79.93" y=".07" width="400" height="80"/>
+              <rect class="cls-1" x="-79.93" y="80.07" width="400" height="80"/>
+              <rect class="cls-6" x="-79.93" y="160.07" width="400" height="80"/>
+            </g>
+            <polygon class="cls-2" points="203.37 101.96 140.04 101.96 120.07 40.27 100.1 101.96 36.77 101.96 88 139.33 68.4 199.87 120.07 163.56 171.74 199.87 152.14 139.33 203.37 101.96"/>
+          </g>
+        </g>
+      </g>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <rect class="cls-3" x=".07" y=".07" width="240" height="240" rx="5.48" ry="5.48"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-4" cx="120.07" cy="120.07" r="117.57"/>
+    </g>
+  </g>
+</svg>

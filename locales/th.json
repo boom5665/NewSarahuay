@@ -3,5 +3,10 @@
   "success": "สำเร็จ",
   "fail": "ล้มเหลว",
   "pro": "โปร",
-  "Memberlevel": "ระดับสมาชิก"
+  "Memberlevel": "ระดับสมาชิก",
+  "Home":"หน้าหลัก",
+  "Lottery":"ข่าวหวย",
+  "Result":"ผลรางวัล",
+  "AIanalysis":"วิเคราะห์ AI",
+  "Saimu":"สายมู"
 }

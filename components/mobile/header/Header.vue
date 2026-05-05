@@ -1,27 +1,14 @@
 <template>
   <div class="header-container">
     <div class="logo">
+    </div>
+    <div class="logo">
       <img :src="logo" alt="logo" />
     </div>
 
-    <div class="menu-icons">
-      <div
-        v-for="item in menuList"
-        :key="item.id"
-        class="menu-item"
-        @click="goPage(item.link)"
-      >
-        <img :src="item.icon" class="icon" />
-        <span>{{ item.name }}</span>
-      </div>
-    </div>
 
     <div class="menu-button-container">
-      <img
-        class="hamberger"
-        src="/assets/svg/hamberger.svg"
-        @click="toggleMenu"
-      />
+      <img class="hamberger" src="/assets/svg/hamberger.svg" @click="toggleMenu" />
     </div>
 
     <!-- Overlay -->
@@ -34,12 +21,7 @@
         <button @click="toggleMenu">✕</button>
       </div>
 
-      <div
-        v-for="item in menuList"
-        :key="item.id"
-        class="side-item"
-        @click="goPage(item.link)"
-      >
+      <div v-for="item in menuList" :key="item.id" class="side-item" @click="goPage(item.link)">
         <img :src="item.icon" />
         <span>{{ item.name }}</span>
       </div>
@@ -52,7 +34,7 @@ import { ref } from "vue";
 
 const showMenu = ref(false);
 
-const logo = "https://dummyimage.com/120x40/000/fff&text=LOGO";
+const logo = "/Logo.png";
 
 const menuList = ref([
   // {

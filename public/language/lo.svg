@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240.14 240.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e2000e;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #999;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        fill: #00246c;
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g>
+      <g class="cls-6">
+        <g>
+          <g>
+            <rect class="cls-2" x="-79.93" y=".02" width="400" height="60.56"/>
+            <rect class="cls-2" x="-79.93" y="179.55" width="400" height="60.56"/>
+            <rect class="cls-5" x="-79.93" y="60.59" width="400" height="118.97"/>
+          </g>
+          <circle class="cls-1" cx="120.07" cy="120.07" r="47.83" transform="translate(-36.81 55.09) rotate(-22.5)"/>
+        </g>
+      </g>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <rect class="cls-3" x=".07" y=".07" width="240" height="240" rx="5.48" ry="5.48"/>
+      <circle class="cls-3" cx="120.07" cy="120.07" r="120"/>
+      <circle class="cls-4" cx="120.07" cy="120.07" r="117.57"/>
+    </g>
+  </g>
+</svg>
