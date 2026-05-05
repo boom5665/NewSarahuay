@@ -49,7 +49,7 @@ const logo = "/Logo.png";
 const languages = [
   { code: "en", label: "English", icon: "/language/en.svg" },
   { code: "th", label: "ไทย", icon: "/language/th.svg" },
-
+  { code: "cn", label: "中國", icon: "/language/cn.svg" },
 ];
 
 const currentLang = computed(() => {
