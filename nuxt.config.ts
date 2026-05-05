@@ -35,20 +35,8 @@ export default defineNuxtConfig({
     { src: "~/plugins/vue-final-modal.js", mode: "client" },
     { src: "~/plugins/methods.js", mode: "client" }
   ],
-  modules: ["@pinia/nuxt", "@nuxtjs/i18n"],
-  i18n: {
-    strategy: "no_prefix",
-    lazy: true,
-    langDir: "locales",
-    locales: [
-      { code: "en", file: "en.json" },
-      { code: "th", file: "th.json" }
-    ],
-    defaultLocale: "th",
-    detectBrowserLanguage: {
-      useCookie: false // 🔥 ปิดการจำค่า
-    }
-  },
+  modules: ["@pinia/nuxt"],
+
   css: ["@/assets/scss/main.scss"],
   runtimeConfig: {
     // ตัวแปรที่เข้าถึงได้ในฝั่งไคลเอนต์

@@ -2,6 +2,7 @@
   <div class="home-content">
     <div class="home-box">
       <div class="text-toplotto">ข่าวหวยทั้งหมด</div>
+
       <div class="top-bar">
         <div class="menu-tab">
           <div
@@ -13,20 +14,23 @@
             {{ menu.name }}
           </div>
         </div>
+
         <div class="date-filter">
           <input type="date" v-model="selectedDate" />
         </div>
       </div>
+
       <div class="home-item">
         <NuxtLink
           v-for="imgcard in filteredData"
           :key="imgcard.id"
-          :to="localePath(`/detailsnew/${imgcard.id}`)"
+          :to="`/detailsnew/${imgcard.id}`"
           class="news-link"
         >
           <ImageCard :obj="imgcard" />
         </NuxtLink>
       </div>
+
     </div>
   </div>
 </template>
@@ -34,7 +38,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import ImageCard from "~/components/desktop/ImageCard.vue";
-const localePath = useLocalePath()
+
 const activeMenu = ref("all");
 const selectedDate = ref("");
 
