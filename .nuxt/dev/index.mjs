@@ -2095,7 +2095,7 @@ const _OjgBliniZpXe949WjQ5mQT4Jxl1AekCJEUWfEOUVUI = (function(nitro) {
 
 const rootDir = "/Users/jarkkarpongsukprasop/Documents/GitHub/NewSarahuay";
 
-const appHead = {"meta":[{"http-equiv":"X-UA-Compatible","content":"IE=edge,chrome=1"},{"charset":"utf-8"},{"http-equiv":"pragma","content":"no-cache"},{"http-equiv":"cache-control","content":"no-cache"},{"http-equiv":"expires","content":"0"},{"name":"viewport","content":"user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"},{"hid":"description","name":"description","content":""}],"link":[],"style":[],"script":[],"noscript":[],"title":"BaseNuxt3","htmlAttrs":{"lang":"th","translate":"no"}};
+const appHead = {"meta":[{"charset":"utf-8"},{"http-equiv":"X-UA-Compatible","content":"IE=edge,chrome=1"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Sarahuay เว็บข่าวหวย ผลหวย และเลขเด็ด"}],"link":[{"rel":"icon","type":"image/png","href":"/icon_tab.png"}],"style":[],"script":[],"noscript":[],"title":"Sarahuay","htmlAttrs":{"lang":"th","translate":"no"}};
 
 const appRootTag = "div";
 

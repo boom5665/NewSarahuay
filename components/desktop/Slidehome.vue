@@ -3,12 +3,12 @@
     <div>
       <!-- header -->
       <div class="d-justi header">
-        <div class="text-top">ข่าวใหม่วันนี้</div>
+        <div class="text-top">{{$t("Latestnews")}}</div>
         <div>{{ today }}</div>
       </div>
 
       <div class="imgcard">
-        <!-- LEFT -->
+      
         <div class="content-left">
           <Swiper
             :modules="[Autoplay, Pagination]"
@@ -49,7 +49,6 @@
           </Swiper>
         </div>
 
-        <!-- RIGHT -->
         <div class="content-right">
           <NuxtLink
             v-for="(item, index) in sideNews"

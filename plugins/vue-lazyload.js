@@ -5,7 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueLazyload, {
     preLoad: 1.5,
     // error: '/images/error.png',
-    // loading: '/images/loading.gif',
+    loading: '/loading.png',
     attempt: 2
   })
 })
