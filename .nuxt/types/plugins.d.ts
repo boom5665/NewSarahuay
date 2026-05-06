@@ -28,6 +28,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../plugins/vue-final-modal.js")> &
   InjectionType<typeof import("../../plugins/methods.js")> &
   InjectionType<typeof import("../../plugins/i18n")> &
+  InjectionType<typeof import("../../plugins/skeleton")> &
   InjectionType<typeof import("../../plugins/vue-lazyload.js")>
 
 declare module '#app' {

@@ -6,6 +6,7 @@
       </div>
       <div class="home-item">
         <ImageCard
+        
           v-for="imgcard in imgcardData"
           :key="imgcard.id"
           :icon="'flags/pingpong6.svg'"

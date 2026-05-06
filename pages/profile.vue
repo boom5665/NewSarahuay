@@ -17,12 +17,7 @@ import Desktoplotto from "~/components/desktop/profile/Profile.vue";
 import Mobilelotto from "~/components/mobile/profile/Profile.vue";
 const mainStore = useMainStore();
 const resultLayout = computed(() => mainStore.resultLayout);
-const { $magic } = useNuxtApp();
 
-onMounted(() => {
-  window.addEventListener("resize", $magic);
-  window.dispatchEvent(new Event("resize"));
-});
 </script>
 <style lang="scss" scoped>
 .homecont {

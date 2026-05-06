@@ -8,28 +8,25 @@
       </div>
       <div class="imgcard">
         <div class="content-left">
-          <Swiper
-            :modules="[Autoplay, Pagination]"
-            :slides-per-view="1"
-            :loop="true"
-            :autoplay="{ delay: 20000, pauseOnMouseEnter: true }"
-            :pagination="{ clickable: true }"
-          >
+          <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
+            :autoplay="{ delay: 20000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
             <SwiperSlide v-for="(item, index) in newsList" :key="index">
               <div class="main-news">
                 <div class="news-image">
-                  <img
-                    class="img-new"
-                    :src="item.image || 'https://via.placeholder.com/300x200'"
-                  />
+                  <img class="img-new" :src="item.image || 'https://via.placeholder.com/300x200'" />
                 </div>
 
                 <div class="news-info">
                   <span class="category">{{ item.category }}</span>
+                  <div v-if="loading">
+                    <div class="sk-line w90"></div>
+                  </div>
+                  <div v-else>
+                    <h2 class="title">
+                      {{ item.title }}
+                    </h2>
+                  </div>
 
-                  <h2 class="title">
-                    {{ item.title }}
-                  </h2>
                 </div>
               </div>
             </SwiperSlide>
@@ -39,21 +36,30 @@
         <div class="content-right">
           <div class="side-item" v-for="(item, index) in sideNews" :key="index">
             <div class="thumb">
-              <img
-                class="img"
-                :src="item.image || 'https://via.placeholder.com/150x100'"
-              />
+              <img class="img" :src="item.image || 'https://via.placeholder.com/150x100'" />
             </div>
 
             <div class="text">
               <div class="side-title">
-                {{ item.title }}
+                <div v-if="loading">
+                  <div class="sk-line w90"></div>
+                </div>
+                <div v-else class="side-title">
+                  {{ item.title }}
+                </div>
               </div>
 
-              <div class="d-justi">
-                <span class="time">{{ item.time }}</span>
-                <span class="time-col">{{ item.category }}</span>
-              </div>
+         <div class="d-justi">
+
+  <!-- time -->
+  <div v-if="loading" class="sk-line w30"></div>
+  <span v-else class="time">{{ item.time }}</span>
+
+  <!-- category -->
+  <div v-if="loading" class="sk-line w40"></div>
+  <span v-else class="time-col">{{ item.category }}</span>
+
+</div>
             </div>
           </div>
         </div>
@@ -64,29 +70,33 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
+
+const loading = ref(true)
+
 const props = defineProps({
-  mainNews: {
-    type: Object,
-    required: true
-  },
+  mainNews: Object,
   sideNews: {
     type: Array,
     default: () => []
   }
-});
+})
 
-// รวม data
 const newsList = computed(() => {
-  return props.mainNews ? [props.mainNews, ...props.sideNews] : props.sideNews;
-});
+  return props.mainNews
+    ? [props.mainNews, ...props.sideNews]
+    : props.sideNews
+})
 
-// วันที่
-const today = new Date().toLocaleDateString("th-TH");
+const today = new Date().toLocaleDateString("th-TH")
+
+setTimeout(() => {
+  loading.value = false
+}, 120000000)
 </script>
 <style scoped lang="scss">
 .imgcard {
@@ -99,6 +109,7 @@ const today = new Date().toLocaleDateString("th-TH");
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
+
 .header {
   grid-column: 1 / -1;
 }
@@ -108,31 +119,38 @@ const today = new Date().toLocaleDateString("th-TH");
     width: 45rem;
     height: 100%;
   }
+
   .swiper-slide {
     height: auto;
   }
+
   .main-news {
     display: flex;
     flex-direction: column;
   }
+
   .news-image {
     width: 100%;
     height: 23.6rem;
     border-radius: 0.5rem;
     overflow: hidden;
   }
+
   .img-new {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
+
   .news-info {
     padding: 0.5rem;
     margin-bottom: 1rem;
     position: absolute;
     bottom: 0;
+    width: 100%;
   }
+
   .category {
     font-size: 0.875rem;
     color: black;
@@ -150,16 +168,20 @@ const today = new Date().toLocaleDateString("th-TH");
     max-height: 2.6em;
   }
 }
+
 .content-right {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
+
 .side-item {
   display: flex;
   gap: 0.5rem;
   height: 5.5rem;
 }
+
 .thumb {
   width: 8.125rem;
   height: 100%;
@@ -173,6 +195,7 @@ const today = new Date().toLocaleDateString("th-TH");
     object-fit: cover;
   }
 }
+
 .text {
   display: flex;
   flex-direction: column;
@@ -189,10 +212,14 @@ const today = new Date().toLocaleDateString("th-TH");
 }
 
 .time {
+  display: inline-block;
+  min-height: 14px;
   font: var(--TimeCardPC);
 }
 
 .time-col {
+  display: inline-block;
+  min-height: 14px;
   font: var(--TimeCardPC);
   color: #008f6c;
 }
@@ -225,6 +252,7 @@ const today = new Date().toLocaleDateString("th-TH");
   left: 0;
   width: 100%;
 }
+
 :deep(.swiper-pagination-bullet) {
   background: #ccc !important;
   opacity: 1;

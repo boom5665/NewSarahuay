@@ -1,0 +1,35 @@
+.sk-line {
+  display: block;
+  height: 12px;
+  min-width: 30px; /* 🔥 กันหาย */
+  background: #b8b8b8;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sk-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+.w80 { width: 80%; }
+.w60 { width: 60%; }
+.w90 { width: 90%; }
