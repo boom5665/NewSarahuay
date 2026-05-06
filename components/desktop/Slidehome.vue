@@ -272,10 +272,11 @@ padding: 1.5rem 1rem;
 }
 
 :deep(.swiper-pagination-horizontal) {
-  bottom: 0.0625rem;
-  top: var(--swiper-pagination-top, auto);
-  left: 0;
-  width: 100%;
+    bottom: 0.5rem;
+    top: var(--swiper-pagination-top, auto);
+    left: 15px;
+    width: 100%;
+    text-align: justify;
 }
 
 :deep(.swiper-pagination-bullet) {
