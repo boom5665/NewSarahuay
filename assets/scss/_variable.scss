@@ -1,4 +1,33 @@
 :root {
+    --primary-color-400: #009a74;
+    --primary-color-500: #008f6c;
+    --primary-color-600: #00795b;
+    --primary-color-700: #005c46;
+    --primary-color-800: #004030;
+    --primary-color-900: #001c15;
+    --secondary-color-400: #fffd3f;
+    --secondary-color-500: #ffeb3b;
+    --disable-color-300: #3f3f3f;
+    --primary-fonts: #ffffff;
+    --secondary-fonts: #000000;
+    --background-image: "";
+    --primary-rgb: "";
+    --secondary-rgb: "";
+    --black: #080808;
+    --lightBlack: #242424;
+    --lighterBlack: #3f3f3f;
+    --orange: #dd9f17;
+
+    --succeed: #3acd15;
+    --failed: #e00;
+    --pending: #f29100;
+    --cancel: #7a7a7a;
+    --white-color: #ffffff;
+    --black-white: #bababa;
+    --redZodiac: #a60a26;
+    --blueZodiac: #2850d1;
+    --yellowZodiac: #c29215;
+    --greenZodiac: #459a3f;
     --black: #000000;
     --white: #ffffff;
     --gray: #808080;
@@ -84,7 +113,7 @@
     --ResultNumberPrimary: 700 3.125rem "Pentor Corporate", sans-serif;
     --ResultNumberSecondary: 700 2rem "Pentor Corporate", sans-serif;
     //desktop
-    --bottom-navPC: 600 .875rem "Pentor Corporate", sans-serif;
+    --bottom-navPC: 600 0.875rem "Pentor Corporate", sans-serif;
     --FooterPC: 400 1rem "Pentor Corporate", sans-serif;
     --PageTitlePC: 700 1.125rem "Pentor Corporate", sans-serif;
     --CategoryTabPC: 400 1rem "Pentor Corporate", sans-serif;
@@ -92,8 +121,8 @@
     --HeroHeadCardPC: 700 1.375rem "Pentor Corporate", sans-serif;
     --HeadCardPC: 600 1.125rem "Pentor Corporate", sans-serif;
     --ArticleBodyPC: 400 1.125rem "FC Sara Samkan [Non-commercial]";
-    --TagCardPC: 400 .875rem "FC Sara Samkan [Non-commercial]";
-    --TimeCardPC: 400 .875rem "Pentor Corporate", sans-serif;
+    --TagCardPC: 400 0.875rem "FC Sara Samkan [Non-commercial]";
+    --TimeCardPC: 400 0.875rem "Pentor Corporate", sans-serif;
     --HeadContentPC: 700 1.375rem "Pentor Corporate", sans-serif;
     --FieldLabelPC: 400 1.125rem "Pentor Corporate", sans-serif;
     --FieldValuePC: 400 1rem "Pentor Corporate", sans-serif;

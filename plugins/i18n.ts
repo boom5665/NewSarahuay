@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 import en from '~/locales/en.json'
 import th from '~/locales/th.json'
 import cn from '~/locales/cn.json'
-
+import km from '~/locales/km.json'
 export default defineNuxtPlugin((nuxtApp) => {
   const i18n = createI18n({
     legacy: false,
@@ -12,7 +12,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     messages: {
       en,
       th,
-      cn
+      cn,
+      km
     }
   })
 

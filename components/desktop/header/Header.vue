@@ -50,6 +50,7 @@ const languages = [
   { code: "en", label: "English", icon: "/language/en.svg" },
   { code: "th", label: "ไทย", icon: "/language/th.svg" },
   { code: "cn", label: "中國", icon: "/language/cn.svg" },
+  { code: "km", label: "ខ្មែร", icon: "/language/km.svg" },
 ];
 
 const currentLang = computed(() => {
@@ -126,16 +127,16 @@ watch(locale, (val) => {
 }
 
 .menu-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: .6875rem 1rem;
-    justify-content: center;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .6875rem 1rem;
+  justify-content: center;
+  color: white;
 }
 
 .menu-item.active {
@@ -158,15 +159,15 @@ watch(locale, (val) => {
 }
 
 .lang-dropdown {
-position: absolute;
-    top: 40px;
-    right: 0;
-    background: white;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    width: 8.125rem;
-    z-index: 9999;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 8.125rem;
+  z-index: 9999;
 }
 
 .lang-item {
