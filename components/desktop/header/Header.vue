@@ -159,14 +159,15 @@ watch(locale, (val) => {
 }
 
 .lang-dropdown {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  width: 8.125rem;
+position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 8.125rem;
+    z-index: 9999;
 }
 
 .lang-item {

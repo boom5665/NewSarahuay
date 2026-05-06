@@ -9,17 +9,21 @@
       <div class="imgcard">
         <div class="content-left">
           <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
-            :autoplay="{ delay: 20000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
+            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
             <SwiperSlide v-for="(item, index) in newsList" :key="index">
               <div class="main-news">
                 <div class="news-image">
-                  <img class="img-new" :src="item.image || 'https://via.placeholder.com/300x200'" />
+                  <div class="img-wrapper">
+                    <img class="img-new" v-lazy="item.image" />
+                    <div class="img-overlay"></div>
+                  </div>
+
                 </div>
 
                 <div class="news-info">
                   <span class="category">{{ item.category }}</span>
                   <div v-if="loading">
-                    <div class="sk-line w90"></div>
+                    <div class="sk-line w40"></div>
                   </div>
                   <div v-else>
                     <h2 class="title">
@@ -42,30 +46,30 @@
             <div class="text">
               <div class="side-title">
                 <div v-if="loading">
-                  <div class="sk-line w90"></div>
+                  <div class="sk-line w40"></div>
                 </div>
                 <div v-else class="side-title">
                   {{ item.title }}
                 </div>
               </div>
 
-         <div class="d-justi">
+              <div class="d-justi">
 
-  <!-- time -->
-  <div v-if="loading" class="sk-line w30"></div>
-  <span v-else class="time">{{ item.time }}</span>
+                <!-- time -->
+                <div v-if="loading" class="sk-line w20"></div>
+                <span v-else class="time">{{ item.time }}</span>
 
-  <!-- category -->
-  <div v-if="loading" class="sk-line w40"></div>
-  <span v-else class="time-col">{{ item.category }}</span>
+                <!-- category -->
+                <div v-if="loading" class="sk-line w20"></div>
+                <span v-else class="time-col">{{ item.category }}</span>
 
-</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="addtext">ดูเพิ่มเติม</div>
+   
   </div>
 </template>
 
@@ -96,7 +100,7 @@ const today = new Date().toLocaleDateString("th-TH")
 
 setTimeout(() => {
   loading.value = false
-}, 120000000)
+}, 1200)
 </script>
 <style scoped lang="scss">
 .imgcard {
@@ -136,6 +140,13 @@ setTimeout(() => {
     overflow: hidden;
   }
 
+  .img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
   .img-new {
     width: 100%;
     height: 100%;
@@ -143,23 +154,37 @@ setTimeout(() => {
     display: block;
   }
 
+  .img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 32.62%,
+        #000 97.57%);
+    pointer-events: none;
+  }
+
   .news-info {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+padding: 1.5rem 1rem;
+    margin-bottom: 0rem;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 45rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
   }
 
   .category {
     font-size: 0.875rem;
-    color: black;
+    color: white;
     margin-bottom: 4px;
   }
 
   .title {
     font: var(--HeroHeadCardPC);
-    color: #4a7766;
+    color: #ffff;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
