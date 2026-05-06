@@ -1,75 +1,88 @@
 <template>
   <div>
-    <div class="">
+    <div>
       <!-- header -->
       <div class="d-justi header">
         <div class="text-top">ข่าวใหม่วันนี้</div>
         <div>{{ today }}</div>
       </div>
+
       <div class="imgcard">
+        <!-- LEFT -->
         <div class="content-left">
-          <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
-            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
-            <SwiperSlide v-for="(item, index) in newsList" :key="index">
-              <div class="main-news">
-                <div class="news-image">
-                  <div class="img-wrapper">
-                    <img class="img-new" v-lazy="item.image" />
-                    <div class="img-overlay"></div>
+          <Swiper
+            :modules="[Autoplay, Pagination]"
+            :slides-per-view="1"
+            :loop="true"
+            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }"
+            :pagination="{ clickable: true }"
+          >
+            <SwiperSlide
+              v-for="(item, index) in newsList"
+              :key="item.id || index"
+            >
+              <NuxtLink :to="`/detailsnew/${item.id}`">
+                <div class="main-news">
+                  <div class="news-image">
+                    <div class="img-wrapper">
+                      <img class="img-new" v-lazy="item.image" />
+                      <div class="img-overlay"></div>
+                    </div>
                   </div>
 
+                  <div class="news-info">
+                    <span class="category">{{ item.category }}</span>
+
+                    <div v-if="loading">
+                      <div class="sk-line w40"></div>
+                    </div>
+
+                    <div v-else>
+                      <h2 class="title">
+                        {{ item.title }}
+                      </h2>
+                    </div>
+                  </div>
                 </div>
-
-                <div class="news-info">
-                  <span class="category">{{ item.category }}</span>
-                  <div v-if="loading">
-                    <div class="sk-line w40"></div>
-                  </div>
-                  <div v-else>
-                    <h2 class="title">
-                      {{ item.title }}
-                    </h2>
-                  </div>
-
-                </div>
-              </div>
+              </NuxtLink>
             </SwiperSlide>
           </Swiper>
         </div>
 
+        <!-- RIGHT -->
         <div class="content-right">
-          <div class="side-item" v-for="(item, index) in sideNews" :key="index">
-            <div class="thumb">
-              <img class="img" :src="item.image || 'https://via.placeholder.com/150x100'" />
-            </div>
+          <NuxtLink
+            v-for="(item, index) in sideNews"
+            :key="item.id || index"
+            :to="`/detailsnew/${item.id}`"
+          >
+            <div class="side-item">
+              <div class="thumb">
+                <img class="img" :src="item.image" />
+              </div>
 
-            <div class="text">
-              <div class="side-title">
+              <div class="text">
                 <div v-if="loading">
                   <div class="sk-line w40"></div>
                 </div>
+
                 <div v-else class="side-title">
                   {{ item.title }}
                 </div>
-              </div>
 
-              <div class="d-justi">
+                <div class="d-justi">
+                  <div v-if="loading" class="sk-line w20"></div>
+                  <span v-else class="time">{{ item.time }}</span>
 
-                <!-- time -->
-                <div v-if="loading" class="sk-line w20"></div>
-                <span v-else class="time">{{ item.time }}</span>
-
-                <!-- category -->
-                <div v-if="loading" class="sk-line w20"></div>
-                <span v-else class="time-col">{{ item.category }}</span>
-
+                  <div v-if="loading" class="sk-line w20"></div>
+                  <span v-else class="time-col">{{ item.category }}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
-   
   </div>
 </template>
 
@@ -80,27 +93,36 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const loading = ref(true)
+const loading = ref(true);
 
 const props = defineProps({
-  mainNews: Object,
+  mainNews: {
+    type: Object,
+    default: null
+  },
   sideNews: {
     type: Array,
     default: () => []
   }
-})
+});
 
 const newsList = computed(() => {
-  return props.mainNews
-    ? [props.mainNews, ...props.sideNews]
-    : props.sideNews
-})
+  const main = props.mainNews ? [props.mainNews] : [];
+  const side = props.sideNews ?? [];
 
-const today = new Date().toLocaleDateString("th-TH")
+  return [...main, ...side]
+    .filter(Boolean)
+    .map((item, index) => ({
+      id: item?.id ?? `${index}`, // 👈 กัน undefined
+      ...item
+    }));
+});
+
+const today = new Date().toLocaleDateString("th-TH");
 
 setTimeout(() => {
-  loading.value = false
-}, 1200)
+  loading.value = false;
+}, 1200);
 </script>
 <style scoped lang="scss">
 .imgcard {

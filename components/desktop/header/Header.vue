@@ -126,17 +126,16 @@ watch(locale, (val) => {
 }
 
 .menu-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  width: 7.3125rem;
-  height: 2.75rem;
-  justify-content: center;
-  color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: .6875rem 1rem;
+    justify-content: center;
+    color: white;
 }
 
 .menu-item.active {

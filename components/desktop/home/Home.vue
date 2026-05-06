@@ -76,6 +76,7 @@ const mainNews = {
 
 const sideNews = [
   {
+    id: 2,
     title:
       "รวยแล้วเฮงอีก รับกลับ บ้านหลังงามออกไปเฮงอีก รับกลับ บ้านหลังงามออกไป",
     image: "https://picsum.photos/500/400",
@@ -83,6 +84,7 @@ const sideNews = [
     category: "ข่าวหวย"
   },
   {
+    id: 3,
     title:
       "เลขเด็ดงวดนี้มาแรงเฮงอีก รับกลับ บ้านหลังงามออกไปเฮงอีก รับกลับ บ้านหลังงามออกไป",
     image: "https://picsum.photos/600/400",
@@ -90,12 +92,14 @@ const sideNews = [
     category: "ข่าวหวย"
   },
   {
+    id: 4,
     title: "เลขเด็ดงวดนี้มาแรง",
     image: "https://picsum.photos/700/400",
     time: "10 ชั่วโมงก่อน",
     category: "ข่าวหวย"
   },
   {
+    id: 5,
     title: "เลขเด็ดงวดนี้มาแรง",
     image: "https://picsum.photos/900/400",
     time: "10 ชั่วโมงก่อน",
