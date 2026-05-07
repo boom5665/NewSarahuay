@@ -1,13 +1,10 @@
 <template>
   <footer class="footer">
     <div class="footer-container">
-      <!-- Column 1 -->
-      <div class="footer-col">
+      <!-- <div class="footer-col">
         <h3>{{ about.title }}</h3>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="footer-col middle">
+      </div> -->
+      <!-- <div class="footer-col middle">
         <div class="row" v-for="item in menuGroup" :key="item.title">
           <h4>{{ item.title }}</h4>
           <ul>
@@ -16,15 +13,18 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Column 3 -->
       <div class="footer-col">
         <p v-for="item in contact.info" :key="item">
           {{ item }}
         </p>
       </div>
-
+      <div class="footer-col">
+        <p v-for="item in contactfooter.info" :key="item">
+          {{ item }}
+        </p>
+      </div>
       <div class="footer-col dark">
         <p v-for="item in date.info" :key="item">
           {{ item }}
@@ -60,7 +60,11 @@ const menuGroup = ref([
 
 const contact = ref({
   //   title: "ติดต่อเรา",
-  info: ["Copyright © 2021 | สาระหวย", "1.2.32-20220916"]
+  info: ["Copyright © 2021 | สาระหวย"]
+});
+const contactfooter = ref({
+  //   title: "ติดต่อเรา",
+  info: ["1.2.32-20220916"]
 });
 const date = ref({
   //   title: "ติดต่อเรา",
@@ -70,16 +74,16 @@ const date = ref({
 
 <style scoped>
 .footer {
-  background: #1e1e1e;
-  color: white;
-  padding-top: 1rem ;
+  background: var(--white);
+  color: var(--black);
+  padding-top: 1rem;
 }
 
 .footer-container {
-  max-width: 1440px;
+  max-width: 100%;
   margin: auto;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-direction: column;
   align-items: center;
 }
@@ -103,12 +107,13 @@ const date = ref({
 .row li {
   margin: 6px 0;
 }
-.dark{
-        width: 100%;
-    background: var(--color-black-300, #E0E0E0);
-    display: flex;
-    justify-content: center;
-    color: black;
-    padding: 5px;
+
+.dark {
+  width: 100%;
+  background: var(--primary-color-500);
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+  padding: 5px;
 }
 </style>

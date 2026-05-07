@@ -4,7 +4,7 @@
       <!-- header -->
       <div class="imgcard">
         <div class="d-justi header">
-          <div class="text-top">ข่าวใหม่วันนี้</div>
+          <div class="text-top"><h1>ข่าวใหม่วันนี้</h1></div>
           <div class="text-top-date">{{ today }}</div>
         </div>
         <div class="content-left">
@@ -152,11 +152,11 @@ const today = new Date().toLocaleDateString("th-TH");
 .content-right {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .side-item {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   height: 5.5rem;
 }
 .thumb {
@@ -204,7 +204,7 @@ const today = new Date().toLocaleDateString("th-TH");
 }
 
 .text-top {
-  font: var(--PageTitle);
+  // font: var(--PageTitle);
 }
 .text-top-date{
   font-size: .875rem;
@@ -238,5 +238,11 @@ const today = new Date().toLocaleDateString("th-TH");
   width: 1.125rem;
   height: 0.5rem;
   border-radius: var(--radius-md, 8px);
+}
+.clock {
+  width: 1rem;
+  height: 1rem;
+  transform: translate(0px, .1875rem);
+  margin-right: 0.2rem;
 }
 </style>

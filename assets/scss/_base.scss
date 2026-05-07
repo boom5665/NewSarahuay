@@ -33,13 +33,13 @@ html {
 }
 
 body {
-  background: var(--gray);
+  background: #4e4e4e;
   font-family: "PentorCorporate";
   font-size: 1rem;
   color: var(--text-dark);
 
   .container {
-    max-width: 1440px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     // padding: 0 16px; // กันติดขอบจอ

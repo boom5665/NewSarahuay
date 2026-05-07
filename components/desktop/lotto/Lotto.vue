@@ -27,7 +27,7 @@
           :to="`/detailsnew/${imgcard.id}`"
           class="news-link"
         >
-          <ImageCard :obj="imgcard" />
+        <ImageCard :obj="imgcard" :loading="loading" />
         </NuxtLink>
       </div>
 
@@ -55,7 +55,7 @@ const imgcardData = ref([
     category: "lotto",
     date: "2024-09-21",
     imgSrc: "https://picsum.photos/350/180?random=1",
-    subtitle: "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ",
+    subtitle: "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ",
     taxt: "ข่าวหวย"
   },
   {
@@ -83,7 +83,10 @@ const imgcardData = ref([
     taxt: "ข่าวหวย"
   }
 ]);
-
+const loading = ref(true)
+setTimeout(() => {
+  loading.value = false
+}, 1200)
 const changeMenu = (menu) => {
   activeMenu.value = menu;
 };
@@ -119,6 +122,7 @@ const filteredData = computed(() => {
 .menu-tab {
   display: flex;
   gap: 1rem;
+  line-height: 1.4;
 }
 
 .tab-item {
@@ -127,8 +131,10 @@ const filteredData = computed(() => {
 }
 
 .active {
-  font-weight: bold;
-  border-bottom: 0.125rem solid #000;
+  // font-weight: bold;
+  color: var(--primary-color-500);
+  border-bottom: 0.125rem solid var(--primary-color-500);
+  line-height: 1.4;
 }
 
 .date-filter input {

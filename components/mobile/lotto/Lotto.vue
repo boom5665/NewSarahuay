@@ -2,18 +2,16 @@
   <div class="home-content">
     <div class="home-box">
       <div class="text-toplotto">
-        <span> <NuxtLink to="/" class="link">หน้าแรก</NuxtLink> </span> /
+        <span>
+          <NuxtLink to="/" class="link">หน้าแรก</NuxtLink>
+        </span> /
         <span>ข่าวหวยทั้งหมด</span>
       </div>
       <div class="top-bar">
         <div class="menu-wrapper">
           <div class="menu-tab">
-            <div
-              v-for="menu in menuList"
-              :key="menu.id"
-              :class="['tab-item', activeMenu === menu.value ? 'active' : '']"
-              @click="changeMenu(menu.value)"
-            >
+            <div v-for="menu in menuList" :key="menu.id"
+              :class="['tab-item', activeMenu === menu.value ? 'active' : '']" @click="changeMenu(menu.value)">
               {{ menu.name }}
             </div>
           </div>
@@ -21,22 +19,11 @@
 
         <div class="date-btn" @click="openDate">📅</div>
 
-        <input
-          ref="dateInput"
-          type="date"
-          v-model="selectedDate"
-          @change="changeDate"
-          class="date-input"
-        />
+        <input ref="dateInput" type="date" v-model="selectedDate" @change="changeDate" class="date-input" />
       </div>
       <div class="home-item">
-        <NuxtLink
-          v-for="imgcard in filteredData"
-          :key="imgcard.id"
-          :to="localePath(`/detailsnew/${imgcard.id}`)"
-          class="news-link"
-        >
-          <ImageCard :obj="imgcard" />
+        <NuxtLink v-for="imgcard in filteredData" :key="imgcard.id" :to="`/detailsnew/${imgcard.id}`" class="news-link">
+          <ImageCard :obj="imgcard" :loading="loading" />
         </NuxtLink>
       </div>
     </div>
@@ -46,7 +33,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import ImageCard from "~/components/desktop/ImageCard.vue";
-const localePath = useLocalePath();
+
 const activeMenu = ref("all");
 const selectedDate = ref("");
 
@@ -56,7 +43,10 @@ const menuList = [
   { id: 3, name: "เลขเด็ด", value: "lucky" },
   { id: 4, name: "ข่าวหวย", value: "lotto" }
 ];
-
+const loading = ref(true)
+setTimeout(() => {
+  loading.value = false
+}, 1200)
 const imgcardData = ref([
   {
     id: 1,
@@ -118,6 +108,7 @@ const filteredData = computed(() => {
   font-weight: 700;
   margin-top: 0.5rem;
 }
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -141,32 +132,38 @@ const filteredData = computed(() => {
   min-width: 14.438rem;
   height: 3rem;
 }
+
 .home-content {
   display: flex;
   justify-content: center;
 }
+
 .home-box {
   max-width: 650px;
   width: 100%;
   padding: 0.5rem;
 }
+
 .home-item {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0.5rem;
   margin: 0.5rem 0px;
 }
+
 .d-flex {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
 .menu-wrapper {
   width: 84%;
   overflow-x: auto;
   border-radius: 9999px;
 }
+
 .menu-wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -175,6 +172,7 @@ const filteredData = computed(() => {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .menu-tab {
   display: flex;
   gap: 8px;
@@ -201,6 +199,7 @@ const filteredData = computed(() => {
   color: white;
   border: none;
 }
+
 .date-btn {
   width: 2.4rem;
   height: 2.4rem;

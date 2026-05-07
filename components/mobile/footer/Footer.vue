@@ -105,10 +105,10 @@ const date = ref({
 }
 .dark{
         width: 100%;
-    background: var(--color-black-300, #E0E0E0);
+      background: var(--primary-color-500);
     display: flex;
     justify-content: center;
-    color: black;
+    color: var(--white);
     padding: 5px;
 }
 </style>

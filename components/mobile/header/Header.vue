@@ -75,8 +75,8 @@ const goPage = (link) => {
 <style scoped>
 .header-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-end;
+  justify-content: center;
   padding: 0.625rem;
   background: cadetblue;
 }
@@ -156,5 +156,13 @@ const goPage = (link) => {
 
 .side-item img {
   width: 1.5rem;
+}
+
+.menu-button-container {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  right: 1rem;
 }
 </style>

@@ -3,24 +3,18 @@
     <div>
       <!-- header -->
       <div class="d-justi header">
-        <div class="text-top">{{$t("Latestnews")}}</div>
+        <h2>
+          <div class="text-top">{{ $t("Latestnews") }}</div>
+        </h2>
         <div>{{ today }}</div>
       </div>
 
       <div class="imgcard">
-      
+
         <div class="content-left">
-          <Swiper
-            :modules="[Autoplay, Pagination]"
-            :slides-per-view="1"
-            :loop="true"
-            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }"
-            :pagination="{ clickable: true }"
-          >
-            <SwiperSlide
-              v-for="(item, index) in newsList"
-              :key="item.id || index"
-            >
+          <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
+            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
+            <SwiperSlide v-for="(item, index) in newsList" :key="item.id || index">
               <NuxtLink :to="`/detailsnew/${item.id}`">
                 <div class="main-news">
                   <div class="news-image">
@@ -50,11 +44,7 @@
         </div>
 
         <div class="content-right">
-          <NuxtLink
-            v-for="(item, index) in sideNews"
-            :key="item.id || index"
-            :to="`/detailsnew/${item.id}`"
-          >
+          <NuxtLink v-for="(item, index) in sideNews" :key="item.id || index" :to="`/detailsnew/${item.id}`">
             <div class="side-item">
               <div class="thumb">
                 <img class="img" :src="item.image" />
@@ -71,10 +61,11 @@
 
                 <div class="d-justi">
                   <div v-if="loading" class="sk-line w20"></div>
-                  <span v-else class="time">{{ item.time }}</span>
+                  <span v-else class="time"> <span><img class="clock" src="/icon/clock.svg" alt=""></span>{{ item.time
+                  }}</span>
 
                   <div v-if="loading" class="sk-line w20"></div>
-                  <span v-else class="time-col">{{ item.category }}</span>
+                  <span v-else class="time-col"> {{ item.category }}</span>
                 </div>
               </div>
             </div>
@@ -125,14 +116,10 @@ setTimeout(() => {
 </script>
 <style scoped lang="scss">
 .imgcard {
-  display: flex;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  background: #f2f4fa;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  flex-direction: row;
-  margin-bottom: 0.5rem;
+  display: grid;
+  grid-template-columns: 700px 1fr;
+  gap: 16px;
+  margin-top: 1rem;
 }
 
 .header {
@@ -141,7 +128,7 @@ setTimeout(() => {
 
 .content-left {
   .swiper {
-    width: 45rem;
+    width: 100%;
     height: 100%;
   }
 
@@ -185,11 +172,11 @@ setTimeout(() => {
   }
 
   .news-info {
-padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
     margin-bottom: 0rem;
     position: absolute;
     bottom: 0;
-    width: 45rem;
+    width: 40rem;
     height: 10rem;
     display: flex;
     flex-direction: column;
@@ -218,14 +205,14 @@ padding: 1.5rem 1rem;
 .content-right {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .side-item {
   display: flex;
-  gap: 0.5rem;
-  height: 5.5rem;
+  gap: 1rem;
+  height: 5.16rem;
 }
 
 .thumb {
@@ -252,7 +239,7 @@ padding: 1.5rem 1rem;
 .side-title {
   font: var(--HeadCardPC);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -293,11 +280,11 @@ padding: 1.5rem 1rem;
 }
 
 :deep(.swiper-pagination-horizontal) {
-    bottom: 0.5rem;
-    top: var(--swiper-pagination-top, auto);
-    left: 15px;
-    width: 100%;
-    text-align: justify;
+  bottom: 0.5rem;
+  top: var(--swiper-pagination-top, auto);
+  left: 15px;
+  width: 100%;
+  text-align: justify;
 }
 
 :deep(.swiper-pagination-bullet) {
@@ -312,5 +299,12 @@ padding: 1.5rem 1rem;
   width: 1.125rem;
   height: 0.5rem;
   border-radius: var(--radius-md, 8px);
+}
+
+.clock {
+  width: 1rem;
+  height: 1rem;
+  transform: translate(0px, .1875rem);
+  margin-right: 0.2rem;
 }
 </style>

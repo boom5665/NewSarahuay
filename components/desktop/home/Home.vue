@@ -1,18 +1,23 @@
 <template>
   <div class="home-content">
     <div class="home-box">
-      <div class="">
-        <Slidehome :mainNews="mainNews" :sideNews="sideNews" />
+      <div class="home-incontent">
+        <div class="">
+          <Slidehome :mainNews="mainNews" :sideNews="sideNews" />
+        </div>
+        <div class="home-item">
+          <NuxtLink v-for="imgcard in imgcardData" :key="imgcard.id" :to="`/detailsnew/${imgcard.id}`"
+            class="news-link">
+            <ImageCard :obj="imgcard" :loading="loading" />
+          </NuxtLink>
+        </div>
+        <div class="imgcard">
+          <NuxtLink to="lotto">
+            <span class="bt-next">ดูเพิ่มเติม <img src="/assets/svg/right.svg" alt="" /></span>
+          </NuxtLink>
+        </div>
       </div>
-      <div class="home-item">
-        <ImageCard
-        
-          v-for="imgcard in imgcardData"
-          :key="imgcard.id"
-          :icon="'flags/pingpong6.svg'"
-          :obj="imgcard"
-        />
-      </div>
+
       <div class="d-flex">
         <ResultBox />
         <ResultLotto />
@@ -33,45 +38,51 @@ import ResultBox from "~/components/desktop/ResultBox.vue";
 import ResultLotto from "~/components/desktop/ResultLotto.vue";
 import ResultHoro from "~/components/desktop/ResultHoro.vue";
 import ResultAi from "~/components/desktop/ResultAi.vue";
+
+
 const imgcardData = ref([
   {
     id: 1,
-    imgSrc: "https://picsum.photos/350/180?random=1",
-    subtitle:
-      "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ โพสต์เรียกไลก์ในวันที่ทองพุ่งแรงราคาทอง กวนๆ ฮาๆ โพสต์เรียกไลก์ในวันที่ทองพุ่งแ",
+    imgSrc: "/HightlightNews.png",
+    subtitle: "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ",
     date: "21 ก.ย. 67",
     taxt: "ข่าวหวย"
   },
   {
     id: 2,
-    imgSrc: "https://picsum.photos/350/180?random=2",
-    subtitle:
-      "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ โพสต์เรียกไลก์ในวันที่ทองพุ่งแรง",
-    date: "21 ก.ย. 67",
-    taxt: "ดูดวง"
-  },
-  {
-    id: 3,
-    imgSrc: "https://picsum.photos/350/180?random=3",
-    subtitle: "ออกผลทุก 60 นาที รวม 16 รอบต่อวัน",
+    imgSrc: "/HightlightNews.png",
+    subtitle: "รวม 100 แคปชั่นทองแพง ราคาทอง กวนๆ ฮาๆ โพสต์เรียกไลก์ในวันที่ทองพุ่งแรงรวม 100 แคปชั่นทองแพงรวม 100 แคปชั่นทองแพง",
     date: "21 ก.ย. 67",
     taxt: "ข่าวหวย"
-  },
+  }
+  ,
+  {
+    id: 3,
+    imgSrc: "/HightlightNews.png",
+    subtitle: "รวม 100 แคปชั่นทองแพง",
+    date: "21 ก.ย. 67",
+    taxt: "ข่าวหวย"
+  }
+  ,
   {
     id: 4,
-    imgSrc: "https://picsum.photos/350/180?random=4",
-
-    subtitle: "ออกผลทุก 60 นาที รวม 16 รอบต่อวัน",
+    imgSrc: "/HightlightNews.png",
+    subtitle: "รวม 100 แคปชั่นทองแพง",
     date: "21 ก.ย. 67",
-    taxt: "ไพ่ยิปซี"
+    taxt: "ข่าวหวย"
   }
-]);
+])
+const loading = ref(true)
+setTimeout(() => {
+  loading.value = false
+}, 1200)
 
 const mainNews = {
   title:
     'โค้งสุดท้ายหวย "เลขเด็ดงวดนี้" 16/9/67 "เลขเด็ดงวดนี้" 16/9/67"เลขเด็ดงวดนี้" 16/9/67โค้งสุดท้ายหวย "เลขเด็ดงวดนี้" 16/9/67 "เลขเด็ดงวดนี้" 16/9/67"เลขเด็ดงวดนี้" 16/9/67',
   category: "ข่าวหวย",
-  image: "https://picsum.photos/800/400"
+  image: "/HightlightNews.png"
+
 };
 
 const sideNews = [
@@ -79,7 +90,7 @@ const sideNews = [
     id: 2,
     title:
       "รวยแล้วเฮงอีก รับกลับ บ้านหลังงามออกไปเฮงอีก รับกลับ บ้านหลังงามออกไป",
-    image: "https://picsum.photos/500/400",
+    image: "/HightlightNews.png",
     time: "16 ชั่วโมงก่อน",
     category: "ข่าวหวย"
   },
@@ -87,21 +98,21 @@ const sideNews = [
     id: 3,
     title:
       "เลขเด็ดงวดนี้มาแรงเฮงอีก รับกลับ บ้านหลังงามออกไปเฮงอีก รับกลับ บ้านหลังงามออกไป",
-    image: "https://picsum.photos/600/400",
+    image: "/HightlightNews.png",
     time: "10 ชั่วโมงก่อน",
     category: "ข่าวหวย"
   },
   {
     id: 4,
     title: "เลขเด็ดงวดนี้มาแรง",
-    image: "https://picsum.photos/700/400",
+    image: "/HightlightNews.png",
     time: "10 ชั่วโมงก่อน",
     category: "ข่าวหวย"
   },
   {
     id: 5,
     title: "เลขเด็ดงวดนี้มาแรง",
-    image: "https://picsum.photos/900/400",
+    image: "/HightlightNews.png",
     time: "10 ชั่วโมงก่อน",
     category: "ข่าวหวย"
   }
@@ -113,24 +124,46 @@ const sideNews = [
   min-width: 14.438rem;
   height: 3rem;
 }
+
 .home-content {
   display: flex;
   justify-content: center;
 }
+
 .home-box {
   max-width: 1080px;
   width: 100%;
 }
+
 .home-item {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin: 1rem 0px;
 }
+
 .d-flex {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.home-incontent {
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bt-next {
+  font: var(--ButtonMain);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Green-Main-Green-500, #008F6C);
+  padding: .8125rem;
+  cursor: pointer;
 }
 </style>
