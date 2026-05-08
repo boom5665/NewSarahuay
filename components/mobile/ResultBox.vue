@@ -2,17 +2,22 @@
   <div class="lotto-check">
     <div class="lotto-box">
       <!-- date -->
-      <div class="text-top">ตรวจสลากกินแบ่งรัฐบาล</div>
-      <div class="lotto-date">
-        <span>ผลสลากฯ {{ lottoResult.date }}</span>
+      <div class="bg-col">
+        <h3>
+          <div class="box-top"><img src="/frame/Avatar.png" alt=""> <span class="text-top">ผลสลากกินแบ่งรัฐบาล</span>
+          </div>
+        </h3>
+        <div class="lotto-date">
+          <span>ผลสลากฯ {{ lottoResult.date }}</span>
 
-        <span class="arrow">›</span>
+        </div>
       </div>
+
 
       <!-- reward 1 -->
       <div class="reward-one">
         <div class="label">รางวัลที่ 1</div>
-        <span>รางวัลละ 6,000,000 บาท</span>
+        <div class="">รางวัลละ 6,000,000 บาท</div>
         <div class="number-main">{{ lottoResult.reward1 }}</div>
       </div>
 
@@ -20,34 +25,37 @@
       <div class="reward-row">
         <div class="reward-col">
           <div class="label">เลขหน้า 3 ตัว</div>
-          <span>2 รางวัลๆ ละ 4,000 บาท</span>
-          <div class="d-calss">
+          <div class="">2 รางวัลๆ ละ 4,000 บาท</div>
+          <div class="d-flex-box">
             <div class="number" v-for="(num, i) in lottoResult.front3" :key="i">
               {{ num }}
             </div>
           </div>
+
         </div>
 
         <div class="reward-col">
           <div class="label">เลขท้าย 3 ตัว</div>
-          <span>2 รางวัลๆ ละ 4,000 บาท</span>
-          <div class="d-calss">
+          <div class="">2 รางวัลๆ ละ 4,000 บาท</div>
+          <div class="d-flex-box">
             <div class="number" v-for="(num, i) in lottoResult.back3" :key="i">
               {{ num }}
             </div>
           </div>
         </div>
 
+
+      </div>
+      <div>
         <div class="reward-col">
           <div class="label">เลขท้าย 2 ตัว</div>
-          <span>รางวัลละ 2,000 บาท</span>
-          <div class="d-calss">
-            <div class="number big">{{ lottoResult.back2 }}</div>
-          </div>
+          <div class="">รางวัลละ 2,000 บาท</div>
+          <div class="number big">{{ lottoResult.back2 }}</div>
         </div>
       </div>
-
-      <div class="more">ดูผลหวยเพิ่มเติม</div>
+      <NuxtLink to="lotto">
+        <span class="bt-next">ดูเพิ่มเติม <img src="/assets/svg/right.svg" alt="" /></span>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -72,60 +80,91 @@ const lottoResult = ref({
   width: 100%;
 }
 
+.box-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 0px 0.2rem 0px;
+  gap: 0.5rem;
+
+  img {
+    width: 2rem;
+    height:  2rem;
+  }
+}
+
+.bg-col {
+  background:
+    linear-gradient(180deg, #04BAFC 0%, #0D1737 100%),
+    url('/frame/framlotto.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-blend-mode: overlay;
+
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  height: 4.6875rem;
+  margin-bottom: 0.5rem;
+}
+
 .text-top {
-  font: var(--HeadContent);
   text-align: center;
-  // background: var(--Linear, linear-gradient(0deg, #8aa8b5 -28.6%, #fff 80.43%));
-  // background-clip: text;
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
+  font: var(--HeadContentPC);
+  font-weight: 700;
+
+  background: var(--Linear, linear-gradient(0deg, #8AA8B5 -28.6%, #FFF 80.43%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 .lotto-box {
   width: 100%;
-  background: #fff;
+  background: var(--white);
   border-radius: 0.75rem;
-  padding: 1rem 0rem 0rem 0rem;
 }
 
 .lotto-date {
   display: flex;
   justify-content: center;
   gap: 0.375rem;
-  font: var(--FieldValue);
+  font: var(--FieldValuePC);
   margin-bottom: 0.625rem;
+  color: var(--white);
+  padding-bottom: 0.5rem;
 }
 
 .reward-one {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   .number-main {
-    font: var(--ResultNumberPrimary);
+    font: var(--ResultNumberPrimaryPC);
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    color: var(--Green-Main-Green-500, #008F6C);
   }
 }
 
 .reward-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 ช่อง */
-  gap: 10px;
-}
-
-/* ตัวล่าง */
-.reward-row > :nth-child(3) {
-  grid-column: 1 / span 2; /* กิน 2 ช่อง */
-  justify-self: center; /* จัดกลาง */
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
 }
 
 .reward-col {
   text-align: center;
 
   .number {
-    font: var(--ResultNumberSecondary);
+    font-size: 2rem;
+    font-weight: 700;
   }
 
   .big {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -133,21 +172,32 @@ const lottoResult = ref({
   text-align: center;
   padding: 0.625rem;
   margin-top: 1rem;
-  background: var(--color-black-0, #fff);
   color: #000;
-  font: var(--ButtonMain);
-  border-radius: var(--radius-md, 8px);
-  border: 1px solid var(--color-black-200, #eee);
-  margin: 0.5rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
 }
-.d-calss {
+
+.label {
+  color: var(--Green-Main-Green-500, #008F6C);
+  font: var(--PageTitle);
+}
+
+.d-flex-box {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
 }
-.label {
-  font: var(--PageTitle);
-  color: var(--Green-Main-Green-500, #008f6c);
+
+.bt-next {
+  font: var(--ButtonMain);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Green-Main-Green-500, #008F6C);
+  padding: 1.6875rem;
+  cursor: pointer;
+  justify-content: center;
 }
 </style>
