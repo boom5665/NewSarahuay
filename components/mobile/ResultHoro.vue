@@ -17,9 +17,8 @@
         </div>
       </div>
 
-      <NuxtLink to="lotto">
-        <span class="bt-next">ดูเพิ่มเติม <img style="transform: rotatey(181deg);" src="/assets/svg/arrow.svg"
-            alt="" /></span>
+      <NuxtLink to="lotto" class="abox">
+        <span class="bt-next">ดูดวงเพิ่มเติม </span>
       </NuxtLink>
     </div>
   </div>
@@ -79,7 +78,7 @@
 
   .box-img {
     padding: 0.5rem 0 1rem 0rem;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -99,9 +98,9 @@
 }
 
 .date-img {
-     width: 3.125rem;
-    height: 3.125rem;
-    padding: .5rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: .5rem;
 }
 
 .more {
@@ -122,11 +121,19 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--white);
-  padding: 1.5rem;
   cursor: pointer;
   justify-content: center;
+  width: max-content;
+  border-radius: var(--radius-full, 999px);
+  border: 1px solid var(--color-black-0, #FFF);
+  padding: var(--space-sm, 8px) var(--space-lg, 24px);
+  height: 3rem;
 }
-
+.abox{
+  display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
 .tatort-horo {
   color: var(---yellow, #FFD9A5);
   display: flex;

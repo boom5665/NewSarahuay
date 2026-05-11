@@ -21,7 +21,7 @@
 
       </div>
       <div class="row-input">
-        <label>งวดวันที่</label>
+        <label><img src="/icon/number.png" alt=""> วิเคราะห์เลขที่มี</label>
         <input type="text" placeholder="กรอกเลขหวย ใบที่ 1" />
       </div>
       <div class="more"><img src="/icon/starleft.svg" alt="" /> วิเคราะห์ด้วย AI</div>
@@ -82,7 +82,7 @@ const menuList = [
 .box-img {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 1.3rem 0.5rem;
 }
 
@@ -91,7 +91,7 @@ const menuList = [
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.5rem;
-  height: 3.25rem;
+  height: 2.875rem;
   padding: 0.875rem 1rem;
   background: var(--AI-defaul, #020B32);
   color: var(--white);
@@ -110,8 +110,8 @@ const menuList = [
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
 
   img {
     width: 100%;
@@ -125,7 +125,7 @@ const menuList = [
 .more {
     font: var(--ButtonMainPC);
     text-align: center;
-        padding: .75rem 0.5rem;
+    padding: 0.75rem 0.5rem;
     color: var(--white);
     border-radius: var(--radius-md, 8px);
     background: var(--AI-active, #2E4CC4);
@@ -133,7 +133,9 @@ const menuList = [
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-     height: 3rem;
+    height: 3rem;
+    align-items: center;
+
 }
 
 .text-top {
@@ -152,9 +154,12 @@ const menuList = [
 }
 
 label {
-  font: var(--FieldLabelPC);
-  margin-bottom: 0.5rem;
-  color: var(--white);
+font: var(--FieldLabelPC);
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .row-input {
@@ -169,6 +174,7 @@ label {
     border-radius: 0.5rem;
     border: 1px solid #ddd;
     padding: 0 0.75rem;
+    font: var(--FieldValue);
   }
 }
 </style>

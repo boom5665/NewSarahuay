@@ -4,24 +4,18 @@
       <!-- header -->
       <div class="imgcard">
         <div class="d-justi header">
-          <div class="text-top"><h1>ข่าวใหม่วันนี้</h1></div>
+          <div class="text-top">
+            <h1>ข่าวใหม่วันนี้</h1>
+          </div>
           <div class="text-top-date">{{ today }}</div>
         </div>
         <div class="content-left">
-          <Swiper
-            :modules="[Autoplay, Pagination]"
-            :slides-per-view="1"
-            :loop="true"
-            :autoplay="{ delay: 20000, pauseOnMouseEnter: true }"
-            :pagination="{ clickable: true }"
-          >
+          <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
+            :autoplay="{ delay: 20000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
             <SwiperSlide v-for="(item, index) in newsList" :key="index">
               <div class="main-news">
                 <div class="news-image">
-                  <img
-                    class="img-new"
-                    :src="item.image || 'https://via.placeholder.com/300x200'"
-                  />
+                  <img class="img-new" :src="item.image || 'https://via.placeholder.com/300x200'" />
                 </div>
 
                 <div class="news-info">
@@ -39,10 +33,7 @@
         <div class="content-right">
           <div class="side-item" v-for="(item, index) in sideNews" :key="index">
             <div class="thumb">
-              <img
-                class="img"
-                :src="item.image || 'https://via.placeholder.com/150x100'"
-              />
+              <img class="img" :src="item.image || 'https://via.placeholder.com/150x100'" />
             </div>
 
             <div class="text">
@@ -57,8 +48,10 @@
             </div>
           </div>
         </div>
+        <div class="d-center">
+          <div class="addtext">ดูเพิ่มเติม</div>
+        </div>
 
-        <div class="addtext">ดูเพิ่มเติม</div>
       </div>
     </div>
   </div>
@@ -100,6 +93,7 @@ const today = new Date().toLocaleDateString("th-TH");
   flex-direction: column;
   margin-bottom: 0.5rem;
 }
+
 .header {
   grid-column: 1 / -1;
 }
@@ -109,29 +103,35 @@ const today = new Date().toLocaleDateString("th-TH");
     width: 100%;
     height: 100%;
   }
+
   .swiper-slide {
     height: auto;
   }
+
   .main-news {
     display: flex;
     flex-direction: column;
   }
+
   .news-image {
     width: 100%;
     height: 12rem;
     border-radius: 0.5rem;
     overflow: hidden;
   }
+
   .img-new {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
+
   .news-info {
     padding: 0.5rem;
     margin-bottom: 1rem;
   }
+
   .category {
     font-size: 0.875rem;
     color: black;
@@ -149,16 +149,19 @@ const today = new Date().toLocaleDateString("th-TH");
     max-height: 2.6em;
   }
 }
+
 .content-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .side-item {
   display: flex;
   gap: 1rem;
   height: 5.5rem;
 }
+
 .thumb {
   width: 8.125rem;
   height: 100%;
@@ -172,6 +175,7 @@ const today = new Date().toLocaleDateString("th-TH");
     object-fit: cover;
   }
 }
+
 .text {
   display: flex;
   flex-direction: column;
@@ -206,18 +210,19 @@ const today = new Date().toLocaleDateString("th-TH");
 .text-top {
   // font: var(--PageTitle);
 }
-.text-top-date{
+
+.text-top-date {
   font-size: .875rem;
 }
+
 .addtext {
   text-align: center;
-  padding: 0.625rem;
-
-  background: var(--color-black-0, #fff);
-  color: #000;
+  padding: 0.625rem 1.5rem;
+  color:  #008F6C;
   font: var(--ButtonMain);
-  border-radius: var(--radius-md, 8px);
-  border: 1px solid var(--color-black-200, #eee);
+  border-radius: var(--radius-full, 999px);
+  border: 1px solid var(--color-Green-Deep-Teal-500, #008F6C);
+  width: max-content;
 }
 
 :deep(.swiper-pagination-horizontal) {
@@ -226,6 +231,7 @@ const today = new Date().toLocaleDateString("th-TH");
   left: 0;
   width: 100%;
 }
+
 :deep(.swiper-pagination-bullet) {
   background: #ccc !important;
   opacity: 1;
@@ -239,10 +245,17 @@ const today = new Date().toLocaleDateString("th-TH");
   height: 0.5rem;
   border-radius: var(--radius-md, 8px);
 }
+
 .clock {
   width: 1rem;
   height: 1rem;
   transform: translate(0px, .1875rem);
   margin-right: 0.2rem;
+}
+
+.d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
