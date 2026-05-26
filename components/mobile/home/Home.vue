@@ -13,6 +13,7 @@
         <ResultHoro />
         <ResultAi />
       </div>
+
     </div>
   </div>
 </template>

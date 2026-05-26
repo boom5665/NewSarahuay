@@ -26,6 +26,10 @@
         <ResultHoro />
         <ResultAi />
       </div>
+
+      <!-- <video autoplay muted loop playsinline>
+  <source :src="`${'/VP9.webm'}`" type="video/webm" />
+</video> -->
     </div>
   </div>
 </template>
