@@ -13,9 +13,81 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    nitro: {
       envPrefix: string,
    },
+
+   sitemap: {
+      cacheMaxAgeSeconds: number,
+
+      debug: boolean,
+   },
+
+   "nuxt-site-config": {
+      stack: Array<{
+
+      }>,
+
+      version: string,
+
+      debug: boolean,
+
+      multiTenancy: Array<any>,
+   },
+
+   "nuxt-robots": {
+      version: string,
+
+      isNuxtContentV2: boolean,
+
+      debug: boolean,
+
+      credits: boolean,
+
+      groups: Array<{
+
+      }>,
+
+      sitemap: Array<string>,
+
+      header: boolean,
+
+      robotsEnabledValue: string,
+
+      robotsDisabledValue: string,
+
+      cacheControl: string,
+
+      botDetection: boolean,
+
+      pageMetaRobots: any,
+   },
   }
   interface SharedPublicRuntimeConfig {
+   "nuxt-robots": {
+      version: string,
 
+      isNuxtContentV2: boolean,
+
+      debug: boolean,
+
+      credits: boolean,
+
+      groups: Array<{
+
+      }>,
+
+      sitemap: Array<string>,
+
+      header: boolean,
+
+      robotsEnabledValue: string,
+
+      robotsDisabledValue: string,
+
+      cacheControl: string,
+
+      botDetection: boolean,
+
+      pageMetaRobots: any,
+   },
   }
 declare module '@nuxt/schema' {
   interface RuntimeConfig extends UserRuntimeConfig {}

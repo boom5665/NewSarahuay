@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^6.0.8",
+    "@nuxtjs/sitemap": "^8.0.15",
     "@pinia/nuxt": "^0.5.1",
     "axios": "^1.7.2",
     "nuxt": "^4.4.4",
