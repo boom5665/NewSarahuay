@@ -1,0 +1,8 @@
+const CommunitySection_vue_vue_type_style_index_0_scoped_4be75e66_lang = '@keyframes backgroundShift-4be75e66{0%,to{background-position:0 50%}50%{background-position:100% 50%}}.community-section[data-v-4be75e66]{animation:backgroundShift-4be75e66 6s ease infinite;background:linear-gradient(135deg,#2a1144,#10192f 50%,#1a0a2e);background-size:200% 200%;border:1px solid rgba(147,51,234,.3);border-radius:20px;color:#fff;display:flex;flex-direction:column;justify-content:center;min-height:200px;overflow:hidden;padding:30px;position:relative}.community-section[data-v-4be75e66]:before{background:radial-gradient(circle at 20% 50%,rgba(147,51,234,.15) 0,transparent 50%);content:"";inset:0;pointer-events:none;position:absolute;z-index:0}.community-title[data-v-4be75e66]{background:linear-gradient(90deg,#ffc857,#ffb300);-webkit-background-clip:text;font-size:28px;font-weight:700;position:relative;z-index:1;-webkit-text-fill-color:transparent;background-clip:text}.community-desc[data-v-4be75e66]{color:#d0d0d0;font-size:16px;margin-top:10px}.community-desc[data-v-4be75e66],button[data-v-4be75e66]{position:relative;z-index:1}button[data-v-4be75e66]{align-self:flex-start;background:linear-gradient(135deg,#ffb300,#ffc857);border:none;border-radius:12px;box-shadow:0 6px 20px #ffb30066;color:#000;cursor:pointer;font-weight:700;margin-top:20px;padding:14px 28px;transition:all .3s ease}button[data-v-4be75e66]:hover{box-shadow:0 10px 30px #ffb30099;transform:translateY(-3px)}button[data-v-4be75e66]:active{transform:translateY(-1px)}';
+
+const CommunitySectionStyles_SinogYpR = [
+  CommunitySection_vue_vue_type_style_index_0_scoped_4be75e66_lang
+];
+
+export { CommunitySectionStyles_SinogYpR as default };
+//# sourceMappingURL=CommunitySection-styles.SinogYpR.mjs.map

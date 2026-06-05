@@ -43,7 +43,18 @@ interface _GlobalComponents {
   DesktopDetailnewNew: typeof import("../../components/desktop/detailnew/New.vue")['default']
   DesktopFooter: typeof import("../../components/desktop/footer/Footer.vue")['default']
   DesktopHeader: typeof import("../../components/desktop/header/Header.vue")['default']
+  DesktopHomeCheckLotteryCard: typeof import("../../components/desktop/home/CheckLotteryCard.vue")['default']
+  DesktopHomeCommunitySection: typeof import("../../components/desktop/home/CommunitySection.vue")['default']
+  DesktopHomeHeroBanner: typeof import("../../components/desktop/home/HeroBanner.vue")['default']
+  "DesktopHomeHome copy": typeof import("../../components/desktop/home/Home copy.vue")['default']
   DesktopHome: typeof import("../../components/desktop/home/Home.vue")['default']
+  DesktopHomeHoroscopeCard: typeof import("../../components/desktop/home/HoroscopeCard.vue")['default']
+  DesktopHomeLottoResultCard: typeof import("../../components/desktop/home/LottoResultCard.vue")['default']
+  DesktopHomeLuckyNewsCard: typeof import("../../components/desktop/home/LuckyNewsCard.vue")['default']
+  DesktopHomeLuckyNumberCard: typeof import("../../components/desktop/home/LuckyNumberCard.vue")['default']
+  DesktopHomeNewsSection: typeof import("../../components/desktop/home/NewsSection.vue")['default']
+  DesktopHomeResultTable: typeof import("../../components/desktop/home/ResultTable.vue")['default']
+  DesktopHomeTarotSection: typeof import("../../components/desktop/home/TarotSection.vue")['default']
   DesktopLotto: typeof import("../../components/desktop/lotto/Lotto.vue")['default']
   DesktopProfile: typeof import("../../components/desktop/profile/Profile.vue")['default']
   DesktopReward: typeof import("../../components/desktop/reward/Reward.vue")['default']
@@ -117,7 +128,18 @@ interface _GlobalComponents {
   LazyDesktopDetailnewNew: LazyComponent<typeof import("../../components/desktop/detailnew/New.vue")['default']>
   LazyDesktopFooter: LazyComponent<typeof import("../../components/desktop/footer/Footer.vue")['default']>
   LazyDesktopHeader: LazyComponent<typeof import("../../components/desktop/header/Header.vue")['default']>
+  LazyDesktopHomeCheckLotteryCard: LazyComponent<typeof import("../../components/desktop/home/CheckLotteryCard.vue")['default']>
+  LazyDesktopHomeCommunitySection: LazyComponent<typeof import("../../components/desktop/home/CommunitySection.vue")['default']>
+  LazyDesktopHomeHeroBanner: LazyComponent<typeof import("../../components/desktop/home/HeroBanner.vue")['default']>
+  "LazyDesktopHomeHome copy": LazyComponent<typeof import("../../components/desktop/home/Home copy.vue")['default']>
   LazyDesktopHome: LazyComponent<typeof import("../../components/desktop/home/Home.vue")['default']>
+  LazyDesktopHomeHoroscopeCard: LazyComponent<typeof import("../../components/desktop/home/HoroscopeCard.vue")['default']>
+  LazyDesktopHomeLottoResultCard: LazyComponent<typeof import("../../components/desktop/home/LottoResultCard.vue")['default']>
+  LazyDesktopHomeLuckyNewsCard: LazyComponent<typeof import("../../components/desktop/home/LuckyNewsCard.vue")['default']>
+  LazyDesktopHomeLuckyNumberCard: LazyComponent<typeof import("../../components/desktop/home/LuckyNumberCard.vue")['default']>
+  LazyDesktopHomeNewsSection: LazyComponent<typeof import("../../components/desktop/home/NewsSection.vue")['default']>
+  LazyDesktopHomeResultTable: LazyComponent<typeof import("../../components/desktop/home/ResultTable.vue")['default']>
+  LazyDesktopHomeTarotSection: LazyComponent<typeof import("../../components/desktop/home/TarotSection.vue")['default']>
   LazyDesktopLotto: LazyComponent<typeof import("../../components/desktop/lotto/Lotto.vue")['default']>
   LazyDesktopProfile: LazyComponent<typeof import("../../components/desktop/profile/Profile.vue")['default']>
   LazyDesktopReward: LazyComponent<typeof import("../../components/desktop/reward/Reward.vue")['default']>

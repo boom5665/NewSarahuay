@@ -1,13 +1,13 @@
 export default defineNuxtPlugin((nuxtApp) => {
   const magic = () => {
     let fontSize = 100;
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 1440) {
       let windowWidth = window.innerWidth > 650 ? 650 : window.innerWidth;
       fontSize = (windowWidth / 375) * 100;
       nuxtApp.$mainStore.setResultLayout('mobile');
     } else {
       // ปรับขนาดตาม container เช่น container 1336 ก็ให้ปรับ 1920 เป็น 1336
-      fontSize = window.innerWidth > 1080 ? 100 : (window.innerWidth / 1080) * 100;
+      fontSize = window.innerWidth > 1620 ? 100 : (window.innerWidth / 1620) * 100;
       nuxtApp.$mainStore.setResultLayout('desktop');
     }
     document.getElementsByTagName("html")[0].style.fontSize = Math.round(fontSize) + "%";

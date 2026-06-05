@@ -1,0 +1,28 @@
+import { p as publicAssetsURL } from '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'vue';
+import 'consola';
+import 'node:url';
+import 'nuxtseo-shared/utils';
+import 'vue/server-renderer';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const ResultAi_vue_vue_type_style_index_0_scoped_d8d71077_lang = ".lotto-check[data-v-d8d71077]{align-items:center;display:flex;flex-direction:column;width:100%}.text-top[data-v-d8d71077]{font-size:1.5rem;font-weight:700}.lotto-box[data-v-d8d71077]{background:#f3f3f3;background:linear-gradient(180deg,#0f1c50,#0f1c50),url(" + publicAssetsURL("/frame/bgai.png") + ");background-blend-mode:overlay;background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:.75rem;border-radius:.5rem;margin-bottom:.5rem;padding:1rem 0 0;width:100%}.pd-box[data-v-d8d71077]{width:100%}.box-img[data-v-d8d71077]{display:grid;gap:.5rem;grid-template-columns:1fr 1fr;padding:1.3rem .5rem}.item[data-v-d8d71077]{align-items:center;background:var(--AI-defaul,#020b32);border-radius:.5rem;color:var(--white);cursor:pointer;display:flex;font:var(--ButtonContentPC);gap:.5rem;height:2.875rem;padding:.875rem 1rem;transition:.25s}.item.active[data-v-d8d71077]{background:url(" + publicAssetsURL("/frame/activeai.png") + ');background-position:50%;background-repeat:no-repeat;background-size:cover;color:#fff}.icon[data-v-d8d71077]{height:1rem;width:1rem}.icon img[data-v-d8d71077]{height:100%;-o-object-fit:contain;object-fit:contain;width:100%}.more[data-v-d8d71077]{background:var(--AI-active,#2e4cc4);border-radius:var(--radius-md,8px);color:var(--white);font:var(--ButtonMainPC);gap:.5rem;height:3rem;margin:1rem .5rem;padding:.75rem .5rem}.more[data-v-d8d71077],.text-top[data-v-d8d71077]{align-items:center;display:flex;justify-content:center;text-align:center}.text-top[data-v-d8d71077]{color:var(--head-content,#8dffff);font:var(--HeadContentPC);font-feature-settings:"dlig" on,"hlig" on;font-variant-numeric:stacked-fractions;text-shadow:0 0 10px rgba(49,119,255,.7),0 0 10px rgba(49,119,255,.5)}label[data-v-d8d71077]{align-items:center;color:var(--white);font:var(--FieldLabelPC);gap:.5rem}.row-input[data-v-d8d71077],label[data-v-d8d71077]{display:flex;margin-bottom:.5rem}.row-input[data-v-d8d71077]{flex-direction:column;padding:0 .5rem}.row-input input[data-v-d8d71077]{border:1px solid #ddd;border-radius:.5rem;font:var(--FieldValue);height:3rem;padding:0 .75rem}';
+
+const ResultAiStyles_BSnQapIf = [
+  ResultAi_vue_vue_type_style_index_0_scoped_d8d71077_lang
+];
+
+export { ResultAiStyles_BSnQapIf as default };
+//# sourceMappingURL=ResultAi-styles.BSnQapIf.mjs.map

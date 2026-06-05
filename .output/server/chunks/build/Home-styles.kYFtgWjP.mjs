@@ -1,0 +1,8 @@
+const Home_vue_vue_type_style_index_0_scoped_d923b55d_lang = ".button[data-v-d923b55d]{height:3rem;min-width:14.438rem}.home-content[data-v-d923b55d]{background:linear-gradient(180deg,#fff8e8,#f3fbf6 52%,#eef7f2);display:flex;justify-content:center;min-height:100vh}.home-box[data-v-d923b55d]{max-width:650px;padding:.75rem;width:100%}.mobile-hero[data-v-d923b55d]{background:linear-gradient(180deg,#0f26211f,#0f2621eb),url(https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=900&q=80);background-position:50%;background-size:cover;border-radius:.5rem;box-shadow:0 1rem 2rem #0f262129;color:#fff;display:flex;flex-direction:column;gap:.45rem;justify-content:flex-end;margin-bottom:.75rem;min-height:13.5rem;padding:1rem}.mobile-hero h1[data-v-d923b55d]{font-size:1.65rem;font-weight:800;line-height:1.2}.mobile-hero p[data-v-d923b55d]{color:#ffffffdb;line-height:1.5}.hero-label[data-v-d923b55d]{background:#ffd54a;border-radius:.5rem;color:#17332c;font-size:.8rem;font-weight:800;padding:.35rem .65rem;width:-moz-max-content;width:max-content}.section-shell[data-v-d923b55d] .imgcard{border:1px solid rgba(0,143,108,.12);box-shadow:0 .75rem 1.75rem #162d2814}.home-item[data-v-d923b55d]{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr);margin:1rem 0}.quick-grid[data-v-d923b55d]{display:grid;gap:.75rem;grid-template-columns:1fr;margin-bottom:.5rem}.quick-grid[data-v-d923b55d]>*{border-radius:.5rem;box-shadow:0 .75rem 1.75rem #162d2814}@media(min-width:560px){.quick-grid[data-v-d923b55d]{grid-template-columns:repeat(2,minmax(0,1fr))}}";
+
+const HomeStyles_kYFtgWjP = [
+  Home_vue_vue_type_style_index_0_scoped_d923b55d_lang
+];
+
+export { HomeStyles_kYFtgWjP as default };
+//# sourceMappingURL=Home-styles.kYFtgWjP.mjs.map

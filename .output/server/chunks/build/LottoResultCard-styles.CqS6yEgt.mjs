@@ -1,0 +1,8 @@
+const LottoResultCard_vue_vue_type_style_index_0_scoped_1999c09a_lang = '@keyframes shimmer-1999c09a{0%,to{background-position:0}50%{background-position:100%}}.result-card[data-v-1999c09a]{background:#ffffffe6;border:1px solid rgba(0,143,108,.14);border-radius:8px;box-shadow:0 18px 44px #162d2814;color:#17332c;overflow:hidden;padding:20px;position:relative}.result-card[data-v-1999c09a]:before{animation:shimmer-1999c09a 3s ease-in-out infinite;background:linear-gradient(90deg,transparent,rgba(255,213,74,.2),transparent);content:"";inset:0;pointer-events:none;position:absolute}.header[data-v-1999c09a]{color:#008f6c;font-size:22px;font-weight:700;margin-bottom:20px}.header[data-v-1999c09a],.number-grid[data-v-1999c09a]{position:relative;z-index:1}.number-grid[data-v-1999c09a]{display:grid;gap:15px;grid-template-columns:1fr}.number-box[data-v-1999c09a]{background:#f6fbf8;border:1px solid rgba(0,143,108,.12);border-radius:8px;cursor:pointer;padding:15px;text-align:center;transition:all .3s ease}.number-box[data-v-1999c09a]:hover{background:#fff8df;border-color:#008f6c47;box-shadow:0 12px 28px #008f6c1f;transform:translateY(-3px)}.label[data-v-1999c09a]{color:#68766f;font-size:14px;transition:color .3s ease}.number-box:hover .label[data-v-1999c09a]{color:#17332c}.number[data-v-1999c09a]{color:#c49100;font-size:32px;font-weight:700;margin-top:8px;text-shadow:none}@media(min-width:1181px){.number-grid[data-v-1999c09a]{gap:10px}.number-box[data-v-1999c09a]{padding:12px}.number[data-v-1999c09a]{font-size:28px}}';
+
+const LottoResultCardStyles_CqS6yEgt = [
+  LottoResultCard_vue_vue_type_style_index_0_scoped_1999c09a_lang
+];
+
+export { LottoResultCardStyles_CqS6yEgt as default };
+//# sourceMappingURL=LottoResultCard-styles.CqS6yEgt.mjs.map

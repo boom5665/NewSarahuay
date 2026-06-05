@@ -1,0 +1,28 @@
+import { p as publicAssetsURL } from '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'vue';
+import 'consola';
+import 'node:url';
+import 'nuxtseo-shared/utils';
+import 'vue/server-renderer';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const ResultBox_vue_vue_type_style_index_0_scoped_30cc00b7_lang = ".lotto-check[data-v-30cc00b7]{flex-direction:column;width:100%}.box-top[data-v-30cc00b7],.lotto-check[data-v-30cc00b7]{align-items:center;display:flex}.box-top[data-v-30cc00b7]{gap:.5rem;justify-content:center;padding:.625rem 0 .2rem}.box-top img[data-v-30cc00b7]{height:2rem;width:2rem}.bg-col[data-v-30cc00b7]{background:linear-gradient(180deg,#04bafc,#0d1737),url(" + publicAssetsURL("/frame/framlotto.png") + ");background-blend-mode:overlay;background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:.5rem .5rem 0 0;height:4.6875rem;margin-bottom:.5rem}.text-top[data-v-30cc00b7]{background:var(--Linear,linear-gradient(0deg,#8aa8b5 -28.6%,#fff 80.43%));background-clip:text;-webkit-background-clip:text;font:var(--HeadContentPC);font-weight:700;text-align:center;-webkit-text-fill-color:transparent}.lotto-box[data-v-30cc00b7]{background:var(--white);border-radius:.75rem;width:100%}.lotto-date[data-v-30cc00b7]{color:var(--white);display:flex;font:var(--FieldValuePC);gap:.375rem;justify-content:center;margin-bottom:.625rem;padding-bottom:.5rem}.reward-one[data-v-30cc00b7]{margin-bottom:1rem;text-align:center}.reward-one .number-main[data-v-30cc00b7]{color:var(--Green-Main-Green-500,#008f6c);font:var(--ResultNumberPrimaryPC);font-weight:700;letter-spacing:.5rem}.reward-row[data-v-30cc00b7]{display:flex;justify-content:space-between;padding:0 1.5rem}.reward-col[data-v-30cc00b7]{text-align:center}.reward-col .number[data-v-30cc00b7]{font-size:2rem;font-weight:700}.reward-col .big[data-v-30cc00b7]{font-size:3rem}.more[data-v-30cc00b7]{border-radius:0 0 .5rem .5rem;color:#000;font-size:1rem;font-style:normal;font-weight:600;margin-top:1rem;padding:.625rem;text-align:center}.label[data-v-30cc00b7]{color:var(--Green-Main-Green-500,#008f6c);font:var(--PageTitle)}.d-flex-box[data-v-30cc00b7]{gap:1rem}.bt-next[data-v-30cc00b7],.d-flex-box[data-v-30cc00b7]{display:flex;justify-content:center}.bt-next[data-v-30cc00b7]{align-items:center;color:var(--Green-Main-Green-500,#008f6c);cursor:pointer;font:var(--ButtonMain);gap:.5rem;padding:1.6875rem}";
+
+const ResultBoxStyles_D0JQH5o = [
+  ResultBox_vue_vue_type_style_index_0_scoped_30cc00b7_lang
+];
+
+export { ResultBoxStyles_D0JQH5o as default };
+//# sourceMappingURL=ResultBox-styles.D0J-qH5o.mjs.map

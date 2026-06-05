@@ -1,17 +1,15 @@
 <template>
-  <div>
-
-
+  <main class="index-page">
     <!-- MOBILE -->
-    <div v-if="resultLayout === 'mobile'" class="layout-wrapper">
+    <div v-if="resultLayout === 'mobile'" class="layout-wrapper mobile-layout">
       <Mobilehome />
     </div>
 
     <!-- DESKTOP -->
-    <div v-else class="container layout-wrapper">
+    <div v-else class="container layout-wrapper desktop-layout">
       <Desktophome />
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -45,15 +43,25 @@ useSeoMeta({
   twitterDescription: pageSeo.value.home.description,
 });
 
-// mock config
+
+// mock config จาก BO
 const seoConfig = {
   schema: {
-    newsArticle: true,
+    newsArticle: {
+      enable: true,
+
+      publisherName: "Sarahuay Homepage",
+
+      publisherLogo:
+        "https://sarahuay.com/logo.png",
+
+      authorName: "Admin",
+    },
   },
 };
 
-// schema
-if (seoConfig.schema.newsArticle) {
+// Schema
+if (seoConfig.schema.newsArticle.enable) {
   useHead({
     script: [
       {
@@ -66,14 +74,35 @@ if (seoConfig.schema.newsArticle) {
 
           headline: pageSeo.value.home.title,
 
-          description: pageSeo.value.home.description,
+          description:
+            pageSeo.value.home.description,
 
           datePublished: "2026-05-12",
 
+          dateModified: "2026-05-12",
+
           author: {
+            "@type": "Person",
+
+            name:
+              seoConfig.schema.newsArticle
+                .authorName,
+          },
+
+          publisher: {
             "@type": "Organization",
 
-            name: "Sarahuay Homepage",
+            name:
+              seoConfig.schema.newsArticle
+                .publisherName,
+
+            logo: {
+              "@type": "ImageObject",
+
+              url:
+                seoConfig.schema.newsArticle
+                  .publisherLogo,
+            },
           },
         }),
       },
@@ -81,31 +110,43 @@ if (seoConfig.schema.newsArticle) {
   });
 }
 const route = useRoute();
-// const canonical = {
-//   enable: true,
-//   autoGenerate: true,
-//   url: "",
-// };
+const canonical = {
+  enable: true,
+  autoGenerate: true,
+  url: "",
+};
 
-// const canonicalUrl =
-//   canonical.autoGenerate
-//     ? `https://sarahuay.com${route.path}`
-//     : canonical.url;
+const canonicalUrl =
+  canonical.autoGenerate
+    ? `https://sarahuay.com${route.path}`
+    : canonical.url;
 
-// if (canonical.enable) {
-//   useHead({
-//     link: [
-//       {
-//         rel: "canonical",
+if (canonical.enable) {
+  useHead({
+    link: [
+      {
+        rel: "canonical",
 
-//         href: canonicalUrl,
-//       },
-//     ],
-//   });
-// }
+        href: canonicalUrl,
+      },
+    ],
+  });
+}
 </script>
 <style lang="scss" scoped>
-.homecont {
-  max-width: 1080px;
+
+
+.layout-wrapper {
+  width: 100%;
 }
+
+.desktop-layout {
+  padding-top: 24px ;
+}
+
+.mobile-layout {
+  padding: 8px 0 24px;
+}
+
+
 </style>

@@ -1,0 +1,28 @@
+import { p as publicAssetsURL } from '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'vue';
+import 'consola';
+import 'node:url';
+import 'nuxtseo-shared/utils';
+import 'vue/server-renderer';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const ResultLotto_vue_vue_type_style_index_0_scoped_d408ebc7_lang = ".lotto-check[data-v-d408ebc7]{display:flex;justify-content:center;width:100%}.lotto-box[data-v-d408ebc7]{background:var(--white);border-radius:.75rem;width:100%}.bg-col[data-v-d408ebc7]{background:linear-gradient(180deg,#04bafc,#0d1737),url(" + publicAssetsURL("/frame/checklotto.png") + ");background-blend-mode:overlay;background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:.5rem .5rem 0 0;height:4.6875rem;justify-content:center;margin-bottom:1rem}.bg-col[data-v-d408ebc7],.text-top[data-v-d408ebc7]{align-items:center;display:flex}.text-top[data-v-d408ebc7]{background:var(--Linear,linear-gradient(0deg,#8aa8b5 -28.6%,#fff 80.43%));background-clip:text;-webkit-background-clip:text;font:var(--HeadContentPC);font-weight:700;text-align:center;-webkit-text-fill-color:transparent;gap:.3rem}.row-select[data-v-d408ebc7]{gap:1rem;padding:0 .5rem 1rem}.field-top[data-v-d408ebc7]{display:flex;flex:1;flex-direction:column;margin-bottom:.5rem}.field-top label[data-v-d408ebc7]{font:var(--FieldLabelPC);margin-bottom:.5rem}.field-top select[data-v-d408ebc7]{border:1px solid #ccc;border-radius:.5rem;height:3rem;padding:0 .5rem}.field[data-v-d408ebc7]{display:flex;flex:1;flex-direction:column}.field label[data-v-d408ebc7]{font:var(--FieldLabelPC);margin-bottom:.5rem}.field select[data-v-d408ebc7]{border:1px solid #ccc;border-radius:.5rem;height:3rem;padding:0 .5rem}.row-input[data-v-d408ebc7]{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.5rem}.row-input input[data-v-d408ebc7]{border:1px solid #ddd;border-radius:.5rem;height:3rem;padding:0 .75rem}.btn-check[data-v-d408ebc7]{align-items:center;background:var(--Green-Main-Green-500,#008f6c);border:none;border-radius:.5rem;color:var(--white);cursor:pointer;display:flex;font:var(--ButtonMainPC);gap:.5rem;height:3rem;justify-content:center;width:100%}";
+
+const ResultLottoStyles_Wiw9VxX4 = [
+  ResultLotto_vue_vue_type_style_index_0_scoped_d408ebc7_lang
+];
+
+export { ResultLottoStyles_Wiw9VxX4 as default };
+//# sourceMappingURL=ResultLotto-styles.Wiw9VxX4.mjs.map

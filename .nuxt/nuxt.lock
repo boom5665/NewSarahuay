@@ -1,0 +1,9 @@
+{
+  "pid": 16007,
+  "startedAt": 1780552766710,
+  "command": "dev",
+  "cwd": "/Users/jarkkarpongsukprasop/Documents/GitHub/NewSarahuay",
+  "port": 5013,
+  "hostname": "0.0.0.0",
+  "url": "http://0.0.0.0:5013"
+}

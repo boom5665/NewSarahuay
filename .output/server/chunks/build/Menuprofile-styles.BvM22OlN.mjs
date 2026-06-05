@@ -1,0 +1,8 @@
+const Menuprofile_vue_vue_type_style_index_0_scoped_8baa9cae_lang = ".menu-right[data-v-8baa9cae]{background:#e0e0e0;border-radius:.5rem}.grid-box[data-v-8baa9cae]{background:#000;display:grid;gap:1rem;grid-template-columns:1fr 1fr;padding:1rem}.menutop[data-v-8baa9cae]{align-items:center;display:flex;gap:.5rem;padding-bottom:.9063rem;padding-left:1rem;padding-top:.9063rem}.menutop span[data-v-8baa9cae]{background:#fff;border-radius:.5rem;padding:.25rem 1rem}.section[data-v-8baa9cae]{background:#fff;border-radius:8px;padding:16px}.section.full[data-v-8baa9cae]{grid-column:span 2}.section-title[data-v-8baa9cae]{font-weight:600;margin-bottom:12px}.form-grid[data-v-8baa9cae]{display:grid;gap:12px;grid-template-columns:1fr 1fr}.input-group[data-v-8baa9cae]{display:flex;flex-direction:column}.input-group.full[data-v-8baa9cae]{grid-column:span 2}label[data-v-8baa9cae]{color:#666;font-size:12px;margin-bottom:4px}input[data-v-8baa9cae],select[data-v-8baa9cae]{border:1px solid #ddd;border-radius:6px;font-size:14px;padding:8px 10px}";
+
+const MenuprofileStyles_BvM22OlN = [
+  Menuprofile_vue_vue_type_style_index_0_scoped_8baa9cae_lang
+];
+
+export { MenuprofileStyles_BvM22OlN as default };
+//# sourceMappingURL=Menuprofile-styles.BvM22OlN.mjs.map

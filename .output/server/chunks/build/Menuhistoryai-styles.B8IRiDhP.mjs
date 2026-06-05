@@ -1,0 +1,8 @@
+const Menuhistoryai_vue_vue_type_style_index_0_scoped_d7e07653_lang = ".menu-right[data-v-d7e07653]{background:#e0e0e0;border-radius:.5rem}.grid-box[data-v-d7e07653]{background:#d2d2d2;display:grid;gap:.5rem;grid-template-columns:1fr;padding:1rem}.menutop[data-v-d7e07653]{align-items:center;display:flex;gap:.5rem;padding-bottom:.9063rem;padding-left:1rem;padding-top:.9063rem}.menutop span[data-v-d7e07653]{background:#fff;border-radius:.5rem;padding:.25rem 1rem}.section[data-v-d7e07653]{background:#fff;border-radius:8px;padding:16px}.date-group[data-v-d7e07653]{margin-bottom:16px}.date[data-v-d7e07653]{color:#333;font-weight:600;margin-bottom:8px}.activity-item[data-v-d7e07653]{display:flex;gap:10px;padding:8px 0}.icon[data-v-d7e07653]{align-items:center;background:#e8edf5;border-radius:6px;display:flex;font-size:12px;height:24px;justify-content:center;width:24px}.content[data-v-d7e07653]{flex:1}.text[data-v-d7e07653]{color:#333;font-size:14px}.time[data-v-d7e07653]{color:#999;font-size:12px}";
+
+const MenuhistoryaiStyles_B8IRiDhP = [
+  Menuhistoryai_vue_vue_type_style_index_0_scoped_d7e07653_lang
+];
+
+export { MenuhistoryaiStyles_B8IRiDhP as default };
+//# sourceMappingURL=Menuhistoryai-styles.B8IRiDhP.mjs.map
