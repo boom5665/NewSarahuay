@@ -144,7 +144,7 @@ const zodiacs = [
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 12px;
+  padding: 8px;
 
   background-size: cover;
   background-position: center;
@@ -196,16 +196,17 @@ const zodiacs = [
 
 .zod-name {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   color: #fff;
   text-align: center;
 }
 
 .zod-desc {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--white);
   text-align: center;
   margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .stars-rate {
@@ -217,5 +218,4 @@ const zodiacs = [
 .off {
   color: #3a3850;
 }
-
 </style>

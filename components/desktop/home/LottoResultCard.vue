@@ -95,8 +95,8 @@ const lotteries = [
 }
 
 .logo {
-  width: 38px;
-  height: 39px;
+  width: 3.125rem;
+  height: 3.125rem;
   border-radius: 50%;
   -o-object-fit: cover;
   object-fit: contain;

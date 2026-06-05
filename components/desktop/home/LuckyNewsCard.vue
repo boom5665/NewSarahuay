@@ -79,7 +79,7 @@ const newsList = ref([
 
 .hl-box {
   border-radius: var(--radius-sm);
-  padding: 12px 8px;
+  padding: 8px 8px;
   text-align: center;
   border: 1px solid var(--line)
 }
@@ -102,7 +102,7 @@ const newsList = ref([
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: .3125rem;
+  gap: .5rem;
   margin-bottom: 7px;
 }
 
@@ -120,6 +120,7 @@ const newsList = ref([
   border-radius: var(--spacing-4, 4px);
   background: #473A2A;
   padding: 8px;
+   font-size: 32px;
 }
 
 .hot .hl-num {
@@ -127,14 +128,15 @@ const newsList = ref([
   border-radius: var(--spacing-4, 4px);
   background: #265243;
   padding: 8px;
+  font-size: 32px;
 }
 
 .hl-second {
-  margin-top: 12px;
+  margin-top: 16px;
   border-radius: 8px;
   border: 1px solid #1A3445;
   background: #092524;
-  padding: 12px
+  padding: .5rem;
 }
 
 .hl-second .hl-label {
@@ -147,10 +149,10 @@ const newsList = ref([
   padding: .5rem;
   border-radius: 5px;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
   font-family: var(--head);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 32px;
   color: #bfeede
 }
 

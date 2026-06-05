@@ -48,7 +48,7 @@
               </div>
 
               <div class="news-analyze">
-                วิเคราะห์เลขจากข่าว
+                   <img src="/icon/aicrop.svg" alt="">   วิเคราะห์เลขจากข่าว
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ const displayNews = computed(() => {
   flex: 1;
   padding: 9px 0;
   border-radius: 9px;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--white);
   font-weight: 600;
   transition: .15s;
@@ -256,7 +256,7 @@ const displayNews = computed(() => {
   border-radius: 8px;
   background: #F6AE1D;
   color: var(--black);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   padding: 6px 10px;
   border-radius: 8px;

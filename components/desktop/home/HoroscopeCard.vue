@@ -70,7 +70,7 @@ const cardStyle = computed(() => ({
   border-radius: .3125rem;
   overflow: hidden;
   background-image: url("/icon/horoscope-bg.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
@@ -135,7 +135,7 @@ const cardStyle = computed(() => ({
   color: white;
   position: relative;
   z-index: 1;
-  font-size: 16px;
+  font-size: 1rem;
 
 }
 

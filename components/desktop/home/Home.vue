@@ -261,7 +261,7 @@ import LuckyNewsCard from '~/components/desktop/home/LuckyNewsCard.vue'
 
 .home-layout {
   display: grid;
-  grid-template-columns: 45rem 24.9375rem 28.125rem;
+  grid-template-columns: 45rem 25.9375rem 28.125rem;
   grid-template-areas:
     "hero lucky right"
     "horo horo right";

@@ -69,7 +69,7 @@
   color: var(--muted-2);
   outline: none;
   font-family: var(--head);
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 3px;
 }
 
@@ -125,7 +125,7 @@
   padding: 0 32px 0 12px;
   height: 44px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   color: #FFDE6E;
   outline: none;
   cursor: pointer;
@@ -156,7 +156,7 @@
   justify-content: center;
   gap: 7px;
   transition: .15s;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
 }

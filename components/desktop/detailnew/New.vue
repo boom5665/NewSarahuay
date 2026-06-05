@@ -203,7 +203,7 @@ const imgcardData = ref([
 
 .article-content {
   line-height: 1.8;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .article-content p {

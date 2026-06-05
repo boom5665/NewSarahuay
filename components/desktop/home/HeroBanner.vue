@@ -20,9 +20,9 @@
           ครบจบในที่เดียว
         </div>
         <div class="button-group">
-          <button>เลขเด็ดวันนี้</button>
-          <button>ผลหวยล่าสุด</button>
-          <button>ดูดวงฟรี</button>
+          <button>แม่นยำ</button>
+          <button>อัพเดตทุกวัน</button>
+          <button>ใช้งานฟรี</button>
         </div>
       </div>
 
@@ -132,30 +132,32 @@
   color: #F6AE1D;
   animation: heroSlideIn-f2b3f371 0.8s ease-out;
   line-height: 1.2;
-  // text-shadow: 0 4px 26px rgba(0, 0, 0, 0.34);
-  // background: linear-gradient(180deg, #EACF80 0%, #D6A73F 100%);
-  // background-clip: text;
-  // -webkit-background-clip: text;
-  // -webkit-text-fill-color: transparent;
+margin-top: 1rem;
 }
 
 .subtitle {
   color: white;
   font-size: 34px;
   animation: heroSlideIn 0.8s ease-out 0.1s both;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .subtitle-in {
   color: white;
   font-size: 24px;
   animation: heroSlideIn 0.8s ease-out 0.1s both;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .button-group {
-  display: flex;
-  gap: 12px;
-  margin-top: 28px;
-  animation: heroSlideIn 0.8s ease-out 0.2s both;
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    animation: heroSlideIn-f2b3f371 0.8s ease-out 0.2s both;
+    position: absolute;
+    bottom: -50px;
 }
 
 .button-group button {
@@ -168,7 +170,7 @@
   font-weight: 700;
   transition: all 0.3s ease;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
-  font-size: 16px;
+  font-size: 1rem;
 
   &:hover {
     transform: translateY(-3px);
@@ -191,7 +193,7 @@
 .title-top {
   color: white;
   font-size: 18px;
-  font-style: italic;
+ text-align: center;
   font-weight: 400;
 }
 </style>

@@ -114,7 +114,7 @@ const tarot = ref({
 
 .tarot-desc {
   max-width: 400px;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   color: var(--white);

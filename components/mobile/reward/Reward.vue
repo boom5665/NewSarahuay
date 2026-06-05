@@ -234,7 +234,7 @@ const lottoResult = ref({
 
 .prize-item div:first-child {
   color: #000;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 700;
 }

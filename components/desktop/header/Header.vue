@@ -8,12 +8,21 @@
       <div class="menu-icons">
         <div v-for="item in menuList" :key="item.id" class="menu-item" :class="{ active: route.path === item.link }"
           @click="goPage(item.link)">
-          <img :src="item.icon" class="icon" />
+          <!-- <img :src="item.icon" class="icon" /> -->
           <span class="bottom-nav">{{ $t(item.name) }}</span>
         </div>
       </div>
       <div class="menu-button-container">
-        <div class="lang-wrapper">
+        <div class="search-box">
+          <input type="text" placeholder="ค้นหาข่าว หวย ดูดวง..." class="search-input" />
+
+          <img src="/icon/srch.png" alt="" class="search-icon">
+        </div>
+
+        <div class="chat-with-ai">
+          <img src="/icon/botcaht.svg" alt=""> <span></span>คุยกับ AI
+        </div>
+        <!-- <div class="lang-wrapper">
           <div class="lang" @click="showLang = !showLang" v-if="currentLang">
             <img :src="currentLang.icon" alt="lang" class="lang-img" />
           </div>
@@ -28,8 +37,8 @@
               <span>{{ lang.label }}</span>
             </div>
           </div>
-        </div>
-        <img class="hamberger" src="/assets/svg/hamberger.svg" @click="navigateTo('/profile')" />
+        </div> -->
+        <!-- <img class="hamberger" src="/assets/svg/hamberger.svg" @click="navigateTo('/profile')" /> -->
       </div>
     </div>
   </div>
@@ -100,7 +109,7 @@ watch(locale, (val) => {
 
 <style lang="scss" scoped>
 .header-container {
-  background: var(--Green-Main-Green-500, #008F6C);
+  // background: var(--Green-Main-Green-500, #008F6C);
   display: flex;
   justify-content: center;
 }
@@ -109,7 +118,7 @@ watch(locale, (val) => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1080px;
+  max-width: 1620px;
   width: 100%;
   height: 5rem;
   padding: 0.625rem 0px;
@@ -133,15 +142,15 @@ watch(locale, (val) => {
   cursor: pointer;
   gap: 0.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   padding: .6875rem 1rem;
   justify-content: center;
-  color: white;
+  color: #737373;
 }
 
 .menu-item.active {
-  border-radius: .5rem;
-  background: var(--Green-Green-700, #005C46);
+  color: #C00;
+  border-bottom: 2px solid #C00;
 }
 
 .icon {
@@ -211,5 +220,52 @@ watch(locale, (val) => {
   border-top-right-radius: .3125rem;
   color: white;
 
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 50px 0 16px;
+  border-radius: 12px;
+  border: 1.5px solid #E3E3E3;
+  background: rgba(255, 255, 255, .05);
+  color: #fff;
+  font-size: .875rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.chat-with-ai {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #F6AE1D;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
 }
 </style>
