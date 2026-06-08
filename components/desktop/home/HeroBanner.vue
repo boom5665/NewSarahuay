@@ -69,13 +69,13 @@
 }
 
 .hero-banner {
-  width: 45rem;
+  width: 100%;
   background-image: url("/bga.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 8px;
-  padding: clamp(20px, 0vw, 20px);
+  padding: 2.5rem;
   // border: 1px solid rgba(255, 255, 255, 0.72);
   position: relative;
   overflow: hidden;
@@ -108,8 +108,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 282px;
-  max-width: 760px;
+ 
   position: relative;
   z-index: 1;
 }
@@ -127,7 +126,7 @@
 }
 
 .title {
-  font-size: 55px;
+  font-size: 3.4375rem;
   font-weight: 700;
   color: #F6AE1D;
   animation: heroSlideIn-f2b3f371 0.8s ease-out;
@@ -137,7 +136,7 @@ margin-top: 1rem;
 
 .subtitle {
   color: white;
-  font-size: 34px;
+  font-size: 2.125rem;
   animation: heroSlideIn 0.8s ease-out 0.1s both;
   text-align: center;
   margin-top: 1rem;
@@ -145,7 +144,7 @@ margin-top: 1rem;
 
 .subtitle-in {
   color: white;
-  font-size: 24px;
+  font-size: 1.5rem;
   animation: heroSlideIn 0.8s ease-out 0.1s both;
   text-align: center;
   margin-top: 1rem;
@@ -153,18 +152,17 @@ margin-top: 1rem;
 
 .button-group {
     display: flex;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 2.5rem;
+    margin-top: 2.75rem;
     animation: heroSlideIn-f2b3f371 0.8s ease-out 0.2s both;
-    position: absolute;
-    bottom: -50px;
+  
 }
 
 .button-group button {
   background: transparent;
   color: #FFDE6E;
   border: none;
-  padding: 12px 24px;
+  padding: .75rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 700;
@@ -172,19 +170,11 @@ margin-top: 1rem;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
   font-size: 1rem;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: translateY(-1px);
-  }
 }
 
 .hero-image {
-  width: 300px;
-  height: 300px;
+  width: 18.75rem;
+  height: 18.75rem;
   object-fit: contain;
   animation: imageFadeIn 1s ease-out;
   filter: drop-shadow(0 20px 50px rgba(255, 212, 74, 0.3));
@@ -192,8 +182,8 @@ margin-top: 1rem;
 
 .title-top {
   color: white;
-  font-size: 18px;
- text-align: center;
+  font-size: 1.125rem;
+  text-align: center;
   font-weight: 400;
 }
 </style>

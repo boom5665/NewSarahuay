@@ -87,21 +87,21 @@ const cardStyle = computed(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: .75rem;
 }
 
 .icon-wrap {
-  width: 46px;
-  height: 46px;
+  width: 2.875rem;
+  height: 2.875rem;
   display: grid;
   place-items: center;
-  border-radius: 8px;
+  border-radius: .5rem;
   background: var(--soft);
   border: 1px solid rgba(255, 255, 255, 0.7);
 
   img {
-    width: 26px;
-    height: 26px;
+    width: 1.625rem;
+    height: 1.625rem;
     object-fit: contain;
   }
 }
@@ -110,12 +110,12 @@ const cardStyle = computed(() => ({
 
   display: inline-flex;
   align-items: center;
-  border-radius: 8px;
-  padding: 0 10px;
+  border-radius: .5rem;
+  padding: 0 .625rem;
   color: var(--accent);
   background: #fff;
   border: 1px solid rgba(0, 143, 108, 0.1);
-  font-size: 13px;
+  font-size: .8125rem;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -125,7 +125,7 @@ const cardStyle = computed(() => ({
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
 }
@@ -146,12 +146,8 @@ const cardStyle = computed(() => ({
   font-size: 1rem;
   font-weight: 600;
   width: max-content;
-  padding: 8px 1.5625rem;
+  padding: .5rem 1.5625rem;
 }
 
-@media (max-width: 1180px) {
-  .horo-card {
-    min-height: 176px;
-  }
-}
+
 </style>

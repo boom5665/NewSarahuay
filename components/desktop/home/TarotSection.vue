@@ -73,17 +73,17 @@ const lottos = [
 
 <style scoped lang="scss">
 .lucky-news-card {
-  border: 1px solid #3C4765;
+  border: 0.0625rem solid #3C4765;
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 1rem;
   color: white;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 0.0625rem solid rgba(59, 130, 246, 0.2);
   overflow: hidden;
 }
 
 .sub-title {
-  font-size: 11px;
+  font-size: 0.6875rem; // 11px
   color: var(--muted);
   font-weight: 400;
 }
@@ -95,11 +95,11 @@ const lottos = [
 }
 
 .zod {
-  width: 9.70rem;
+  width: 9.7rem;
   height: 12.875rem;
   display: flex;
   flex-direction: column;
-  padding: 12px;
+  padding: 0.75rem; // 12px
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,62 +109,86 @@ const lottos = [
   justify-content: center;
 }
 
-
 .zod-orb {
+  margin: 0 auto;
 
-  margin: 0 auto 0px;
   border-radius: 50%;
   overflow: hidden;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 6.25rem;
+    height:  6.25rem;
+    object-fit: contain;
   }
 }
 
 .stars-rate {
   display: flex;
   justify-content: center;
-  gap: 3px;
+  gap: 0.1875rem; // 3px
 }
 
 .star {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem; // 12px
+  height: 0.75rem; // 12px
   object-fit: contain;
 }
 
 .zod-name {
   font-weight: 600;
   font-size: 1rem;
-  height: 41px;
+  height: 2.5625rem; // 41px
   color: #fff;
   text-align: center;
-  border: 1px solid rgba(113, 106, 217, 0);
-  background: linear-gradient(270deg, rgba(113, 106, 217, 0) 0%, rgba(113, 106, 217, 0.5) 30%, rgba(113, 106, 217, 0.5) 70%, rgba(113, 106, 217, 0) 100%);
+
+  border: 0.0625rem solid rgba(113, 106, 217, 0);
+
+  background: linear-gradient(
+    270deg,
+    rgba(113, 106, 217, 0) 0%,
+    rgba(113, 106, 217, 0.5) 30%,
+    rgba(113, 106, 217, 0.5) 70%,
+    rgba(113, 106, 217, 0) 100%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .zod-name-text {
-  background: linear-gradient(180deg, #FFF 50%, #CACACA 68.33%, #FFF 83.33%);
+  background: linear-gradient(
+    180deg,
+    #fff 50%,
+    #cacaca 68.33%,
+    #fff 83.33%
+  );
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 7px 2px rgba(0, 0, 0, 0.35));
+
+  filter: drop-shadow(0 0.4375rem 0.125rem rgba(0, 0, 0, 0.35)); // 7px 2px
 }
 
 .zod-desc {
   font-size: 1.25rem;
   font-weight: 700;
-  height: 41px;
+  height: 2.5625rem; // 41px
   color: var(--white);
   text-align: center;
-  margin-bottom: 2px;
-border: 1px solid rgba(217, 170, 106, 0.00);
-background: linear-gradient(270deg, rgba(217, 170, 106, 0.00) 0%, rgba(217, 170, 106, 0.50) 30%, rgba(217, 170, 106, 0.50) 70%, rgba(217, 170, 106, 0.00) 100%);
+  margin-bottom: 0.125rem; // 2px
+
+  border: 0.0625rem solid rgba(217, 170, 106, 0);
+
+  background: linear-gradient(
+    270deg,
+    rgba(217, 170, 106, 0) 0%,
+    rgba(217, 170, 106, 0.5) 30%,
+    rgba(217, 170, 106, 0.5) 70%,
+    rgba(217, 170, 106, 0) 100%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,5 +197,4 @@ background: linear-gradient(270deg, rgba(217, 170, 106, 0.00) 0%, rgba(217, 170,
 .off {
   color: #3a3850;
 }
-
 </style>

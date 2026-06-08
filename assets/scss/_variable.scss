@@ -164,11 +164,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: .875rem;
 }
 .card-title {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
     font-family: var(--head);
     font-weight: 600;

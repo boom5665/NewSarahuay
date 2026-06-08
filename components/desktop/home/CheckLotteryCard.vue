@@ -43,7 +43,7 @@
 .lucky-news-card {
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
   border-radius: 20px;
-  padding: 20px;
+  padding: 1rem;
   color: white;
   border: 1px solid rgba(111, 60, 255, 0.2);
 }
@@ -65,7 +65,7 @@
   border: 1px solid var(--line-strong);
   border-radius: 10px 0px 0px 10px;
   padding: 0 14px;
-  height: 44px;
+  height: 2.75rem;
   color: var(--muted-2);
   outline: none;
   font-family: var(--head);
@@ -84,8 +84,8 @@
   color: #1a1206;
   font-weight: 700;
   border-radius: 0px 10px 10px 0px;
-  padding: 0 16px;
-  height: 43px;
+  padding: 0 1rem;
+  height: 2.6875rem;
   white-space: nowrap;
   transition: .15s;
   border: 1px solid var(--line-strong);
@@ -123,7 +123,7 @@
   border: 1px solid var(--line-strong);
   border-radius: 10px;
   padding: 0 32px 0 12px;
-  height: 44px;
+  height: 2.75rem;
   font-family: inherit;
   font-size: 1rem;
   color: #FFDE6E;
@@ -149,7 +149,7 @@
   border-radius: .5rem;
   background: #F6AE1D;
   border-radius: 10px;
-  height: 44px;
+  height: 2.75rem;
   color: var(--black);
   display: flex;
   align-items: center;

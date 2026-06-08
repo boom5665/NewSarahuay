@@ -74,8 +74,8 @@ const date = ref({
 
 <style scoped>
 .footer {
-  background: var(--white);
-  color: var(--black);
+  background: #2B2648;
+  color: var(--white);
   padding-top: 1rem;
 }
 
@@ -110,7 +110,7 @@ const date = ref({
 
 .dark {
   width: 100%;
-  background: var(--primary-color-500);
+  background: #140F34;
   display: flex;
   justify-content: center;
   color: var(--white);

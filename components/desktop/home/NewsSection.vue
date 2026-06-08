@@ -118,102 +118,93 @@ const displayNews = computed(() => {
 </script>
 <style scoped lang="scss">
 .result-table {
-
-  border: 1px solid #3C4765;
+  border: 0.0625rem solid #3C4765;
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 1rem;
+  padding: 1.25rem;
   color: white;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 0.0625rem solid rgba(59, 130, 246, 0.2);
   overflow: hidden;
 }
 
 .tabs {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   background: #0e0e20;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 8px;
-  margin-bottom: 14px
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  margin-bottom: 0.875rem;
 }
 
 .tab {
   flex: 1;
-  padding: 9px 0;
-  border-radius: 9px;
+  padding: 0.5625rem 0;
+  border-radius: 0.3125rem;
   font-size: 1rem;
   color: var(--white);
   font-weight: 600;
   transition: .15s;
-  background: no-repeat;
+  background: none;
   border: none;
 }
 
 .tab.active {
   background: #F6AE1D;
   color: #1a1206;
-  font-weight: 700
+  font-weight: 700;
 }
 
 .news {
-  border-radius: var(--spacing-8, 8px);
-  border: 1px solid #3C4765;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #3C4765;
   background: linear-gradient(293deg, #02062B 2.26%, #211F35 109.49%);
   padding: 1rem;
-  height: 22.5625rem;
 }
 
 .news-item {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: flex-start;
 
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #3C4765;
+  border-bottom: 0.0625rem solid #3C4765;
 }
 
 .news-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
-}
-
-.news-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start
+   margin-bottom: 0;
 }
 
 .news-thumb {
   width: 8.5rem;
   height: 5.5rem;
-  border-radius: 9px;
+  border-radius: 0.5625rem;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--line)
+  border: 0.0625rem solid var(--line);
 }
 
 .news-cat {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  font-size: 14px;
-  padding: 4px 6px;
-  border-radius: 5px;
+  top: 0.25rem;
+  left: 0.25rem;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.3125rem;
   font-weight: 700;
   color: white;
 }
-
-
 
 .news-body {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: 88px;
+  height: 5.5rem;
   justify-content: space-between;
 }
 
@@ -222,7 +213,7 @@ const displayNews = computed(() => {
   font-weight: 500;
   color: #e7e2f5;
   line-height: 1.4;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;
 
   overflow: hidden;
   white-space: nowrap;
@@ -232,7 +223,7 @@ const displayNews = computed(() => {
 .news-meta {
   display: flex;
   align-items: flex-end;
-  gap: .875rem;
+  gap: 0.875rem;
   font: var(--TimeCardPC);
   color: var(--muted-2);
   justify-content: space-between;
@@ -241,33 +232,37 @@ const displayNews = computed(() => {
 .news-meta-left {
   display: flex;
   align-items: center;
-  gap: 14px
+  gap: 0.875rem;
 }
 
 .news-meta .m {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   align-items: flex-start;
 }
 
 .news-analyze {
   flex-shrink: 0;
   align-self: center;
-  border-radius: 8px;
+
+  border-radius: 0.5rem;
   background: #F6AE1D;
+
   color: var(--black);
   font-size: 1rem;
   font-weight: 600;
-  padding: 6px 10px;
-  border-radius: 8px;
+
+  padding: 0.375rem 0.625rem;
+
   white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: .15s
+  gap: 0.3125rem;
+
+  transition: .15s;
 }
 
 .news-analyze:hover {
-  background: rgba(241, 196, 85, .2)
+  background: rgba(241, 196, 85, 0.2);
 }
 </style>

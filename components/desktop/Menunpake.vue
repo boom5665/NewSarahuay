@@ -118,7 +118,7 @@ const packages = [
 
 .card-title {
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: .375rem;
 }
 .card-title-free {
   margin-top: 1.3rem;

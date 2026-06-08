@@ -1,17 +1,26 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  const magic = () => {
-    let fontSize = 100;
-    if (window.innerWidth <= 1440) {
-      let windowWidth = window.innerWidth > 650 ? 650 : window.innerWidth;
-      fontSize = (windowWidth / 375) * 100;
-      nuxtApp.$mainStore.setResultLayout('mobile');
-    } else {
-      // ปรับขนาดตาม container เช่น container 1336 ก็ให้ปรับ 1920 เป็น 1336
-      fontSize = window.innerWidth > 1620 ? 100 : (window.innerWidth / 1620) * 100;
-      nuxtApp.$mainStore.setResultLayout('desktop');
+const magic = () => {
+  let fontSize = 100;
+
+  if (window.innerWidth <= 1024) {
+    const windowWidth = Math.min(window.innerWidth, 650);
+
+    fontSize = (windowWidth / 375) * 100;
+
+    nuxtApp.$mainStore.setResultLayout("mobile");
+  } else {
+    fontSize = (window.innerWidth / 1620) * 100;
+
+    if (fontSize > 100) {
+      fontSize = 100;
     }
-    document.getElementsByTagName("html")[0].style.fontSize = Math.round(fontSize) + "%";
-  };
+
+    nuxtApp.$mainStore.setResultLayout("desktop");
+  }
+
+  document.documentElement.style.fontSize =
+    Math.round(fontSize) + "%";
+};
 
   const getIcon = (icon, path) => {
     let imageSrc = '';

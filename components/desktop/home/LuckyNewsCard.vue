@@ -3,11 +3,11 @@
     <div class="card card-pad">
       <div class="card-head">
         <div class="card-head-two">
-          <div class="card-title"><span class="ic"><img src="/icon/yippeesee.png" alt=""></span> เลขเด่นวันนี้</div>
+          <div class="card-title"><span class="ic"><img src="/icon/hot6.png" alt=""></span> เลขเด่นวันนี้</div>
           <span class="card-sub">อัพเดตล่าสุด 10:30 น.</span>
         </div>
         <div class="see-all">
-          <span style="margin-right: 5px;">ดูทั้งหมด</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
+          <span style="margin-right: .3125rem;">ดูทั้งหมด</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
             height="13" viewBox="0 0 7 13" fill="none">
             <path d="M0.75 0.750546L5.45003 6.0306L0.75 11.3105" stroke="#FFDE6E" stroke-width="1.5"
               stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -64,8 +64,8 @@ const newsList = ref([
 
 <style scoped lang="scss">
 .lucky-news-card {
-  padding: var(--space-md, 16px);
-  border-radius: 16px;
+  padding: 1rem;
+  border-radius: 1rem;
   border: 1px solid #31304C;
   background: linear-gradient(180deg, #211F35 0%, #02062B 100%);
   color: white;
@@ -74,18 +74,18 @@ const newsList = ref([
 .hl-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px
+  gap: 1rem
 }
 
 .hl-box {
   border-radius: var(--radius-sm);
-  padding: 8px 8px;
+  padding: .5rem .5rem;
   text-align: center;
   border: 1px solid var(--line)
 }
 
 .hl-box.lead {
-  border-radius: 8px;
+  border-radius: .3125rem;
   border: 1px solid #3D382D;
   background: linear-gradient(270deg, #1C1525 0%, #312A24 50%, #1C1525 100%);
 }
@@ -100,16 +100,20 @@ const newsList = ref([
   font-size: 1rem;
   color: #80FFF0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: .5rem;
-  margin-bottom: 7px;
+  gap: 0.5rem;
+  margin-bottom: .4375rem;
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
 .hl-num {
   font-family: var(--head);
   font-weight: 800;
-  font-size: 19px;
+  font-size: 1.1875rem;
   letter-spacing: 2px;
   white-space: nowrap
 }
@@ -120,19 +124,19 @@ const newsList = ref([
   border-radius: var(--spacing-4, 4px);
   background: #473A2A;
   padding: 8px;
-   font-size: 32px;
+  font-size: 2rem;
 }
 
 .hot .hl-num {
   color: var(--green);
   border-radius: var(--spacing-4, 4px);
   background: #265243;
-  padding: 8px;
-  font-size: 32px;
+  padding: .5rem;
+  font-size: 2rem;
 }
 
 .hl-second {
-  margin-top: 16px;
+  margin-top: 1rem;
   border-radius: 8px;
   border: 1px solid #1A3445;
   background: #092524;
@@ -140,7 +144,7 @@ const newsList = ref([
 }
 
 .hl-second .hl-label {
-  margin-bottom: 9px
+  margin-bottom: .5625rem
 }
 
 .hl-second .nums {
@@ -149,18 +153,18 @@ const newsList = ref([
   padding: .5rem;
   border-radius: 5px;
   justify-content: center;
-  gap: 16px;
+  gap: 1rem;
   font-family: var(--head);
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2rem;
   color: #bfeede
 }
 
 .src-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-top: 14px;
+  gap: .5rem;
+  margin-top: .875rem;
   background: linear-gradient(111deg, #212D4B -0.96%, #120E29 126.93%);
 
   border-radius: 5px;
@@ -170,10 +174,8 @@ const newsList = ref([
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 10px 0px;
-  border-radius: 11px;
-
+  gap: .375rem;
+  padding: .5rem 0px;
   font-size: 1rem;
   color: var(--white);
   transition: .15s;
@@ -187,12 +189,10 @@ const newsList = ref([
 }
 
 .src .si {
-  width: 26px;
-  height: 26px;
+  width: 1.625rem;
+  height: 1.625rem;
   display: grid;
   place-items: center;
   color: var(--gold)
 }
-
-
 </style>

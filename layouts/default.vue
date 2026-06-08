@@ -49,6 +49,12 @@ onMounted(() => {
   mainStore.loaderAction(true);
   mainStore.loaderAction(false);
 });
+watch(
+  () => mainStore.resultLayout,
+  (v) => {
+    console.log("layout =>", v);
+  }
+);
 </script>
 
 <style scoped>
@@ -56,6 +62,7 @@ onMounted(() => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
 }
 
 .layout-wrapper {

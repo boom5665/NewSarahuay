@@ -60,12 +60,12 @@ const lotteries = [
 .lottery-card {
   position: relative;
 
-  height: 5rem;
+  height: 5.375rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 14px;
+  padding: 0 .875rem;
   border-radius: .3125rem;
   overflow: hidden;
   background-position: center;
@@ -111,17 +111,21 @@ const lotteries = [
 .timer {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: .375rem;
 
   background: rgba(0, 0, 0, .55);
 
-  padding: 6px 8px;
+  padding: .375rem .5rem;
 
-  border-radius: 8px;
+  border-radius: .5rem;
 
   color: #fff;
   font-size: 1.125rem;
   font-weight: 600;
+  img {
+    width: 1.6875rem;
+    height: 1.6875rem;
+  }
 }
 
 .day {

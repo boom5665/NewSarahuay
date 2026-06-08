@@ -78,28 +78,28 @@
 <style scoped lang="scss">
 .result-table {
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 1.25rem; // 20px
+  padding: 1.25rem;
   color: white;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 0.0625rem solid rgba(59, 130, 246, 0.2);
   overflow: hidden;
 }
 
 .draw-date {
   background: #0e0e20;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  padding: 12px 16px;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
   font-family: var(--head);
   font-weight: 500;
   color: #FFDE6E;
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
   text-align: left;
 }
 
 .cardtop {
-  border-radius: 16px;
-  border: 1px solid #3C4765;
+  border-radius: 1rem; // 16px
+  border: 0.0625rem solid #3C4765;
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
   padding: 1rem;
 }
@@ -107,32 +107,25 @@
 .prize-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr .8fr;
-  gap: 12px
+  gap: 0.75rem;
 }
 
 .prize {
-  background: #0e0e20;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 12px;
+  padding: 0.75rem;
   text-align: center;
-  border-radius: 8px;
-  border: 1px solid #3D382D;
+  border-radius: 0.5rem; // 8px
+  border: 0.0625rem solid #3D382D;
   background: linear-gradient(270deg, #1C1525 0%, #312A24 50%, #1C1525 100%);
 }
-
-
-
-
 
 .prize-l {
   font-size: 1rem;
   color: white;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem; // 8px
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px
+  gap: 0.3125rem; // 5px
 }
 
 .horo-title {
@@ -141,7 +134,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
-  font-style: normal;
   font-weight: 700;
 }
 
@@ -154,17 +146,17 @@
 .prize-n {
   font-family: var(--head);
   font-weight: 800;
-  font-size: 24px;
-  letter-spacing: 2px
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem; // 2px
 }
 
 .prize.first .prize-n {
   color: var(--white);
   background: #473A2A;
-  border-radius: 8px;
-  height: 54px;
+  border-radius: 0.5rem; // 8px
+  height: 3.375rem;
   display: flex;
-  border: 1px solid rgba(241, 196, 85, 0.2);
+  border: 0.0625rem solid rgba(241, 196, 85, 0.2);
   align-items: center;
   justify-content: center;
 }
@@ -172,34 +164,34 @@
 .sub-head {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   font-family: var(--head);
   font-weight: 600;
-  font-size: 15px;
-  margin: 1rem 0 0px
+  font-size: 0.9375rem;
+  margin: 1rem 0 0;
 }
 
 .sub-head .ic {
-  color: var(--gold)
+  color: var(--gold);
 }
 
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px
+  gap: 0.75rem;
 }
 
 .stat-box {
-  padding: 13px 10px;
-  border-radius: 8px;
-  border: 1px solid #49455C;
+  padding: 0.8125rem 0.625rem; // 13px 10px
+  border-radius: 0.5rem; // 8px
+  border: 0.0625rem solid #49455C;
   background: #282536;
 }
 
 .stat-t {
   text-align: center;
   font: var(--PageTitlePC);
-  margin-bottom: 2px;
+  margin-bottom: 0.125rem; // 2px
   color: #FFDE6E;
 }
 
@@ -207,20 +199,20 @@
   text-align: center;
   font: var(--TimeCardPC);
   color: var(--white);
-  margin-bottom: 10px
+  margin-bottom: 0.625rem;
 }
 
 .stat-nums {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7px
+  gap: 0.4375rem; // 7px
 }
 
 .stat-nums span {
-  border-radius: 4px;
+  border-radius: 0.25rem; // 4px
   background: #151425;
   text-align: center;
-  padding: 10px 0;
+  padding: 0.625rem 0;
   font-family: var(--head);
   font-weight: 700;
   font-size: 1rem;
@@ -233,6 +225,6 @@
 }
 
 .font-two {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 </style>

@@ -109,7 +109,6 @@ watch(locale, (val) => {
 
 <style lang="scss" scoped>
 .header-container {
-  // background: var(--Green-Main-Green-500, #008F6C);
   display: flex;
   justify-content: center;
 }
@@ -118,11 +117,10 @@ watch(locale, (val) => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1620px;
+  max-width: 101.25rem; // 1620px
   width: 100%;
   height: 5rem;
-  padding: 0.625rem 0px;
-
+  padding: 0.625rem 0;
 }
 
 .logo img {
@@ -136,21 +134,29 @@ watch(locale, (val) => {
 }
 
 .menu-item {
+  position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  cursor: pointer;
   gap: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  padding: .6875rem 1rem;
-  justify-content: center;
+  padding: 0.4063rem 1rem;
   color: #737373;
 }
 
 .menu-item.active {
   color: #C00;
-  border-bottom: 2px solid #C00;
+}
+
+.menu-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1rem; /* เท่ากับ padding ซ้าย */
+  right: 1rem; /* เท่ากับ padding ขวา */
+  height: 0.125rem;
+  background: #C00;
+  border-radius: 999rem;
 }
 
 .icon {
@@ -169,25 +175,24 @@ watch(locale, (val) => {
 
 .lang-dropdown {
   position: absolute;
-  top: 40px;
+  top: 2.5rem; // 40px
   right: 0;
   background: white;
-  border-radius: 8px;
+  border-radius: 0.5rem; // 8px
   display: flex;
   flex-direction: column;
-  width: 8.125rem;
+  width: 8.125rem; // 130px
   z-index: 9999;
 }
 
 .lang-item {
   display: flex;
-  gap: 8px;
-  padding: 0px 0px;
+  gap: 0.5rem; // 8px
   cursor: pointer;
-  height: 2.5rem;
+  height: 2.5rem; // 40px
   width: 100%;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 0.625rem; // 10px
   color: white;
   background: #114606;
 
@@ -196,7 +201,6 @@ watch(locale, (val) => {
     height: 1.5rem;
   }
 }
-
 
 .lang-item.active {
   background: #0b2d03;
@@ -216,10 +220,9 @@ watch(locale, (val) => {
   text-align: center;
   padding: 0.625rem;
   background: #071f02;
-  border-top-left-radius: .3125rem;
-  border-top-right-radius: .3125rem;
+  border-top-left-radius: 0.3125rem; // 5px
+  border-top-right-radius: 0.3125rem; // 5px
   color: white;
-
 }
 
 .search-box {
@@ -229,21 +232,21 @@ watch(locale, (val) => {
 
 .search-input {
   width: 100%;
-  height: 40px;
-  padding: 0 50px 0 16px;
-  border-radius: 12px;
-  border: 1.5px solid #E3E3E3;
-  background: rgba(255, 255, 255, .05);
+  height: 2.5rem; // 40px
+  padding: 0 3.125rem 0 1rem; // 50px 16px
+  border-radius: 0.75rem; // 12px
+  border: 0.09375rem solid #E3E3E3; // 1.5px
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .search-icon {
   position: absolute;
-  right: 16px;
+  right: 1rem; // 16px
   top: 50%;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem; // 20px
+  height: 1.25rem; // 20px
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -251,9 +254,9 @@ watch(locale, (val) => {
 .chat-with-ai {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125rem; // 5px
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 0.5rem; // 8px
   background: #F6AE1D;
   color: black;
   font-size: 1rem;

@@ -117,17 +117,17 @@ const zodiacs = [
 
 <style scoped lang="scss">
 .lucky-news-card {
-  border: 1px solid #3C4765;
+  border: 0.0625rem solid #3C4765;
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));
-  border-radius: 16px;
+  border-radius: 1rem;
   padding: 1rem;
   color: white;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 0.0625rem solid rgba(59, 130, 246, 0.2);
   overflow: hidden;
 }
 
 .sub-title {
-  font-size: 11px;
+  font-size: 0.6875rem; // 11px
   color: var(--muted);
   font-weight: 400;
 }
@@ -135,7 +135,7 @@ const zodiacs = [
 .zodiac-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 0.5rem; // 8px
 }
 
 .zod {
@@ -144,7 +144,7 @@ const zodiacs = [
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 8px;
+  padding: 0.5rem; // 8px
 
   background-size: cover;
   background-position: center;
@@ -154,26 +154,23 @@ const zodiacs = [
   border: none;
 }
 
-
 .zod-name,
 .zod-desc,
 .stars-rate {
   position: relative;
   z-index: 2;
-
 }
 
 .zod-orb {
-  width: 70px;
-  height: 70px;
+  width: 4.375rem; // 70px
+  height: 4.375rem; // 70px
 
-  margin: 0 auto 10px;
+  margin: 0 auto 0.625rem; // 10px
 
   border-radius: 50%;
-
   overflow: hidden;
 
-  border: 2px solid rgba(255, 255, 255, .1);
+  border: 0.125rem solid rgba(255, 255, 255, 0.1); // 2px
 
   img {
     width: 100%;
@@ -185,12 +182,12 @@ const zodiacs = [
 .stars-rate {
   display: flex;
   justify-content: center;
-  gap: 3px;
+  gap: 0.1875rem; // 3px
 }
 
 .star {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem; // 12px
+  height: 0.75rem; // 12px
   object-fit: contain;
 }
 
@@ -205,17 +202,5 @@ const zodiacs = [
   font-size: 0.875rem;
   color: var(--white);
   text-align: center;
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
-
-.stars-rate {
-  color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 1px;
-}
-
-.off {
-  color: #3a3850;
 }
 </style>

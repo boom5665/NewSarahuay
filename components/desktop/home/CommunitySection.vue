@@ -48,11 +48,15 @@ const tarot = ref({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 20px;
+
+  border-radius: 1.25rem; // 20px
   padding: 1rem;
   color: white;
-  border: 1px solid rgba(111, 60, 255, 0.2);
+
+  border: 0.0625rem solid rgba(111, 60, 255, 0.2);
+
   position: relative;
+  overflow: hidden;
 }
 
 .tarot-card {
@@ -60,13 +64,13 @@ const tarot = ref({
   overflow: hidden;
 
   background:
-    radial-gradient(400px 300px at 50% 30%,
+    radial-gradient(25rem 18.75rem at 50% 30%,
       rgba(124, 77, 255, 0.3),
       transparent 70%),
     linear-gradient(160deg, #241a52, #120e2c);
 
-  border: 1px solid rgba(124, 77, 255, 0.25);
-  border-radius: 18px;
+  border: 0.0625rem solid rgba(124, 77, 255, 0.25);
+  border-radius: 1.125rem; // 18px
 }
 
 .tarot-stars {
@@ -74,11 +78,11 @@ const tarot = ref({
   inset: 0;
 
   background-image:
-    radial-gradient(1.3px 1.3px at 20% 25%, #fff, transparent),
-    radial-gradient(1.3px 1.3px at 75% 35%, #fff, transparent),
-    radial-gradient(1px 1px at 50% 60%, #fff, transparent),
-    radial-gradient(1.4px 1.4px at 85% 70%, #fff, transparent),
-    radial-gradient(1px 1px at 30% 80%, #fff, transparent);
+    radial-gradient(0.08125rem 0.08125rem at 20% 25%, #fff, transparent),
+    radial-gradient(0.08125rem 0.08125rem at 75% 35%, #fff, transparent),
+    radial-gradient(0.0625rem 0.0625rem at 50% 60%, #fff, transparent),
+    radial-gradient(0.0875rem 0.0875rem at 85% 70%, #fff, transparent),
+    radial-gradient(0.0625rem 0.0625rem at 30% 80%, #fff, transparent);
 
   opacity: 0.45;
   pointer-events: none;
@@ -91,44 +95,39 @@ const tarot = ref({
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
-
 }
 
-
-
 .tarot-img img {
-  width: 200px;
-  height: 274px;
-  -o-object-fit: cover;
-  object-fit: none;
+  width: 12.5rem; // 200px
+  height: 17.125rem; // 274px
+
 }
 
 .tarot-name {
-  font-size: 22px;
+  font-size: 1.375rem; // 22px
   font-weight: 700;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; // 10px
 }
 
 .tarot-desc {
-  max-width: 400px;
+  max-width: 25rem; // 400px
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   color: var(--white);
-  margin-bottom: 16px;
+  margin-bottom: 1rem; // 16px
 }
 
 .btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 224px;
-  height: 40px;
-  padding: 0 24px;
-  border-radius: 8px;
+  width: 14rem;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
   background: #F6AE1D;
   cursor: pointer;
   font-weight: 600;
@@ -136,22 +135,20 @@ const tarot = ref({
 
 .aura-img {
   position: absolute;
-  width: 1237px;
-  height: 1099px;
-  top: -23rem;
-  left: 0rem;
-
+  left: 50%;
+  top: 37%;
+  width: 77.3125rem;
+  height: 68.6875rem; // 1099px
   animation: rotateAura 20s linear infinite;
-  transform-origin: center center;
 }
 
 @keyframes rotateAura {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 </style>
