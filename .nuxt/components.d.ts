@@ -46,7 +46,6 @@ export const DesktopHeader: typeof import("../components/desktop/header/Header.v
 export const DesktopHomeCheckLotteryCard: typeof import("../components/desktop/home/CheckLotteryCard.vue")['default']
 export const DesktopHomeCommunitySection: typeof import("../components/desktop/home/CommunitySection.vue")['default']
 export const DesktopHomeHeroBanner: typeof import("../components/desktop/home/HeroBanner.vue")['default']
-export const DesktopHomeHome copy: typeof import("../components/desktop/home/Home copy.vue")['default']
 export const DesktopHome: typeof import("../components/desktop/home/Home.vue")['default']
 export const DesktopHomeHoroscopeCard: typeof import("../components/desktop/home/HoroscopeCard.vue")['default']
 export const DesktopHomeLottoResultCard: typeof import("../components/desktop/home/LottoResultCard.vue")['default']
@@ -131,7 +130,6 @@ export const LazyDesktopHeader: LazyComponent<typeof import("../components/deskt
 export const LazyDesktopHomeCheckLotteryCard: LazyComponent<typeof import("../components/desktop/home/CheckLotteryCard.vue")['default']>
 export const LazyDesktopHomeCommunitySection: LazyComponent<typeof import("../components/desktop/home/CommunitySection.vue")['default']>
 export const LazyDesktopHomeHeroBanner: LazyComponent<typeof import("../components/desktop/home/HeroBanner.vue")['default']>
-export const LazyDesktopHomeHome copy: LazyComponent<typeof import("../components/desktop/home/Home copy.vue")['default']>
 export const LazyDesktopHome: LazyComponent<typeof import("../components/desktop/home/Home.vue")['default']>
 export const LazyDesktopHomeHoroscopeCard: LazyComponent<typeof import("../components/desktop/home/HoroscopeCard.vue")['default']>
 export const LazyDesktopHomeLottoResultCard: LazyComponent<typeof import("../components/desktop/home/LottoResultCard.vue")['default']>

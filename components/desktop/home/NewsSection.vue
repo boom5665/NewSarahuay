@@ -48,7 +48,7 @@
               </div>
 
               <div class="news-analyze">
-                   <img src="/icon/aicrop.svg" alt="">   วิเคราะห์เลขจากข่าว
+                <img src="/icon/aicrop.svg" alt=""> วิเคราะห์เลขจากข่าว
               </div>
             </div>
           </div>
@@ -100,7 +100,16 @@ const newsList = [
     date: "28 พ.ค. 2569 08:30 น.",
     views: "856,321",
   },
-
+  {
+    id: 3,
+    category: "บทความ",
+    categoryColor: "#1F3983",
+    image: "/icon/Hightlight.png",
+    title:
+      "สถิติหวยรัฐบาลย้อนหลัง 20 งวด เลขเด่นที่ออกซ้ำมากที่สุด",
+    date: "28 พ.ค. 2569 08:30 น.",
+    views: "856,321",
+  },
 ];
 
 const filteredNews = computed(() => {
@@ -175,12 +184,12 @@ const displayNews = computed(() => {
 .news-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
-   margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .news-thumb {
   width: 8.5rem;
-  height: 5.5rem;
+  height: 5.3125rem;
   border-radius: 0.5625rem;
   flex-shrink: 0;
   position: relative;
@@ -204,7 +213,7 @@ const displayNews = computed(() => {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  height: 5.5rem;
+  height: 5.3125rem;
   justify-content: space-between;
 }
 

@@ -4,7 +4,7 @@
       <div class="card-head">
         <div class="card-head-two">
           <div class="card-title"><span class="ic"><img src="/icon/hot6.png" alt=""></span> เลขเด่นวันนี้</div>
-          <span class="card-sub">อัพเดตล่าสุด 10:30 น.</span>
+          อัพเดตล่าสุด {{ highlightNumbers.updatedAt }}
         </div>
         <div class="see-all">
           <span style="margin-right: .3125rem;">ดูทั้งหมด</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
@@ -16,24 +16,44 @@
       </div>
       <div class="hl-row">
         <div class="hl-box lead">
-          <div class="hl-label"><span><img src="/icon/star.png" alt=""></span> เลขเด่น</div>
-          <div class="hl-num">29 78 96</div>
+          <div class="hl-label">
+            <span><img src="/icon/star.png" alt=""></span>
+            เลขเด่น
+          </div>
+
+          <div class="hl-num">
+            {{ highlightNumbers.lead.join(" ") }}
+          </div>
         </div>
+
         <div class="hl-box hot">
-          <div class="hl-label"><span><img src="/icon/fire.png" alt=""></span> เลขมาแรง</div>
-          <div class="hl-num">91 17 78</div>
+          <div class="hl-label">
+            <span><img src="/icon/fire.png" alt=""></span>
+            เลขมาแรง
+          </div>
+
+          <div class="hl-num">
+            {{ highlightNumbers.hot.join(" ") }}
+          </div>
         </div>
       </div>
       <div class="hl-second">
         <div class="hl-label">เลขรอง</div>
-        <div class="nums"><span>04</span><span>55</span><span>16</span><span>45</span><span>43</span><span>23</span>
+
+        <div class="nums">
+          <span v-for="num in highlightNumbers.secondary" :key="num">
+            {{ num }}
+          </span>
         </div>
       </div>
       <div class="src-row">
-        <button class="src"><span class="si"><img src="/icon/fi1.png" alt=""></span> จากสถิติ</button>
-        <button class="src"><span class="si"><img src="/icon/fi3.png" alt=""></span> จากข่าว</button>
-        <button class="src"><span class="si"><img src="/icon/fi2.png" alt=""></span> จากโหเซียน</button>
-        <button class="src"><span class="si"><img src="/icon/fi4.png" alt=""></span> จากความฝัน</button>
+        <button v-for="source in sources" :key="source.id" class="src">
+          <span class="si">
+            <img :src="source.icon" :alt="source.title">
+          </span>
+
+          {{ source.title }}
+        </button>
       </div>
     </div>
 
@@ -41,20 +61,51 @@
 </template>
 
 <script setup>
+const highlightNumbers = ref({
+  updatedAt: "10:30 น.",
+  lead: ["29", "78", "96"],
+  hot: ["91", "17", "78"],
+  secondary: ["04", "55", "16", "45", "43", "23"],
+});
+
+const sources = ref([
+  {
+    id: 1,
+    icon: "/icon/fi1.png",
+    title: "จากสถิติ",
+  },
+  {
+    id: 2,
+    icon: "/icon/fi3.png",
+    title: "จากข่าว",
+  },
+  {
+    id: 3,
+    icon: "/icon/fi2.png",
+    title: "จากโหเซียน",
+  },
+  {
+    id: 4,
+    icon: "/icon/fi4.png",
+    title: "จากความฝัน",
+  },
+]);
+
 const newsList = ref([
   {
+    id: 1,
     number: "89",
     title: "เลขเด็ดแม่น้ำหนึ่ง",
     desc: "เลขดังงวดนี้มาแรง",
   },
-
   {
+    id: 2,
     number: "24",
     title: "เลขปฏิทินจีน",
     desc: "เลขเด็ดจากสายมู",
   },
-
   {
+    id: 3,
     number: "55",
     title: "เลขฝันแม่น",
     desc: "รวมเลขจากความฝัน",
@@ -66,7 +117,7 @@ const newsList = ref([
 .lucky-news-card {
   padding: 1rem;
   border-radius: 1rem;
-  border: 1px solid #31304C;
+  border: .0625rem solid #31304C;
   background: linear-gradient(180deg, #211F35 0%, #02062B 100%);
   color: white;
 }
@@ -81,18 +132,18 @@ const newsList = ref([
   border-radius: var(--radius-sm);
   padding: .5rem .5rem;
   text-align: center;
-  border: 1px solid var(--line)
+  border: .0625rem solid var(--line)
 }
 
 .hl-box.lead {
   border-radius: .3125rem;
-  border: 1px solid #3D382D;
+  border: .0625rem solid #3D382D;
   background: linear-gradient(270deg, #1C1525 0%, #312A24 50%, #1C1525 100%);
 }
 
 .hl-box.hot {
-  border-radius: 8px;
-  border: 1px solid #2E4632;
+  border-radius: .3125rem;
+  border: .0625rem solid #2E4632;
   background: #1D2E28;
 }
 
@@ -104,6 +155,7 @@ const newsList = ref([
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: .4375rem;
+
   img {
     width: 1.25rem;
     height: 1.25rem;
@@ -114,22 +166,22 @@ const newsList = ref([
   font-family: var(--head);
   font-weight: 800;
   font-size: 1.1875rem;
-  letter-spacing: 2px;
+
   white-space: nowrap
 }
 
 .lead .hl-num {
   color: var(--gold);
 
-  border-radius: var(--spacing-4, 4px);
+  border-radius: .25rem;
   background: #473A2A;
-  padding: 8px;
+  padding: .5rem;
   font-size: 2rem;
 }
 
 .hot .hl-num {
   color: var(--green);
-  border-radius: var(--spacing-4, 4px);
+  border-radius: .25rem;
   background: #265243;
   padding: .5rem;
   font-size: 2rem;
@@ -137,8 +189,8 @@ const newsList = ref([
 
 .hl-second {
   margin-top: 1rem;
-  border-radius: 8px;
-  border: 1px solid #1A3445;
+  border-radius: .5rem;
+  border: .0625rem solid #1A3445;
   background: #092524;
   padding: .5rem;
 }
@@ -151,7 +203,7 @@ const newsList = ref([
   display: flex;
   background: #253F51;
   padding: .5rem;
-  border-radius: 5px;
+  border-radius: .3125rem;
   justify-content: center;
   gap: 1rem;
   font-family: var(--head);
@@ -167,7 +219,7 @@ const newsList = ref([
   margin-top: .875rem;
   background: linear-gradient(111deg, #212D4B -0.96%, #120E29 126.93%);
 
-  border-radius: 5px;
+  border-radius: .3125rem;
 }
 
 .src {
@@ -175,7 +227,7 @@ const newsList = ref([
   flex-direction: column;
   align-items: center;
   gap: .375rem;
-  padding: .5rem 0px;
+  padding: .5rem 0rem;
   font-size: 1rem;
   color: var(--white);
   transition: .15s;

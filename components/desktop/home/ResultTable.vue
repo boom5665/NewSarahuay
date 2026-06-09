@@ -13,27 +13,49 @@
           </svg>
         </div>
         </div>
-        <div class="draw-date">งวดวันที่ 16 พฤษภาคม 2569</div>
-        <div class="prize-grid">
-          <div class="prize first">
-            <div class="prize-l st"><span class="st"><img src="/icon/Cup.png" class="icon" alt=""></span> รางวัลที่ 1
-              <span class="st"><img src="/icon/Cup.png" class="icon" alt=""></span>
-            </div>
-            <div class="prize-n "> <span class="horo-title">123456</span></div>
-          </div>
-          <div class="prize first">
-            <div class="prize-l"> เลขหน้า 3 ตัว </div>
-            <div class="prize-n">123 456</div>
-          </div>
-          <div class="prize first">
-            <div class="prize-l"> เลขท้าย 3 ตัว </div>
-            <div class="prize-n">123 456</div>
-          </div>
-          <div class="prize first">
-            <div class="prize-l"> เลขท้าย 2 ตัว </div>
-            <div class="prize-n font-two">22</div>
-          </div>
-        </div>
+        <div class="draw-date">
+  งวดวันที่ {{ lotteryResult.drawDate }}
+</div>
+<div class="prize-grid">
+  <div class="prize first">
+    <div class="prize-l st">
+      <span class="st">
+        <img src="/icon/Cup.png" class="icon" alt="">
+      </span>
+      รางวัลที่ 1
+      <span class="st">
+        <img src="/icon/Cup.png" class="icon" alt="">
+      </span>
+    </div>
+
+    <div class="prize-n">
+      <span class="horo-title">
+        {{ lotteryResult.firstPrize }}
+      </span>
+    </div>
+  </div>
+
+  <div class="prize first">
+    <div class="prize-l">เลขหน้า 3 ตัว</div>
+    <div class="prize-n">
+      {{ lotteryResult.front3.join(" ") }}
+    </div>
+  </div>
+
+  <div class="prize first">
+    <div class="prize-l">เลขท้าย 3 ตัว</div>
+    <div class="prize-n">
+      {{ lotteryResult.back3.join(" ") }}
+    </div>
+  </div>
+
+  <div class="prize first">
+    <div class="prize-l">เลขท้าย 2 ตัว</div>
+    <div class="prize-n font-two">
+      {{ lotteryResult.back2 }}
+    </div>
+  </div>
+</div>
       </div>
 
       <div>
@@ -46,35 +68,65 @@
 
           </div>
         </div>
-        <div class="stat-grid">
-          <div class="stat-box">
-            <div class="stat-t">เลขออกบ่อย</div>
-            <div class="stat-d">ออกบ่อยที่สุด 10 งวด</div>
-            <div class="stat-nums">
-              <span>12</span><span>34</span><span>47</span><span>56</span><span>78</span><span>27</span>
-            </div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-t">เลขหายไปนาน</div>
-            <div class="stat-d">ไม่ออกนานที่สุด 30 งวด</div>
-            <div class="stat-nums">
-              <span>12</span><span>34</span><span>47</span><span>56</span><span>78</span><span>27</span>
-            </div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-t">เลขท้าย 2 ตัว</div>
-            <div class="stat-d">มาแรงล่าสุด 10 งวด</div>
-            <div class="stat-nums">
-              <span>12</span><span>34</span><span>47</span><span>56</span><span>78</span><span>27</span>
-            </div>
-          </div>
-        </div>
+    <div class="stat-grid">
+  <div
+    v-for="(stat, index) in lotteryResult.statistics"
+    :key="index"
+    class="stat-box"
+  >
+    <div class="stat-t">
+      {{ stat.title }}
+    </div>
+
+    <div class="stat-d">
+      {{ stat.description }}
+    </div>
+
+    <div class="stat-nums">
+      <span
+        v-for="num in stat.numbers"
+        :key="num"
+      >
+        {{ num }}
+      </span>
+    </div>
+  </div>
+</div>
       </div>
 
     </div>
   </div>
 </template>
+<script setup>
+import { ref } from "vue";
 
+const lotteryResult = ref({
+  drawDate: "16 พฤษภาคม 2569",
+
+  firstPrize: "123456",
+  front3: ["123", "456"],
+  back3: ["123", "456"],
+  back2: "22",
+
+  statistics: [
+    {
+      title: "เลขออกบ่อย",
+      description: "ออกบ่อยที่สุด 10 งวด",
+      numbers: ["12", "34", "47", "56", "78", "27"],
+    },
+    {
+      title: "เลขหายไปนาน",
+      description: "ไม่ออกนานที่สุด 30 งวด",
+      numbers: ["12", "34", "47", "56", "78", "27"],
+    },
+    {
+      title: "เลขท้าย 2 ตัว",
+      description: "มาแรงล่าสุด 10 งวด",
+      numbers: ["12", "34", "47", "56", "78", "27"],
+    },
+  ],
+});
+</script>
 <style scoped lang="scss">
 .result-table {
   background: var(--bg-content, linear-gradient(293deg, #120E29 2.26%, #212D4B 109.49%));

@@ -141,11 +141,11 @@ if (canonical.enable) {
 }
 
 .desktop-layout {
-  padding-top: 24px ;
+  padding-top: 1rem;
 }
 
 .mobile-layout {
-  padding: 8px 0 24px;
+  padding: 0.5rem 0 1.5rem;
 }
 
 

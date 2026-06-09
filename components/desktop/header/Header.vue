@@ -120,7 +120,7 @@ watch(locale, (val) => {
   max-width: 101.25rem; // 1620px
   width: 100%;
   height: 5rem;
-  padding: 0.625rem 0;
+  padding: 0.625rem 1.5rem;
 }
 
 .logo img {
@@ -130,7 +130,7 @@ watch(locale, (val) => {
 
 .menu-icons {
   display: flex;
-  gap: 1rem;
+  gap: 0rem;
 }
 
 .menu-item {
@@ -140,7 +140,7 @@ watch(locale, (val) => {
   gap: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.4063rem 1rem;
+  padding: .375rem 1.2rem;
   color: #737373;
 }
 

@@ -7,7 +7,7 @@
 
       </div>
       <div class="see-all">
-        <span style="margin-right: 5px;">ไพ่อื่น ๆ</span> <svg xmlns="http://www.w3.org/2000/svg" width="7" height="13"
+        <span style="margin-right: 5px;">ดูไพ่อื่น ๆ</span> <svg xmlns="http://www.w3.org/2000/svg" width="7" height="13"
           viewBox="0 0 7 13" fill="none">
           <path d="M0.75 0.750546L5.45003 6.0306L0.75 11.3105" stroke="#FFDE6E" stroke-width="1.5"
             stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />

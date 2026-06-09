@@ -3,7 +3,7 @@
     <div class="card card-pad">
       <div class="card-head">
         <div class="card-head-two">
-          <div class="card-title"><span class="ic"><img src="/icon/hot5.png" alt=""></span> เลขเด่นวันนี้</div>
+          <div class="card-title"><span class="ic"><img src="/icon/hot5.png" alt=""></span> เลขเด็ดจากความฝัน</div>
 
         </div>
 

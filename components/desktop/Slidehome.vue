@@ -1,19 +1,13 @@
 <template>
   <div>
     <div>
-      <!-- header -->
-      <div class="d-justi header">
-        <h2>
-          <div class="text-top">{{ $t("Latestnews") }}</div>
-        </h2>
-        <div>{{ today }}</div>
-      </div>
+
 
       <div class="imgcard">
 
         <div class="content-left">
           <Swiper :modules="[Autoplay, Pagination]" :slides-per-view="1" :loop="true"
-            :autoplay="{ delay: 200000000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
+            :autoplay="{ delay: 5000, pauseOnMouseEnter: true }" :pagination="{ clickable: true }">
             <SwiperSlide v-for="(item, index) in newsList" :key="item.id || index">
               <NuxtLink :to="`/detailsnew/${item.id}`">
                 <div class="main-news">
@@ -25,17 +19,28 @@
                   </div>
 
                   <div class="news-info">
-                    <span class="category">{{ item.category }}</span>
 
-                    <div v-if="loading">
-                      <div class="sk-line w40"></div>
-                    </div>
+                    <div class="news-text">
 
-                    <div v-else>
+
+
+                      <span class="category">{{ item.category }}</span>
+
                       <h2 class="title">
                         {{ item.title }}
                       </h2>
+
+                      <div class="subtitle">
+                        {{ item.subtitle }}
+                      </div>
+
+                      <div class="subtitle-in">
+                        {{ item.subin }}
+                      </div>
+
                     </div>
+
+
                   </div>
                 </div>
               </NuxtLink>
@@ -43,34 +48,7 @@
           </Swiper>
         </div>
 
-        <div class="content-right">
-          <NuxtLink v-for="(item, index) in sideNews" :key="item.id || index" :to="`/detailsnew/${item.id}`">
-            <div class="side-item">
-              <div class="thumb">
-                <img class="img" :src="item.image" />
-              </div>
 
-              <div class="text">
-                <div v-if="loading">
-                  <div class="sk-line w40"></div>
-                </div>
-
-                <div v-else class="side-title">
-                  {{ item.title }}
-                </div>
-
-                <div class="d-justi">
-                  <div v-if="loading" class="sk-line w20"></div>
-                  <span v-else class="time"> <span><img class="clock" src="/icon/clock.svg" alt=""></span>{{ item.time
-                  }}</span>
-
-                  <div v-if="loading" class="sk-line w20"></div>
-                  <span v-else class="time-col"> {{ item.category }}</span>
-                </div>
-              </div>
-            </div>
-          </NuxtLink>
-        </div>
       </div>
     </div>
   </div>
@@ -108,7 +86,6 @@ const newsList = computed(() => {
     }));
 });
 
-const today = new Date().toLocaleDateString("th-TH");
 
 setTimeout(() => {
   loading.value = false;
@@ -117,9 +94,8 @@ setTimeout(() => {
 <style scoped lang="scss">
 .imgcard {
   display: grid;
-  grid-template-columns: 700px 1fr;
-  gap: 16px;
-  margin-top: 1rem;
+  grid-template-columns: 100% 1fr;
+
 }
 
 .header {
@@ -160,6 +136,7 @@ setTimeout(() => {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 1rem;
   }
 
   .img-overlay {
@@ -172,132 +149,75 @@ setTimeout(() => {
   }
 
   .news-info {
-    padding: 1.5rem 1rem;
-    margin-bottom: 0rem;
+    padding: 0.5rem 2rem;
     position: absolute;
-    bottom: 0;
-    width: 40rem;
-    height: 10rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    height: 100%;
 
+
+  }
+
+  .news-text {
+    text-align: center;
+    margin-top: 4rem;
   }
 
   .category {
-    font-size: 0.875rem;
     color: white;
-    margin-bottom: 4px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    animation: heroSlideIn-f2b3f371 0.8s ease-out;
+    text-align: center;
+    margin-top: 1rem;
   }
 
   .title {
-    font: var(--HeroHeadCardPC);
-    color: #ffff;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    line-height: 1.4;
-    max-height: 2.6em;
+    font-size: 3.4375rem;
+    font-weight: 700;
+    color: #F6AE1D;
+    animation: heroSlideIn-f2b3f371 0.8s ease-out;
+  }
+
+  .subtitle {
+    color: white;
+    font-size: 2.125rem;
+    animation: heroSlideIn-f2b3f371 0.8s ease-out 0.1s both;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .subtitle-in {
+    color: white;
+    font-size: 1.5rem;
+    animation: heroSlideIn-f2b3f371 0.8s ease-out 0.1s both;
+    text-align: center;
+    margin-top: 1rem;
   }
 }
 
-.content-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.side-item {
-  display: flex;
-  gap: 1rem;
-  height: 5.16rem;
-}
-
-.thumb {
-  width: 8.125rem;
-  height: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 8px;
-
-  .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.side-title {
-  font: var(--HeadCardPC);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.time {
-  display: inline-block;
-  min-height: 14px;
-  font: var(--TimeCardPC);
-}
-
-.time-col {
-  display: inline-block;
-  min-height: 14px;
-  font: var(--TimeCardPC);
-  color: #008f6c;
-}
-
-/* util */
-.d-justi {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.text-top {
-  font-size: 1.375rem;
-  font-weight: 700;
-}
-
-.addtext {
-  text-align: center;
-  padding: 0.625rem;
-  background: var(--color-black-0, #fff);
-  color: #000;
-  font: var(--ButtonMainPC);
-  border-radius: var(--radius-md, 8px);
-  border: 1px solid var(--color-black-200, #eee);
-}
 
 :deep(.swiper-pagination-horizontal) {
   bottom: 0.5rem;
   top: var(--swiper-pagination-top, auto);
-  left: 15px;
   width: 100%;
-  text-align: justify;
+  text-align: center;
+
 }
 
 :deep(.swiper-pagination-bullet) {
-  background: #ccc !important;
+  background: white !important;
   opacity: 1;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 1.125rem !important;
 }
 
 :deep(.swiper-pagination-bullet-active) {
-  background: #008f6c !important;
-  width: 1.125rem;
-  height: 0.5rem;
+  background: #FFC143 !important;
+  width: 3.125rem;
+  height: 1rem;
   border-radius: var(--radius-md, 8px);
 }
 

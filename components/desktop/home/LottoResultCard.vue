@@ -60,7 +60,7 @@ const lotteries = [
 .lottery-card {
   position: relative;
 
-  height: 5.375rem;
+  height: 5.625rem;
 
   display: flex;
   align-items: center;

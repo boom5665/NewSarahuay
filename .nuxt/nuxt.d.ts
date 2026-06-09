@@ -1,6 +1,6 @@
 /// <reference types="@pinia/nuxt" />
-/// <reference types="@nuxtjs/sitemap" />
 /// <reference types="@nuxtjs/robots" />
+/// <reference types="@nuxtjs/sitemap" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference path="types/nitro-layouts.d.ts" />

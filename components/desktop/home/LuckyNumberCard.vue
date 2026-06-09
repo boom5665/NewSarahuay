@@ -3,11 +3,11 @@
     <div class="card card-pad">
       <div class="card-head">
         <div class="card-head-two">
-          <div class="card-title"><span class="ic"><img src="/icon/hot4.png" alt=""></span> เลขเด่นวันนี้</div>
-          <span class="card-sub">อัพเดตล่าสุด 10:30 น.</span>
+          <div class="card-title"><span class="ic"><img src="/icon/hot4.png" alt=""></span> ดวงวันนี้</div>
+          <span class="card-sub">ดูดวงรายวัน 12 ราศี</span>
         </div>
         <div class="see-all">
-          <span style="margin-right: 5px;">ดูทั้งหมด</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
+          <span style="margin-right: 5px;">ดูดวงเพิ่มเติม</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
             height="13" viewBox="0 0 7 13" fill="none">
             <path d="M0.75 0.750546L5.45003 6.0306L0.75 11.3105" stroke="#FFDE6E" stroke-width="1.5"
               stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
