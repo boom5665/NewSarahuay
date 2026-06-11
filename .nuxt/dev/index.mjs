@@ -3214,7 +3214,22 @@ _PHCKn_1ywU7iQ5VKB_8MpyRY1BvtFuy5NkbVb_haLo,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3c392-oBSM140u0oN3ymzOOeM7Bf1nzaU\"",
+    "mtime": "2026-06-11T09:07:32.125Z",
+    "size": 246674,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"f82c2-SwZWfhG5AF92IXn/m4j9In7wq7M\"",
+    "mtime": "2026-06-11T09:07:32.125Z",
+    "size": 1016514,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -6424,11 +6439,13 @@ const _OBjovh = defineEventHandler(async (e) => {
   };
 });
 
+const _lazy_0ZrZr_ = () => Promise.resolve().then(function () { return _healthz$1; });
 const _lazy_w10mQ2 = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: _HFji1A, lazy: false, middleware: true, method: undefined },
   { route: '', handler: _H9XScQ, lazy: false, middleware: true, method: undefined },
+  { route: '/api/ healthz', handler: _lazy_0ZrZr_, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_w10mQ2, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '', handler: __gcVui, lazy: false, middleware: true, method: undefined },
@@ -6841,6 +6858,15 @@ const sources = {};
 const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   sources: sources
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _healthz = defineEventHandler(() => {
+  return { status: "ok" };
+});
+
+const _healthz$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _healthz
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

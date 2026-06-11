@@ -1,0 +1,90 @@
+name: Build & Push Docker on Tag
+
+on:
+  push:
+    tags:
+      - 'dev-*'
+      - 'devv2-*'
+      - 'test-*' 
+      - 'demo-*'
+      - 'prod-*' 
+  workflow_dispatch:
+
+env:
+  IMAGE_REPO: ghcr.io/boom5665/NewSarahuay
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Extract tag metadata
+        id: meta
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          CHANNEL="${TAG%-*}"
+          SHORT_SHA="${GITHUB_SHA::7}"
+
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "channel=${CHANNEL}" >> "$GITHUB_OUTPUT"
+          echo "sha_tag=sha-${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: boom5665
+          password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Check whether commit image already exists
+        id: existing
+        shell: bash
+        run: |
+          if docker buildx imagetools inspect "${IMAGE_REPO}:${{ steps.meta.outputs.sha_tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and push image
+        if: steps.existing.outputs.exists != 'true'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE_REPO }}:${{ steps.meta.outputs.tag }}
+            ${{ env.IMAGE_REPO }}:${{ steps.meta.outputs.sha_tag }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ steps.meta.outputs.tag }}
+            io.nuxt-runtime.channel=${{ steps.meta.outputs.channel }}
+
+      - name: Reuse existing digest for the new tag
+        if: steps.existing.outputs.exists == 'true'
+        shell: bash
+        run: |
+          docker buildx imagetools create \
+            --tag "${IMAGE_REPO}:${{ steps.meta.outputs.tag }}" \
+            "${IMAGE_REPO}:${{ steps.meta.outputs.sha_tag }}"
+
+      - name: Print pushed image references
+        shell: bash
+        run: |
+          echo "✅ Image ready for deployment"
+          echo "Channel: ${{ steps.meta.outputs.channel }}"
+          echo "Release tag: ${IMAGE_REPO}:${{ steps.meta.outputs.tag }}"
+          echo "Commit tag: ${IMAGE_REPO}:${{ steps.meta.outputs.sha_tag }}"
+          echo "Package: https://github.com/${{ github.repository }}/pkgs/container/nuxt-runtimeconfig"
