@@ -144,9 +144,7 @@ if (canonical.enable) {
   padding-top: 1rem;
 }
 
-.mobile-layout {
-  padding: 0.5rem 0 1.5rem;
-}
+
 
 
 </style>

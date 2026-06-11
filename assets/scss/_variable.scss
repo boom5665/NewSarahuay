@@ -152,7 +152,7 @@
     --red: #ff5d5d;
     --text: #eceaf6;
     --muted: #8b88a6;
-    --muted-2: #BDBDBD;
+    --muted-2: #bdbdbd;
     --radius: 16px;
     --radius-sm: 11px;
     --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.8);
@@ -164,7 +164,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: .875rem;
+    margin-bottom: 0.875rem;
 }
 .card-title {
     display: flex;
@@ -196,7 +196,49 @@
 }
 
 .card-sub {
-margin-top: .4375rem;
+    margin-top: 0.4375rem;
     font: var(--TimeCardPC);
     color: var(--color-black-400, #bdbdbd);
+}
+@media (max-width: 1023px) {
+    .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.875rem;
+    }
+    .card-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--head);
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    .card-title .ic {
+        color: var(--gold);
+    }
+    .see-all {
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        transition: 0.15s;
+        color: #ffde6e;
+        font: var(--TimeCard);
+    }
+    .see-all:hover {
+        color: var(--gold);
+    }
+    .card-head-two {
+        display: flex;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .card-sub {
+        margin-top: 0.4375rem;
+        font: var(--TimeCard);
+        color: var(--color-black-400, #bdbdbd);
+    }
 }

@@ -115,8 +115,8 @@ const newsList = ref([
 
 <style scoped lang="scss">
 .lucky-news-card {
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   border: .0625rem solid #31304C;
   background: linear-gradient(180deg, #211F35 0%, #02062B 100%);
   color: white;
@@ -125,7 +125,7 @@ const newsList = ref([
 .hl-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem
+  gap: 0.5rem
 }
 
 .hl-box {
@@ -176,7 +176,7 @@ const newsList = ref([
   border-radius: .25rem;
   background: #473A2A;
   padding: .5rem;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .hot .hl-num {
@@ -184,11 +184,11 @@ const newsList = ref([
   border-radius: .25rem;
   background: #265243;
   padding: .5rem;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .hl-second {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   border-radius: .5rem;
   border: .0625rem solid #1A3445;
   background: #092524;
@@ -205,10 +205,10 @@ const newsList = ref([
   padding: .5rem;
   border-radius: .3125rem;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   font-family: var(--head);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1rem;
   color: #bfeede
 }
 
@@ -228,7 +228,7 @@ const newsList = ref([
   align-items: center;
   gap: .375rem;
   padding: .5rem 0rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: var(--white);
   transition: .15s;
   background: transparent;
@@ -245,6 +245,12 @@ const newsList = ref([
   height: 1.625rem;
   display: grid;
   place-items: center;
-  color: var(--gold)
+
+  color: var(--gold);
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 </style>

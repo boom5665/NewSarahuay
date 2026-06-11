@@ -69,7 +69,17 @@ interface _GlobalComponents {
   MobileDetailnewNew: typeof import("../../components/mobile/detailnew/New.vue")['default']
   MobileFooter: typeof import("../../components/mobile/footer/Footer.vue")['default']
   MobileHeader: typeof import("../../components/mobile/header/Header.vue")['default']
+  MobileHomeCheckLotteryCard: typeof import("../../components/mobile/home/CheckLotteryCard.vue")['default']
+  MobileHomeCommunitySection: typeof import("../../components/mobile/home/CommunitySection.vue")['default']
+  MobileHomeHeroBanner: typeof import("../../components/mobile/home/HeroBanner.vue")['default']
   MobileHome: typeof import("../../components/mobile/home/Home.vue")['default']
+  MobileHomeHoroscopeCard: typeof import("../../components/mobile/home/HoroscopeCard.vue")['default']
+  MobileHomeLottoResultCard: typeof import("../../components/mobile/home/LottoResultCard.vue")['default']
+  MobileHomeLuckyNewsCard: typeof import("../../components/mobile/home/LuckyNewsCard.vue")['default']
+  MobileHomeLuckyNumberCard: typeof import("../../components/mobile/home/LuckyNumberCard.vue")['default']
+  MobileHomeNewsSection: typeof import("../../components/mobile/home/NewsSection.vue")['default']
+  MobileHomeResultTable: typeof import("../../components/mobile/home/ResultTable.vue")['default']
+  MobileHomeTarotSection: typeof import("../../components/mobile/home/TarotSection.vue")['default']
   MobileLotto: typeof import("../../components/mobile/lotto/Lotto.vue")['default']
   MobileProfile: typeof import("../../components/mobile/profile/Profile.vue")['default']
   MobileReward: typeof import("../../components/mobile/reward/Reward.vue")['default']
@@ -153,7 +163,17 @@ interface _GlobalComponents {
   LazyMobileDetailnewNew: LazyComponent<typeof import("../../components/mobile/detailnew/New.vue")['default']>
   LazyMobileFooter: LazyComponent<typeof import("../../components/mobile/footer/Footer.vue")['default']>
   LazyMobileHeader: LazyComponent<typeof import("../../components/mobile/header/Header.vue")['default']>
+  LazyMobileHomeCheckLotteryCard: LazyComponent<typeof import("../../components/mobile/home/CheckLotteryCard.vue")['default']>
+  LazyMobileHomeCommunitySection: LazyComponent<typeof import("../../components/mobile/home/CommunitySection.vue")['default']>
+  LazyMobileHomeHeroBanner: LazyComponent<typeof import("../../components/mobile/home/HeroBanner.vue")['default']>
   LazyMobileHome: LazyComponent<typeof import("../../components/mobile/home/Home.vue")['default']>
+  LazyMobileHomeHoroscopeCard: LazyComponent<typeof import("../../components/mobile/home/HoroscopeCard.vue")['default']>
+  LazyMobileHomeLottoResultCard: LazyComponent<typeof import("../../components/mobile/home/LottoResultCard.vue")['default']>
+  LazyMobileHomeLuckyNewsCard: LazyComponent<typeof import("../../components/mobile/home/LuckyNewsCard.vue")['default']>
+  LazyMobileHomeLuckyNumberCard: LazyComponent<typeof import("../../components/mobile/home/LuckyNumberCard.vue")['default']>
+  LazyMobileHomeNewsSection: LazyComponent<typeof import("../../components/mobile/home/NewsSection.vue")['default']>
+  LazyMobileHomeResultTable: LazyComponent<typeof import("../../components/mobile/home/ResultTable.vue")['default']>
+  LazyMobileHomeTarotSection: LazyComponent<typeof import("../../components/mobile/home/TarotSection.vue")['default']>
   LazyMobileLotto: LazyComponent<typeof import("../../components/mobile/lotto/Lotto.vue")['default']>
   LazyMobileProfile: LazyComponent<typeof import("../../components/mobile/profile/Profile.vue")['default']>
   LazyMobileReward: LazyComponent<typeof import("../../components/mobile/reward/Reward.vue")['default']>

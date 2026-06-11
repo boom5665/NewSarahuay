@@ -209,15 +209,15 @@ setTimeout(() => {
 :deep(.swiper-pagination-bullet) {
   background: white !important;
   opacity: 1;
-  width: 1rem;
-  height: 1rem;
-  margin: 0 1.125rem !important;
+  width: .5rem;
+  height: .5rem;
+  margin: 0 .5rem !important;
 }
 
 :deep(.swiper-pagination-bullet-active) {
   background: #FFC143 !important;
-  width: 3.125rem;
-  height: 1rem;
+  width: 1.875rem;
+  height: .5rem;
   border-radius: var(--radius-md, 8px);
 }
 

@@ -25,7 +25,7 @@
     </div>
 
     <!-- Middle -->
-    <div class="footer-middle">
+    <!-- <div class="footer-middle">
 
       <div class="security-box">
         <img src="/footer/ChatGPT.png">
@@ -53,10 +53,10 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
 
     <!-- Banner -->
-    <div class="footer-banner">
+    <!-- <div class="footer-banner">
 
       <div class="banner-left">
         <img src="/footer/banner-footer.png">
@@ -77,8 +77,10 @@
 
       </div>
 
+    </div> -->
+    <div class="footer-logo">
+      <img src="/footer/vec1.png" alt="">
     </div>
-
     <!-- Bottom -->
     <div class="footer-bottom">
 
@@ -189,11 +191,16 @@ const menus = [
   max-width: 101.25rem;
   width: 100%;
   margin: auto;
-  padding: 1rem;
+  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border-radius: var(--radius-lg, 16px) var(--radius-lg, 16px) 0 0;
+  background: #080838;
+
+
+  // background-image: url(/icon/bthai.png);
 }
 
 .footer-top {
@@ -206,6 +213,7 @@ const menus = [
 .footer-desc {
   color: #FFDE6E;
   font: var(--PageTitlePC);
+  margin-bottom: .5rem;
 }
 
 .desc {
@@ -363,9 +371,9 @@ const menus = [
 }
 
 .footer-bottom {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  gap: 1rem;
 }
 
 .update-time {
