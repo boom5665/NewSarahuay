@@ -95,30 +95,63 @@
 import { ref } from "vue";
 
 const lotteryResult = ref({
-  drawDate: "16 พฤษภาคม 2569",
+  drawDate: "",
+  firstPrize: "",
+  front3: [],
+  back3: [],
+  back2: "",
+  statistics: [],
+});
 
-  firstPrize: "123456",
-  front3: ["123", "456"],
-  back3: ["123", "456"],
-  back2: "22",
 
-  statistics: [
-    {
-      title: "เลขออกบ่อย",
-      description: "ออกบ่อยที่สุด 10 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-    {
-      title: "เลขหายไปนาน",
-      description: "ไม่ออกนานที่สุด 30 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-    {
-      title: "เลขท้าย 2 ตัว",
-      description: "มาแรงล่าสุด 10 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-  ],
+const { $axios } = useNuxtApp();
+
+const getLatestThaiResult = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/latest_thai_result");
+
+    const data = res.data;
+    const result = data.result;
+
+    lotteryResult.value.drawDate = data.lotto_date;
+    lotteryResult.value.firstPrize = result.top6?.[0] || "";
+    lotteryResult.value.front3 = result.bottom3?.slice(0, 2) || [];
+    lotteryResult.value.back3 = result.bottom3?.slice(2, 4) || [];
+    lotteryResult.value.back2 = result.bottom2?.[0] || "";
+  } catch (err) {
+    console.error(err);
+  }
+};
+const getFrequentNumbers = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/frequent-numbers");
+
+    lotteryResult.value.statistics = [
+      {
+        title: "เลขออกบ่อย",
+        description: "ออกบ่อยที่สุด 10 งวด",
+        numbers: res.data.most_frequent || [],
+      },
+      {
+        title: "เลขหายไปนาน",
+        description: "ไม่ออกนานที่สุด 30 งวด",
+        numbers: res.data.least_frequent || [],
+      },
+      {
+        title: "เลขท้าย 2 ตัว",
+        description: "มาแรงล่าสุด 10 งวด",
+        numbers: res.data.two_bottom || [],
+      },
+    ];
+  } catch (err) {
+    console.error(err);
+  }
+};
+onMounted(async () => {
+  await Promise.all([
+    getLatestThaiResult(),
+    getFrequentNumbers(),
+  ]);
 });
 </script>
 <style scoped lang="scss">

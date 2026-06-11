@@ -26,7 +26,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/warn.dev.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-if-layout-used.js")> &
   InjectionType<typeof import("../../plugins/pinia.js")> &
-  InjectionType<typeof import("../../plugins/axios.js")> &
+  InjectionType<typeof import("../../plugins/axios")> &
   InjectionType<typeof import("../../plugins/vue-final-modal.js")> &
   InjectionType<typeof import("../../plugins/methods.js")> &
   InjectionType<typeof import("../../plugins/i18n")> &

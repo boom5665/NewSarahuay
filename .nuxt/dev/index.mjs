@@ -712,6 +712,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
+    "baseURL": "https://dev-api.sarahuay.com",
     "nuxt-robots": {
       "version": "6.0.8",
       "isNuxtContentV2": false,

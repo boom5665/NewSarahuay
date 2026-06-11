@@ -47,7 +47,7 @@ export default defineNuxtConfig({
     },
 
     {
-      src: "~/plugins/axios.js",
+      src: "~/plugins/axios.ts",
       mode: "client",
     },
 
@@ -102,7 +102,9 @@ export default defineNuxtConfig({
   css: ["@/assets/scss/main.scss"],
 
   runtimeConfig: {
-    public: {},
+    public: {
+      baseURL: process.env.NUXT_PUBLIC_BASE_URL,
+    },
   },
 
   alias: {},

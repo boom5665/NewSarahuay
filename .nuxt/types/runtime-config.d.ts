@@ -61,6 +61,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
   }
   interface SharedPublicRuntimeConfig {
+   baseURL: string,
+
    "nuxt-robots": {
       version: string,
 

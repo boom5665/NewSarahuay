@@ -62,12 +62,37 @@
 
 <script setup>
 const highlightNumbers = ref({
-  updatedAt: "10:30 น.",
-  lead: ["29", "78", "96"],
-  hot: ["91", "17", "78"],
-  secondary: ["04", "55", "16", "45", "43", "23"],
+  updatedAt: "",
+  lead: [],
+  hot: [],
+  secondary: [],
 });
 
+const { $axios } = useNuxtApp();
+
+const getHighlightNumbers = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/hot-numbers");
+
+    const numbers = res.data;
+
+    highlightNumbers.value = {
+      updatedAt: new Date().toLocaleTimeString("th-TH", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }) + " น.",
+      lead: numbers.slice(0, 3),
+      hot: numbers.slice(3, 6),
+      secondary: numbers.slice(6),
+    };
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+onMounted(() => {
+  getHighlightNumbers();
+});
 const sources = ref([
   {
     id: 1,
@@ -91,26 +116,6 @@ const sources = ref([
   },
 ]);
 
-const newsList = ref([
-  {
-    id: 1,
-    number: "89",
-    title: "เลขเด็ดแม่น้ำหนึ่ง",
-    desc: "เลขดังงวดนี้มาแรง",
-  },
-  {
-    id: 2,
-    number: "24",
-    title: "เลขปฏิทินจีน",
-    desc: "เลขเด็ดจากสายมู",
-  },
-  {
-    id: 3,
-    number: "55",
-    title: "เลขฝันแม่น",
-    desc: "รวมเลขจากความฝัน",
-  },
-]);
 </script>
 
 <style scoped lang="scss">

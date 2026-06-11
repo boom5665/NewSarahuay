@@ -39,80 +39,79 @@
 </template>
 
 <script setup>
-const zodiacs = [
-  {
+const zodiacs = ref([]);
+
+const zodiacMap = {
+  Aries: {
     name: "ราศีเมษ",
-    desc: "การเงินดี",
     bg: "/zodiac/aries.png",
-    r: 4,
   },
-  {
+  Taurus: {
     name: "ราศีพฤษภ",
-    desc: "โชคลาภเด่น",
     bg: "/zodiac/taurus.png",
-    r: 5,
   },
-  {
+  Gemini: {
     name: "ราศีเมถุน",
-    desc: "มีเกณฑ์เดินทาง",
     bg: "/zodiac/gemini.png",
-    r: 3,
   },
-  {
+  Cancer: {
     name: "ราศีกรกฎ",
-    desc: "อารมณ์แปรปรวน",
     bg: "/zodiac/cancer.png",
-    r: 4,
   },
-  {
+  Leo: {
     name: "ราศีสิงห์",
-    desc: "งานโดดเด่น",
     bg: "/zodiac/leo.png",
-    r: 5,
   },
-  {
+  Virgo: {
     name: "ราศีกันย์",
-    desc: "ระวังการใช้จ่าย",
     bg: "/zodiac/virgo.png",
-    r: 3,
   },
-  {
+  Libra: {
     name: "ราศีตุลย์",
-    desc: "คนช่วยเหลือ",
     bg: "/zodiac/libra.png",
-    r: 4,
   },
-  {
+  Scorpio: {
     name: "ราศีพิจิก",
-    desc: "ระวังคำพูด",
     bg: "/zodiac/scorpio.png",
-    r: 3,
   },
-  {
+  Sagittarius: {
     name: "ราศีธนู",
-    desc: "การเงินคล่อง",
     bg: "/zodiac/sagittarius.png",
-    r: 4,
   },
-  {
+  Capricorn: {
     name: "ราศีมังกร",
-    desc: "ความรักสดใส",
     bg: "/zodiac/capricorn.png",
-    r: 5,
   },
-  {
+  Aquarius: {
     name: "ราศีกุมภ์",
-    desc: "มีโชคทางลับ",
     bg: "/zodiac/aquarius.png",
-    r: 4,
   },
-  {
+  Pisces: {
     name: "ราศีมีน",
-    desc: "รายได้เพิ่มขึ้น",
     bg: "/zodiac/pisces.png",
-    r: 3,
   },
-];
+};
+const { $axios } = useNuxtApp();
+const getDailyFortune = async () => {
+  try {
+    const res = await $axios.get("/api/fortunes/daily");
+
+    zodiacs.value = res.data.map((item) => ({
+      name: zodiacMap[item.zodiac]?.name || item.zodiac,
+      desc: item.fortune,
+      bg: zodiacMap[item.zodiac]?.bg || "",
+      r: item.rate,
+    }));
+
+    console.log(zodiacs.value);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+onMounted(() => {
+  getDailyFortune();
+});
 </script>
 
 <style scoped lang="scss">

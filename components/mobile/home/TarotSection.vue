@@ -29,46 +29,43 @@
     </div>
   </div>
 </template>
-
 <script setup>
-const lottos = [
-  {
-    name: "ราศีเมษ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/fun.png",
-  },
-  {
-    name: "ราศีพฤษภ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/car.png",
-  },
-  {
-    name: "ราศีเมถุน",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/fish.png",
-  },
-  {
-    name: "ราศีกรกฎ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/snack.png",
-  },
-  {
-    name: "ราศีสิงห์",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/pilot.png",
-  },
-  {
-    name: "ราศีกันย์",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/ghost.png",
-  },
-];
+const lottos = ref([]);
+
+const dreamImageMap = {
+  "ฟันหัก": "/lotto/fun.png",
+  "พระสงฆ์": "/lotto/car.png",
+  "ถูกหวย": "/lotto/fish.png",
+  "บ้านไฟไหม้": "/lotto/snack.png",
+  "เด็กทารก": "/lotto/pilot.png",
+  "คนตาย": "/lotto/ghost.png",
+  "งูใหญ่": "/lotto/snack.png",
+  "ทอง": "/lotto/fun.png",
+  "โลงศพ": "/lotto/ghost.png"
+};
+
+const { $axios } = useNuxtApp();
+
+const getDailyFortune = async () => {
+  try {
+    const res = await $axios.get("/api/dreams/numbers");
+
+    lottos.value = res.data.map((item) => ({
+      name: item.dream,
+      desc: item.number.join(" "),
+      bg: "/lotto/lottobg.png",
+      img: dreamImageMap[item.dream] || "/lotto/fun.png",
+    }));
+
+    console.log(lottos.value);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+onMounted(() => {
+  getDailyFortune();
+});
 </script>
 
 <style scoped lang="scss">

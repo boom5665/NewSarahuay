@@ -6,56 +6,57 @@
           <div class="card-head-two">
             <div class="card-title"><span class="ic"><img src="/icon/hot1.png" alt=""></span> ผลหวยล่าสุด</div>
           </div>
-           <div class="see-all">
-         <span style="margin-right: 5px;">ดูทั้งหมด</span>  <svg xmlns="http://www.w3.org/2000/svg" width="7" height="13" viewBox="0 0 7 13" fill="none">
-            <path d="M0.75 0.750546L5.45003 6.0306L0.75 11.3105" stroke="#FFDE6E" stroke-width="1.5"
-              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
+          <div class="see-all">
+            <span style="margin-right: 5px;">ดูทั้งหมด</span> <svg xmlns="http://www.w3.org/2000/svg" width="7"
+              height="13" viewBox="0 0 7 13" fill="none">
+              <path d="M0.75 0.750546L5.45003 6.0306L0.75 11.3105" stroke="#FFDE6E" stroke-width="1.5"
+                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
         </div>
         <div class="draw-date">
-  งวดวันที่ {{ lotteryResult.drawDate }}
-</div>
-<div class="prize-grid">
-  <div class="prize first">
-    <div class="prize-l st">
-      <span class="st">
-        <img src="/icon/Cup.png" class="icon" alt="">
-      </span>
-      รางวัลที่ 1
-      <span class="st">
-        <img src="/icon/Cup.png" class="icon" alt="">
-      </span>
-    </div>
+          งวดวันที่ {{ lotteryResult.drawDate }}
+        </div>
+        <div class="prize-grid">
+          <div class="prize first">
+            <div class="prize-l st">
+              <span class="st">
+                <img src="/icon/Cup.png" class="icon" alt="">
+              </span>
+              รางวัลที่ 1
+              <span class="st">
+                <img src="/icon/Cup.png" class="icon" alt="">
+              </span>
+            </div>
 
-    <div class="prize-n">
-      <span class="horo-title">
-        {{ lotteryResult.firstPrize }}
-      </span>
-    </div>
-  </div>
+            <div class="prize-n">
+              <span class="horo-title">
+                {{ lotteryResult.firstPrize }}
+              </span>
+            </div>
+          </div>
 
-  <div class="prize first">
-    <div class="prize-l">เลขหน้า 3 ตัว</div>
-    <div class="prize-n">
-      {{ lotteryResult.front3.join(" ") }}
-    </div>
-  </div>
+          <div class="prize first">
+            <div class="prize-l">เลขหน้า 3 ตัว</div>
+            <div class="prize-n">
+              {{ lotteryResult.front3.join(" ") }}
+            </div>
+          </div>
 
-  <div class="prize first">
-    <div class="prize-l">เลขท้าย 3 ตัว</div>
-    <div class="prize-n">
-      {{ lotteryResult.back3.join(" ") }}
-    </div>
-  </div>
+          <div class="prize first">
+            <div class="prize-l">เลขท้าย 3 ตัว</div>
+            <div class="prize-n">
+              {{ lotteryResult.back3.join(" ") }}
+            </div>
+          </div>
 
-  <div class="prize first">
-    <div class="prize-l">เลขท้าย 2 ตัว</div>
-    <div class="prize-n font-two">
-      {{ lotteryResult.back2 }}
-    </div>
-  </div>
-</div>
+          <div class="prize first">
+            <div class="prize-l">เลขท้าย 2 ตัว</div>
+            <div class="prize-n font-two">
+              {{ lotteryResult.back2 }}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -68,30 +69,23 @@
 
           </div>
         </div>
-    <div class="stat-grid">
-  <div
-    v-for="(stat, index) in lotteryResult.statistics"
-    :key="index"
-    class="stat-box"
-  >
-    <div class="stat-t">
-      {{ stat.title }}
-    </div>
+        <div class="stat-grid">
+          <div v-for="(stat, index) in lotteryResult.statistics" :key="index" class="stat-box">
+            <div class="stat-t">
+              {{ stat.title }}
+            </div>
 
-    <div class="stat-d">
-      {{ stat.description }}
-    </div>
+            <div class="stat-d">
+              {{ stat.description }}
+            </div>
 
-    <div class="stat-nums">
-      <span
-        v-for="num in stat.numbers"
-        :key="num"
-      >
-        {{ num }}
-      </span>
-    </div>
-  </div>
-</div>
+            <div class="stat-nums">
+              <span v-for="num in stat.numbers" :key="num">
+                {{ num }}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -101,30 +95,63 @@
 import { ref } from "vue";
 
 const lotteryResult = ref({
-  drawDate: "16 พฤษภาคม 2569",
+  drawDate: "",
+  firstPrize: "",
+  front3: [],
+  back3: [],
+  back2: "",
+  statistics: [],
+});
 
-  firstPrize: "123456",
-  front3: ["123", "456"],
-  back3: ["123", "456"],
-  back2: "22",
 
-  statistics: [
-    {
-      title: "เลขออกบ่อย",
-      description: "ออกบ่อยที่สุด 10 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-    {
-      title: "เลขหายไปนาน",
-      description: "ไม่ออกนานที่สุด 30 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-    {
-      title: "เลขท้าย 2 ตัว",
-      description: "มาแรงล่าสุด 10 งวด",
-      numbers: ["12", "34", "47", "56", "78", "27"],
-    },
-  ],
+const { $axios } = useNuxtApp();
+
+const getLatestThaiResult = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/latest_thai_result");
+
+    const data = res.data;
+    const result = data.result;
+
+    lotteryResult.value.drawDate = data.lotto_date;
+    lotteryResult.value.firstPrize = result.top6?.[0] || "";
+    lotteryResult.value.front3 = result.bottom3?.slice(0, 2) || [];
+    lotteryResult.value.back3 = result.bottom3?.slice(2, 4) || [];
+    lotteryResult.value.back2 = result.bottom2?.[0] || "";
+  } catch (err) {
+    console.error(err);
+  }
+};
+const getFrequentNumbers = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/frequent-numbers");
+
+    lotteryResult.value.statistics = [
+      {
+        title: "เลขออกบ่อย",
+        description: "ออกบ่อยที่สุด 10 งวด",
+        numbers: res.data.most_frequent || [],
+      },
+      {
+        title: "เลขหายไปนาน",
+        description: "ไม่ออกนานที่สุด 30 งวด",
+        numbers: res.data.least_frequent || [],
+      },
+      {
+        title: "เลขท้าย 2 ตัว",
+        description: "มาแรงล่าสุด 10 งวด",
+        numbers: res.data.two_bottom || [],
+      },
+    ];
+  } catch (err) {
+    console.error(err);
+  }
+};
+onMounted(async () => {
+  await Promise.all([
+    getLatestThaiResult(),
+    getFrequentNumbers(),
+  ]);
 });
 </script>
 <style scoped lang="scss">

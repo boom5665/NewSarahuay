@@ -31,44 +31,42 @@
 </template>
 
 <script setup>
-const lottos = [
-  {
-    name: "ราศีเมษ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/fun.png",
-  },
-  {
-    name: "ราศีพฤษภ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/car.png",
-  },
-  {
-    name: "ราศีเมถุน",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/fish.png",
-  },
-  {
-    name: "ราศีกรกฎ",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/snack.png",
-  },
-  {
-    name: "ราศีสิงห์",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/pilot.png",
-  },
-  {
-    name: "ราศีกันย์",
-    desc: "64 64 64",
-    bg: "/lotto/lottobg.png",
-    img: "/lotto/ghost.png",
-  },
-];
+const lottos = ref([]);
+
+const dreamImageMap = {
+  "ฟันหัก": "/lotto/fun.png",
+  "พระสงฆ์": "/lotto/car.png",
+  "ถูกหวย": "/lotto/fish.png",
+  "บ้านไฟไหม้": "/lotto/snack.png",
+  "เด็กทารก": "/lotto/pilot.png",
+  "คนตาย": "/lotto/ghost.png",
+  "งูใหญ่": "/lotto/snack.png",
+  "ทอง": "/lotto/fun.png",
+  "โลงศพ": "/lotto/ghost.png"
+};
+
+const { $axios } = useNuxtApp();
+
+const getDailyFortune = async () => {
+  try {
+    const res = await $axios.get("/api/dreams/numbers");
+
+    lottos.value = res.data.map((item) => ({
+      name: item.dream,
+      desc: item.number.join(" "),
+      bg: "/lotto/lottobg.png",
+      img: dreamImageMap[item.dream] || "/lotto/fun.png",
+    }));
+
+    console.log(lottos.value);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+onMounted(() => {
+  getDailyFortune();
+});
 </script>
 
 <style scoped lang="scss">
@@ -117,7 +115,7 @@ const lottos = [
 
   img {
     width: 6.25rem;
-    height:  6.25rem;
+    height: 6.25rem;
     object-fit: contain;
   }
 }
@@ -143,13 +141,11 @@ const lottos = [
 
   border: 0.0625rem solid rgba(113, 106, 217, 0);
 
-  background: linear-gradient(
-    270deg,
-    rgba(113, 106, 217, 0) 0%,
-    rgba(113, 106, 217, 0.5) 30%,
-    rgba(113, 106, 217, 0.5) 70%,
-    rgba(113, 106, 217, 0) 100%
-  );
+  background: linear-gradient(270deg,
+      rgba(113, 106, 217, 0) 0%,
+      rgba(113, 106, 217, 0.5) 30%,
+      rgba(113, 106, 217, 0.5) 70%,
+      rgba(113, 106, 217, 0) 100%);
 
   display: flex;
   align-items: center;
@@ -157,12 +153,10 @@ const lottos = [
 }
 
 .zod-name-text {
-  background: linear-gradient(
-    180deg,
-    #fff 50%,
-    #cacaca 68.33%,
-    #fff 83.33%
-  );
+  background: linear-gradient(180deg,
+      #fff 50%,
+      #cacaca 68.33%,
+      #fff 83.33%);
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -181,13 +175,11 @@ const lottos = [
 
   border: 0.0625rem solid rgba(217, 170, 106, 0);
 
-  background: linear-gradient(
-    270deg,
-    rgba(217, 170, 106, 0) 0%,
-    rgba(217, 170, 106, 0.5) 30%,
-    rgba(217, 170, 106, 0.5) 70%,
-    rgba(217, 170, 106, 0) 100%
-  );
+  background: linear-gradient(270deg,
+      rgba(217, 170, 106, 0) 0%,
+      rgba(217, 170, 106, 0.5) 30%,
+      rgba(217, 170, 106, 0.5) 70%,
+      rgba(217, 170, 106, 0) 100%);
 
   display: flex;
   align-items: center;

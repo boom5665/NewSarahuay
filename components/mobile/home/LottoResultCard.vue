@@ -26,22 +26,106 @@
 </template>
 
 <script setup>
-const lotteries = [
-  {
+import { ref, onMounted, onUnmounted } from "vue";
+
+const { $axios } = useNuxtApp();
+
+const lotteries = ref([]);
+
+const lottoMap = {
+  thailotto: {
     name: "สลากกินแบ่งฯ",
     logo: "/icon/thai.png",
     bg: "/icon/bthai.png",
-    day: "15 วัน",
-    time: "01:57:34",
   },
-  {
+  laoslotto: {
     name: "หวยลาว",
     logo: "/icon/laos.png",
     bg: "/icon/bloas.png",
-    day: "",
-    time: "01:57:34",
   },
-];
+  hanoylotto: {
+    name: "หวยฮานอย",
+    logo: "/icon/hanoy.png",
+    bg: "/icon/bhanoy.png",
+  },
+};
+
+let interval = null;
+
+const getCountdown = (dateTime) => {
+  const target = new Date(dateTime);
+  const now = new Date();
+
+  const diff = target - now;
+
+  if (diff <= 0) {
+    return {
+      day: "0 วัน",
+      time: "00:00:00",
+    };
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+  const secs = Math.floor((diff / 1000) % 60);
+
+  return {
+    day: `${days} วัน`,
+    time: `${String(hours).padStart(2, "0")}:${String(mins).padStart(
+      2,
+      "0"
+    )}:${String(secs).padStart(2, "0")}`,
+  };
+};
+
+const updateCountdowns = () => {
+  lotteries.value = lotteries.value.map((item) => {
+    const countdown = getCountdown(item.result_date_time);
+
+    return {
+      ...item,
+      day: countdown.day,
+      time: countdown.time,
+    };
+  });
+};
+
+const getLotteryCountdown = async () => {
+  try {
+    const res = await $axios.get("/api/lottery/schedules");
+
+    lotteries.value = res.data
+      .filter(item => item.lotto_type !== "hanoylotto")
+      .map(item => ({
+        lotto_type: item.lotto_type,
+        name: lottoMap[item.lotto_type]?.name || item.lotto_type,
+        logo: lottoMap[item.lotto_type]?.logo || "",
+        bg: lottoMap[item.lotto_type]?.bg || "",
+        result_date_time: item.result_date_time,
+        day: "",
+        time: "",
+      }));
+
+    updateCountdowns();
+
+    interval = setInterval(() => {
+      updateCountdowns();
+    }, 1000);
+
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+onMounted(() => {
+  getLotteryCountdown();
+});
+
+onUnmounted(() => {
+  clearInterval(interval);
+});
 </script>
 
 <style scoped lang="scss">

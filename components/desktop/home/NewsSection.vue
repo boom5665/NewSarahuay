@@ -156,6 +156,7 @@ const displayNews = computed(() => {
   transition: .15s;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .tab.active {
@@ -269,6 +270,7 @@ const displayNews = computed(() => {
   gap: 0.3125rem;
 
   transition: .15s;
+  cursor: pointer;
 }
 
 .news-analyze:hover {
